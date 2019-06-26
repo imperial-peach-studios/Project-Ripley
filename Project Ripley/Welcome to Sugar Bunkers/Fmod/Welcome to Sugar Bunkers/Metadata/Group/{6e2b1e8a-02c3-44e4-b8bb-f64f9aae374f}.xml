@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{6e2b1e8a-02c3-44e4-b8bb-f64f9aae374f}">
+		<property name="name">
+			<value>Sound</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{9948f546-c547-4b85-8c67-97fbd5d321ef}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{d50a5d59-6379-4d28-94eb-2b46b4de4991}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{aa518ca5-0f76-4301-bb68-e40334593d25}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{9948f546-c547-4b85-8c67-97fbd5d321ef}">
+		<relationship name="effects">
+			<destination>{d7806e64-82bb-497f-85ce-fafea1fc030d}</destination>
+			<destination>{6982337b-2bd4-4c1d-a66b-2ecee8d908da}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{d50a5d59-6379-4d28-94eb-2b46b4de4991}" />
+	<object class="MixerBusFader" id="{d7806e64-82bb-497f-85ce-fafea1fc030d}" />
+	<object class="ThreeEQEffect" id="{6982337b-2bd4-4c1d-a66b-2ecee8d908da}" />
+</objects>

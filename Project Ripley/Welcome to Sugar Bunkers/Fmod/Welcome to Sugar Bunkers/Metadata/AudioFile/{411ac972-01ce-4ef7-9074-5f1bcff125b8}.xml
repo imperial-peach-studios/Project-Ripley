@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{411ac972-01ce-4ef7-9074-5f1bcff125b8}">
+		<property name="assetPath">
+			<value>Sounds/Kie/Walking/Walking_Gravel/Walking_Gravel 9-Footsteps, Gravel, Sneaker, Medium SND1052.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.35193750000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7fed7cee-e3f3-4e92-a997-b7d772d33a6e}</destination>
+		</relationship>
+	</object>
+</objects>

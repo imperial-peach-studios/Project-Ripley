@@ -1,0 +1,523 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9141618568484474878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walking/Floor type
+  m_EditorClassIdentifier: 
+  Name: Floor type
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &-8557211744991513519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Movement/Walking
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Movement/Walking
+  guid: efa0814a59b023489d03d10c52bdecde
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8976799057375013780}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15000
+--- !u!114 &-8533042606520391054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Medicine/First Aid
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Medicine/First Aid
+  guid: dfec74ae547fd342b4a983896758fe4e
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 400
+--- !u!114 &-8497184382308420598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Throwing/Impact_Brick_Ground
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Throwing/Impact_Brick_Ground
+  guid: 32dbe5484cdeda4192a9edfc74a70e1e
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 510
+--- !u!114 &-8176501733396163805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Eating/Snackbar
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Eating/Snackbar
+  guid: 4a395a08b0e21243a3fbb922d3c7c635
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 824
+--- !u!114 &-7538659713347956511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Throwing/Impact_Bottle_Ground
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Throwing/Impact_Bottle_Ground
+  guid: 67c2095b5661da42a5be9ff738dda3fe
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-7481528603663563193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Medicine/Flask
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Medicine/Flask
+  guid: af4f9a7853c15e4682b4af9d5e9ea9f7
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 704
+--- !u!114 &-6519229143731475335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1_BackgroundTrack/Combat
+  m_EditorClassIdentifier: 
+  Name: Combat
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-6456352158014938319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Heartbeat/Heartbeat
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Heartbeat/Heartbeat
+  guid: 59f5935566727a4782a9219219dd9379
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4828020459799496849}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 152000
+--- !u!114 &-6182514314081852414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Level1_BackgroundTrack
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Level1_BackgroundTrack
+  guid: 4117049380f09344abbe89ceef7528e0
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6519229143731475335}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 213975
+--- !u!114 &-6083726155988730774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Throwing/Impact_Bottle_Flesh
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Throwing/Impact_Bottle_Flesh
+  guid: ececc0b68cd955478f28540e8fca34e6
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-4114257568069384358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Throwing/Throw
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Throwing/Throw
+  guid: a10280259e620948b8ffca24b83b2098
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &-2981493251580894269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Throwing/Impact_Brick_Flesh
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Throwing/Impact_Brick_Flesh
+  guid: 26281fbf1efa3f4eaf95a266106a56b0
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-2861502775494451098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Damage & Death/Damage
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Damage & Death/Damage
+  guid: dfcfcb6f318dac42ac150fba240b3b56
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 716
+--- !u!114 &-983949318400293003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Enemies/Walking
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Enemies/Walking
+  guid: 34b8fd827bec6e4184aa3997a7c46b94
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -9141618568484474878}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8643
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 1659072266187224359}
+  - {fileID: 2322005617353459076}
+  EditorEvents:
+  - {fileID: 3311726393119064996}
+  - {fileID: -2981493251580894269}
+  - {fileID: -8497184382308420598}
+  - {fileID: -983949318400293003}
+  - {fileID: -6182514314081852414}
+  - {fileID: -8176501733396163805}
+  - {fileID: -6456352158014938319}
+  - {fileID: -7538659713347956511}
+  - {fileID: 3339543869093950526}
+  - {fileID: -4114257568069384358}
+  - {fileID: -7481528603663563193}
+  - {fileID: 9120781520689119850}
+  - {fileID: -2861502775494451098}
+  - {fileID: -8533042606520391054}
+  - {fileID: -6083726155988730774}
+  - {fileID: -8557211744991513519}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2322005617353459076}
+  StringsBanks:
+  - {fileID: 1659072266187224359}
+  stringsBankWriteTime: 636971530549135457
+  cacheVersion: 3
+--- !u!114 &1659072266187224359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:\Users\WolfC\Documents\GitHub\Project-Ripley\Project Ripley\Welcome to Sugar
+    Bunkers\Fmod\Welcome to Sugar Bunkers\Build\Desktop\Master.strings.bank
+  SubDir: 
+  lastModified: 636971530549135457
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1808
+  Exists: 1
+--- !u!114 &2322005617353459076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: C:\Users\WolfC\Documents\GitHub\Project-Ripley\Project Ripley\Welcome to Sugar
+    Bunkers\Fmod\Welcome to Sugar Bunkers\Build\Desktop\Master.bank
+  SubDir: 
+  lastModified: 636971530548965912
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 8441408
+  Exists: 1
+--- !u!114 &3311726393119064996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Damage & Death/Death
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Damage & Death/Death
+  guid: 10342d26697e30489151f1c17be96175
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1571
+--- !u!114 &3339543869093950526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/Kie/Eating/Canned Food
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/Kie/Eating/Canned Food
+  guid: 80e8a1c23e88b5418ff0a1ea959e2533
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1314
+--- !u!114 &4828020459799496849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Heartbeat/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 100
+  Default: 100
+  Exists: 1
+--- !u!114 &8976799057375013780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walking/Floor type
+  m_EditorClassIdentifier: 
+  Name: Floor type
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &9120781520689119850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/LowHealth
+  m_EditorClassIdentifier: 
+  Path: snapshot:/LowHealth
+  guid: b75fae9d1b3f504c920729c783849eb8
+  Banks:
+  - {fileID: 2322005617353459076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
