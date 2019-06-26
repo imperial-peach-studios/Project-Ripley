@@ -34,7 +34,7 @@ public class MeleeAttackEvent : MonoBehaviour
             itemSettings = invetory.secondary.GetComponent<ItemSettings>();
         }
 
-        attackA.UpdateStats(itemSettings.meleeOS.knockBack, itemSettings.meleeOS.knockLength, itemSettings.meleeOS.stanLength, itemSettings.meleeOS.damage, itemSettings);
+        attackA.UpdateStats(itemSettings.meleeOS.knockBack, itemSettings.meleeOS.knockLength, itemSettings.meleeOS.stanLength, itemSettings.meleeOS.damage, itemSettings, GetComponentInParent<Animator>());
         
         attackA.SetHasAttacked(true);
     }

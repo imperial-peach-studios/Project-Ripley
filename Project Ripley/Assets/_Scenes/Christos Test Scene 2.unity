@@ -12385,6 +12385,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentlyKnocking: 1
   currentlyStunning: 1
+  waitAfterAttackLenght: 1
+  shrinkSpeed: 4
+  shrinkSize: 0.8
 --- !u!61 &1377998765
 BoxCollider2D:
   m_ObjectHideFlags: 0

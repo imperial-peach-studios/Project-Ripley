@@ -12,12 +12,18 @@ public class AttackActorCollision : MonoBehaviour
     bool giveDamage = false;
     [SerializeField] bool currentlyKnocking;
     [SerializeField] bool currentlyStunning;
+    float waitAfterAttackTimer = 0;
+    [SerializeField] float waitAfterAttackLenght;
+    [SerializeField] float shrinkSpeed;
+    [SerializeField] float shrinkSize;
+    Vector3 previousScale;
 
     float damage;
     float knockBack;
     float stan;
     float knockLength;
     ItemSettings itemSettings;
+    Animator anim;
 
     public void SetHasAttacked(bool hasAttacked)
     {
@@ -52,17 +58,36 @@ public class AttackActorCollision : MonoBehaviour
             enemyStunned.GetStunnedInfo(currentlyStunning, stan);
 
             itemSettings.Decrease();
+            previousScale = transform.parent.transform.localScale;
+            //anim.StopPlayback();
+            transform.parent.localScale = new Vector3(transform.parent.localScale.x * shrinkSize, transform.parent.localScale.y * shrinkSize, transform.parent.localScale.z * shrinkSize);
+            anim.speed = 0;
+            
             giveDamage = true;
+        }
+
+        if(anim.speed == 0)
+        {
+            waitAfterAttackTimer += Time.deltaTime;
+            
+            transform.parent.localScale = Vector3.MoveTowards(transform.parent.localScale, previousScale, shrinkSpeed * Time.deltaTime);
+
+            if(waitAfterAttackTimer > waitAfterAttackLenght)
+            {
+                waitAfterAttackTimer = 0;
+                anim.speed = 1;
+            }
         }
     }
 
-    public void UpdateStats(float knockBackStrength, float knockBackLength, float stan, float damage, ItemSettings itemSettings)
+    public void UpdateStats(float knockBackStrength, float knockBackLength, float stan, float damage, ItemSettings itemSettings, Animator animator)
     {
         this.damage = damage;
         this.knockBack = knockBackStrength;
         this.knockLength = knockBackLength;
         this.stan = stan;
         this.itemSettings = itemSettings;
+        this.anim = animator;
     }
 
     public void ResetEnemyHit()
