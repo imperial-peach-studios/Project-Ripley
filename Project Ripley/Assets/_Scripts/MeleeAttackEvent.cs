@@ -21,8 +21,9 @@ public class MeleeAttackEvent : MonoBehaviour
 
     public void AttackTriggerEnable()
     {
-        attackA.enabled = true;
-
+        //fireA.enabled = false;
+        //attackA.enabled = true;
+        //GetComponentInParent<Animator>().speed = 1;
         ItemInfo itemInfo;
 
         if(invetory.currentWeapon == 1)
@@ -34,16 +35,16 @@ public class MeleeAttackEvent : MonoBehaviour
             itemSettings = invetory.secondary.GetComponent<ItemSettings>();
         }
 
-        attackA.UpdateStats(itemSettings.meleeOS.knockBack, itemSettings.meleeOS.knockLength, itemSettings.meleeOS.stanLength, itemSettings.meleeOS.damage, itemSettings);
+        attackA.UpdateStats(itemSettings.meleeOS.knockBack, itemSettings.meleeOS.knockLength, itemSettings.meleeOS.stanLength, itemSettings.meleeOS.damage, itemSettings, GetComponentInParent<Animator>());
         
         attackA.SetHasAttacked(true);
     }
     public void AttackTriggerDisable()
     {
-        attackA.SetHasAttacked(false);
+        //attackA.SetHasAttacked(false);
         attackA.ResetEnemyHit();
-
-        attackA.enabled = false;
+        
+        //attackA.enabled = false;
     }
 
     public void Fire()
@@ -60,7 +61,7 @@ public class MeleeAttackEvent : MonoBehaviour
         }
         GunSO gunSO = itemSettings.gunOS;
 
-        fireA.GetFireInfo(gunSO.weaponBullet, gunSO.damage, gunSO.firingRate, gunSO.numberOfBulletsFired, gunSO.spreadFactor);
+        fireA.GetFireInfo(gunSO.weaponBullet, gunSO.damage, gunSO.firingRate, gunSO.numberOfBulletsFired, gunSO.spreadFactor, gunSO.knockBack, gunSO.knockLength, gunSO.stunLength, GetComponentInParent<Animator>());
     }
 }
 

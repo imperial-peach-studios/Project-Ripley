@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1118674735674506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,6 +100,11 @@ MonoBehaviour:
   deathRate: 1
   deathTimer: 0
   direction: 0
+  knockBack: 0
+  stun: 0
+  knockBackPower: 0
+  knockBackLength: 0
+  stunLength: 0
 --- !u!58 &58965294393407862
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,8 +139,8 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!96 &96088350751462424
 TrailRenderer:

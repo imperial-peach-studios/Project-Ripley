@@ -1,5 +1,94 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1377998762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1377998763}
+  - component: {fileID: 1377998765}
+  - component: {fileID: 1377998764}
+  - component: {fileID: 1377998766}
+  m_Layer: 8
+  m_Name: Attack Actor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1377998763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377998762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1183545188613039444}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1377998765
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377998762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1377998764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377998762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf319440cf0e48448f69a1a2805a298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentlyKnocking: 1
+  currentlyStunning: 1
+  waitAfterAttackLength: 0.2
+  shrinkSize: {x: 1, y: 1, z: 1}
+  shrinkSpeed: 4
+--- !u!114 &1377998766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377998762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15301beb8bbcf14198bc69aa7f054ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPoint: {fileID: 1183545189064635955}
 --- !u!1 &1183545188438924858
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +145,7 @@ LineRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -149,7 +239,6 @@ GameObject:
   - component: {fileID: 1183545188613039432}
   - component: {fileID: 1183545188613039440}
   - component: {fileID: 430792548}
-  - component: {fileID: 430792562}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -172,6 +261,8 @@ Transform:
   - {fileID: 1183545188438924861}
   - {fileID: 1183545188950898470}
   - {fileID: 1183545190455618142}
+  - {fileID: 1377998763}
+  - {fileID: 1183545189064635955}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,6 +291,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -211,8 +303,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -993660871
   m_SortingLayer: 2
-  m_SortingOrder: 23
-  m_Sprite: {fileID: 21300000, guid: 396d4a4ebb4732c44add76139e0f8c1a, type: 3}
+  m_SortingOrder: 74
+  m_Sprite: {fileID: 21300000, guid: 8c29346359dec464cbeb1ec30c269916, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -276,7 +368,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.27}
+  m_Offset: {x: 0, y: 1}
   serializedVersion: 2
   m_Radius: 0.34
 --- !u!114 &1183545188613039452
@@ -303,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1462414810b4a3241a819d917c1c0ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDatabaseSO: {fileID: 11400000, guid: b2ad8f501899e274aaa9f592b19f6b14, type: 2}
 --- !u!114 &1183545188613039441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +413,6 @@ MonoBehaviour:
   isSneaking: 0
   stopMoving: 0
   disableMove: 0
-  movementDatabase: {fileID: 0}
 --- !u!114 &1183545188613039435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,9 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cec791c76555ad4c8428e9f090aad22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDatabase: {fileID: 0}
   followMouseRate: 2
   clickRate: 0.1
+  hasAttacked: 0
   followMouse: 0
 --- !u!114 &1183545188613039434
 MonoBehaviour:
@@ -364,7 +456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa08fe16fdaabd04fba7d7a0f61cfa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDatabase: {fileID: 0}
 --- !u!114 &1183545188613039433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c83919a02d1d94885408c6fcbfc4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackActor: {fileID: 1377998762}
 --- !u!114 &1183545188613039432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,15 +485,15 @@ MonoBehaviour:
   uiArrow: {fileID: 0}
   layersToCollide:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 4096
   pickUpKey: 101
   radius: 1
-  lootText: 
-  pickUpText: 
-  speakText: 
-  lootTag: 
-  pickUpTag: 
-  speakTag: 
+  lootText: Loot With
+  pickUpText: Pick Up With
+  speakText: Speak With
+  lootTag: InteractionLoot
+  pickUpTag: InteractionPickUp
+  speakTag: InteractionInput
 --- !u!114 &1183545188613039440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,194 +539,6 @@ MonoBehaviour:
     soundPlayed: 0
     hideCircle: 0
     ignore: 0
---- !u!114 &430792562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183545188613039450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7705d3f216e76b0418a0c9ec7cfae08c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  stateName: 
-  directions: 3
-  attackID: 9
-  normalizedTime: 0
-  currentIndex: 0
-  collideWithLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  attackColls:
-  - name: Crowbat
-    stateName: 
-    baseLayerName: 
-    perspectiveName: 
-    directionName: 
-    parameterName: 
-    parameterValue: 0
-    animationID: 9
-    collisionColor: {r: 0.21382403, g: 1, b: 0, a: 1}
-    hideCollision: 0
-    layerIndex: 0
-    stateIndex: 0
-    perspectiveIndex: 0
-    parameterIndex: 0
-    currentDirection: 0
-    currentPerspective: 0
-    boxOffset: {x: 0, y: 0}
-    boxSize: {x: 0, y: 0}
-    boxOffsetUp: {x: 0, y: 0}
-    boxOffsetRight: {x: 0, y: 0}
-    boxOffsetLeft: {x: 0, y: 0}
-    boxOffsetDown: {x: 0, y: 0}
-    boxSizeUp: {x: 0, y: 0}
-    boxSizeRight: {x: 0, y: 0}
-    boxSizeLeft: {x: 0, y: 0}
-    boxSizeDown: {x: 0, y: 0}
-    enabledColor: {r: 0, g: 0, b: 0, a: 0}
-    disabledColor: {r: 0, g: 0, b: 0, a: 0}
-    enableCollision: 0
-    disableCollision: 0
-    attackFrame: 0
-    comboColls:
-    - name: Attack 1
-      collisionEnableAtTime: 0
-      collisionDisableAtTime: 0
-      canCauseDamage: 0
-      controllOverAll: 1
-      FixOffset_X_BySize_X: 1
-      FixOffset_Y_BySize_Y: 1
-      infoForAllDirections:
-        offset: {x: 0, y: 1.33}
-        size: {x: 0.5, y: 1}
-      specificDirections:
-        upDirection:
-          offset: {x: 0, y: 1}
-          size: {x: 1, y: 1}
-        rightDirection:
-          offset: {x: 0.25, y: 1}
-          size: {x: 0.5, y: 1}
-        leftDirection:
-          offset: {x: -1, y: 1}
-          size: {x: 1, y: 1}
-        downDirection:
-          offset: {x: 0, y: 0}
-          size: {x: 1, y: 1}
-    - name: Attack 2
-      collisionEnableAtTime: 0
-      collisionDisableAtTime: 0
-      canCauseDamage: 0
-      controllOverAll: 1
-      FixOffset_X_BySize_X: 1
-      FixOffset_Y_BySize_Y: 1
-      infoForAllDirections:
-        offset: {x: 0.5, y: 1.33}
-        size: {x: 1, y: 1}
-      specificDirections:
-        upDirection:
-          offset: {x: 0, y: 1}
-          size: {x: 1, y: 1}
-        rightDirection:
-          offset: {x: 0.25, y: 1}
-          size: {x: 1, y: 1}
-        leftDirection:
-          offset: {x: -1, y: 1}
-          size: {x: 1, y: 1}
-        downDirection:
-          offset: {x: 0, y: 0}
-          size: {x: 1, y: 1}
-  - name: Knife
-    stateName: 
-    baseLayerName: 
-    perspectiveName: 
-    directionName: 
-    parameterName: 
-    parameterValue: 0
-    animationID: 10
-    collisionColor: {r: 0.21382403, g: 1, b: 0, a: 1}
-    hideCollision: 0
-    layerIndex: 0
-    stateIndex: 0
-    perspectiveIndex: 0
-    parameterIndex: 0
-    currentDirection: 0
-    currentPerspective: 0
-    boxOffset: {x: 0, y: 0}
-    boxSize: {x: 0, y: 0}
-    boxOffsetUp: {x: 0, y: 0}
-    boxOffsetRight: {x: 0, y: 0}
-    boxOffsetLeft: {x: 0, y: 0}
-    boxOffsetDown: {x: 0, y: 0}
-    boxSizeUp: {x: 0, y: 0}
-    boxSizeRight: {x: 0, y: 0}
-    boxSizeLeft: {x: 0, y: 0}
-    boxSizeDown: {x: 0, y: 0}
-    enabledColor: {r: 0, g: 0, b: 0, a: 0}
-    disabledColor: {r: 0, g: 0, b: 0, a: 0}
-    enableCollision: 0
-    disableCollision: 0
-    attackFrame: 0
-    comboColls:
-    - name: Attack 1
-      collisionEnableAtTime: 0
-      collisionDisableAtTime: 0
-      canCauseDamage: 0
-      controllOverAll: 1
-      FixOffset_X_BySize_X: 1
-      FixOffset_Y_BySize_Y: 0
-      infoForAllDirections:
-        offset: {x: -0.25, y: 1.4}
-        size: {x: 0.5, y: 0.61}
-      specificDirections:
-        upDirection:
-          offset: {x: 0, y: 0}
-          size: {x: 0, y: 0}
-        rightDirection:
-          offset: {x: 0, y: 0}
-          size: {x: 0, y: 0}
-        leftDirection:
-          offset: {x: 0, y: 0}
-          size: {x: 0, y: 0}
-        downDirection:
-          offset: {x: 0, y: 0}
-          size: {x: 0, y: 0}
-  - name: Bat
-    stateName: 
-    baseLayerName: 
-    perspectiveName: 
-    directionName: 
-    parameterName: 
-    parameterValue: 0
-    animationID: 11
-    collisionColor: {r: 0, g: 1, b: 0.86782575, a: 1}
-    hideCollision: 0
-    layerIndex: 0
-    stateIndex: 0
-    perspectiveIndex: 0
-    parameterIndex: 0
-    currentDirection: 0
-    currentPerspective: 0
-    boxOffset: {x: 0, y: 0}
-    boxSize: {x: 0, y: 0}
-    boxOffsetUp: {x: 0, y: 0}
-    boxOffsetRight: {x: 0, y: 0}
-    boxOffsetLeft: {x: 0, y: 0}
-    boxOffsetDown: {x: 0, y: 0}
-    boxSizeUp: {x: 0, y: 0}
-    boxSizeRight: {x: 0, y: 0}
-    boxSizeLeft: {x: 0, y: 0}
-    boxSizeDown: {x: 0, y: 0}
-    enabledColor: {r: 0, g: 0, b: 0, a: 0}
-    disabledColor: {r: 0, g: 0, b: 0, a: 0}
-    enableCollision: 0
-    disableCollision: 0
-    attackFrame: 0
-    comboColls: []
-  direction: {x: 0, y: 0}
 --- !u!1 &1183545188950898471
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,4 +665,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b20518d45890e4be59ba82946f88026c,
     type: 3}
   m_PrefabInstance: {fileID: 1183545189668574196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5234022583450948674
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1183545188613039444}
+    m_Modifications:
+    - target: {fileID: 6399113534967816818, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_Name
+      value: BulletPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c0b0b352831b8441ac107a7e3b94867, type: 3}
+--- !u!4 &1183545189064635955 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6399113534967816817, guid: 2c0b0b352831b8441ac107a7e3b94867,
+    type: 3}
+  m_PrefabInstance: {fileID: 5234022583450948674}
   m_PrefabAsset: {fileID: 0}

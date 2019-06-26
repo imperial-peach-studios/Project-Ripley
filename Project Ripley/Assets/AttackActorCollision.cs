@@ -12,7 +12,13 @@ public class AttackActorCollision : MonoBehaviour
     bool giveDamage = false;
     [SerializeField] bool currentlyKnocking;
     [SerializeField] bool currentlyStunning;
-
+    float waitAfterAttackTimer = 0;
+    [SerializeField] float waitAfterAttackLength;
+    
+    Animator anim;
+    Vector3 previousScale;
+    [SerializeField] Vector3 shrinkSize;
+    [SerializeField] float shrinkSpeed;
     float damage;
     float knockBack;
     float stan;
@@ -24,7 +30,7 @@ public class AttackActorCollision : MonoBehaviour
         isAttacking = hasAttacked; 
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(isAttacking && collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && collision.gameObject.tag == "Enemy")
         {
@@ -43,7 +49,7 @@ public class AttackActorCollision : MonoBehaviour
             Debug.Log("Gave Damage To Enemy: " + enemyHit.name);
 
             Vector2 knockBackDirection = enemyHit.transform.position - transform.position;
-            Debug.Log(knockBackDirection);
+            //Debug.Log(knockBackDirection);
             knockBackDirection.Normalize();
 
             EnemyKnockedBack enemyKnock = enemyHit.GetComponent<EnemyKnockedBack>();
@@ -52,21 +58,53 @@ public class AttackActorCollision : MonoBehaviour
             enemyStunned.GetStunnedInfo(currentlyStunning, stan);
 
             itemSettings.Decrease();
+
+            previousScale = transform.parent.localScale;
+            //transform.parent.localScale *= shrinkSize;
+            transform.parent.localScale = new Vector3(transform.parent.localScale.x * shrinkSize.x, transform.parent.localScale.y * shrinkSize.y, transform.parent.localScale.z * shrinkSize.z);
+            anim.speed = 0f;
+           // anim.playbackTime = 0.10f;
+            //anim.StopPlayback();
             giveDamage = true;
+        }
+
+        if(anim != null)
+        {
+            if (anim.speed != 1)
+            {
+                waitAfterAttackTimer += Time.deltaTime;
+
+                transform.parent.localScale = Vector3.MoveTowards(transform.parent.localScale, previousScale, shrinkSpeed * Time.deltaTime);
+
+                if (waitAfterAttackTimer > waitAfterAttackLength)
+                {
+                    //anim.speed = 0.8f;
+                    //anim.speed = 1f;
+                    anim.speed = 1f;
+
+                    //anim.playbackTime = 1;
+                    //ResetEnemyHit();
+                    waitAfterAttackTimer = 0;
+                }
+            }
         }
     }
 
-    public void UpdateStats(float knockBackStrength, float knockBackLength, float stan, float damage, ItemSettings itemSettings)
+    public void UpdateStats(float knockBackStrength, float knockBackLength, float stan, float damage, ItemSettings itemSettings, Animator anim)
     {
         this.damage = damage;
         this.knockBack = knockBackStrength;
         this.knockLength = knockBackLength;
         this.stan = stan;
         this.itemSettings = itemSettings;
+        this.anim = anim;
     }
 
     public void ResetEnemyHit()
     {
         enemyHit = null;
+        giveDamage = false;
+        isAttacking = false;
+        //anim.speed = 1;
     }
 }

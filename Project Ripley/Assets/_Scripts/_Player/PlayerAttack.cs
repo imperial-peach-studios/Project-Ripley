@@ -81,10 +81,12 @@ public class PlayerAttack : MonoBehaviour
             if (myAnim.GetBool("Hold Attack") == true)
             {
                 followMouse = true;
+                playerMovement.StopMoving = true;
             }
             if (Input.GetMouseButtonUp(0))
             {
                 myAnim.SetBool("Hold Attack", false);
+                playerMovement.StopMoving = false;
             }
         }
         else if (value > 0 && value < 5) //Consumable

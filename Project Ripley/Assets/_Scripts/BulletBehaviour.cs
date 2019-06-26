@@ -10,6 +10,13 @@ public class BulletBehaviour : MonoBehaviour
     public float direction;
     float spreadFactor;
     float damage;
+
+    public bool knockBack = false;
+    public bool stun = false;
+    public float knockBackPower;
+    public float knockBackLength;
+    public float stunLength;
+
     public float SpreadFactor
     {
         set
@@ -47,6 +54,20 @@ public class BulletBehaviour : MonoBehaviour
         if (other.transform.tag == "Wall")
         {
             Destroy(gameObject);
+        }
+        else if(other.transform.tag == "Enemy")
+        {
+            Debug.Log("HE");
+            Vector2 knockBackDirection = other.transform.position - transform.position;
+            knockBackDirection.Normalize();
+
+            EnemyKnockedBack enemyKnock = other.GetComponent<EnemyKnockedBack>();
+            enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, knockBackLength, knockBackPower);
+            EnemyStunned enemyStunned = other.GetComponent<EnemyStunned>();
+            enemyStunned.GetStunnedInfo(stun, stunLength);
+
+            Destroy(gameObject);
+
         }
     }
 }
