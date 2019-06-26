@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3284b294f799017498eb855189ea9ab9, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  weaponsName: 
+  uiIcon: {fileID: 21300000, guid: aed0adec49e33434a89929dbb4f616c6, type: 3}
+  twoHanded: 0
+  animationID: 10
+  attackRate: 1
+  damage: 0
+  durability: 0
+  durabilityDecrease: 0
+  CollisionBoxSize: {x: 0.6, y: 0.6}
+  pickUpBoxSize: {x: 0.4, y: 0.4}
+  attackCollisionSize: {x: 0, y: 0}
+  attackCollisionOffset: {x: 0, y: 0}
+  info: A Kitchen Knife????
