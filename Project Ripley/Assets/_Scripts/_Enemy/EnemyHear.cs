@@ -10,7 +10,7 @@ public class EnemyHear : MonoBehaviour
     [SerializeField] AIPath path;
     EnemyInfo info;
     
-    void Start()
+    void Awake()
     {
         info = GetComponent<EnemyInfo>();
     }

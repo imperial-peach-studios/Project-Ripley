@@ -10,7 +10,7 @@ public class PlayerHPManager : MonoBehaviour
 	public Slider myHPSlider;
     public Image hpImage;
 	
-	void Start ()
+	void Awake ()
     {
 		for(int i = 0; i < transform.childCount; i++)
         {

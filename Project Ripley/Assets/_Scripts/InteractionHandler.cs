@@ -10,6 +10,7 @@ public class InteractionHandler : MonoBehaviour
     public KeyCode pickUpKey;
     public float radius;
     GameObject closestObject;
+    NewPlayerInvetory invetory;
     [Space]
     [SerializeField] string lootText;
     [SerializeField] string pickUpText;
@@ -26,6 +27,11 @@ public class InteractionHandler : MonoBehaviour
     public static event OnArrowShow OnExit;
     public delegate void OnShowText(string text, Vector3 position);
     public static event OnShowText OnText;
+
+    private void Awake()
+    {
+        invetory = GetComponent<NewPlayerInvetory>();
+    }
 
     void Update()
     {
@@ -83,7 +89,7 @@ public class InteractionHandler : MonoBehaviour
                 {
                     if (closestObject.GetComponent<InteractionGiver>() != null)
                     {
-                        closestObject.GetComponent<InteractionGiver>().ActivateByOther(GetComponent<NewPlayerInvetory>());
+                        closestObject.GetComponent<InteractionGiver>().ActivateByOther(invetory);
                     }
                 }
             }

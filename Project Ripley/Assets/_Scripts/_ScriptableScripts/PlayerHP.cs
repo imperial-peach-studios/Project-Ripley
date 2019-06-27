@@ -65,4 +65,8 @@ public class PlayerHP : ScriptableObject
             health = 0;
         }
     }
+    public void EqualHP(int value)
+    {
+        health = value;
+    }
 }

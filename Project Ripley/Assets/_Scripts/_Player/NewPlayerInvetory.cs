@@ -14,7 +14,7 @@ public class NewPlayerInvetory : MonoBehaviour
     Animator anim;
     InteractionHandler iHandler;
 
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
         playerM = GetComponent<PlayerMovement>();

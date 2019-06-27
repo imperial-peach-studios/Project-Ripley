@@ -25,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] bool followMouse = false;
 
-    void Start()
+    void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
         myAnim = GetComponent<Animator>();

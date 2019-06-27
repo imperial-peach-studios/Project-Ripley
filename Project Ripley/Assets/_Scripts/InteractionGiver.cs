@@ -20,7 +20,7 @@ public class InteractionGiver : MonoBehaviour
     private int currentIcon = -1;
     private Vector2 direction;
 
-    void Start()
+    void Awake()
     {
         OnStart.Invoke();
     }

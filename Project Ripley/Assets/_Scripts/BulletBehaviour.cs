@@ -33,7 +33,7 @@ public class BulletBehaviour : MonoBehaviour
     }
 
 
-    void Start ()
+    void Awake ()
     {
         direction += Random.Range(-spreadFactor, spreadFactor);
 	}
@@ -57,7 +57,7 @@ public class BulletBehaviour : MonoBehaviour
         }
         else if(other.transform.tag == "Enemy")
         {
-            Debug.Log("HE");
+            //Debug.Log("Hit Enemy");
             Vector2 knockBackDirection = other.transform.position - transform.position;
             knockBackDirection.Normalize();
 
@@ -66,8 +66,10 @@ public class BulletBehaviour : MonoBehaviour
             EnemyStunned enemyStunned = other.GetComponent<EnemyStunned>();
             enemyStunned.GetStunnedInfo(stun, stunLength);
 
-            Destroy(gameObject);
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            enemyHealth.DecreaseHealthWith(damage);
 
+            Destroy(gameObject);
         }
     }
 }

@@ -57,6 +57,9 @@ public class AttackActorCollision : MonoBehaviour
             EnemyStunned enemyStunned = enemyHit.GetComponent<EnemyStunned>();
             enemyStunned.GetStunnedInfo(currentlyStunning, stan);
 
+            EnemyHealth enemyHealth = enemyHit.GetComponent<EnemyHealth>();
+            enemyHealth.DecreaseHealthWith(damage);
+
             itemSettings.Decrease();
 
             previousScale = transform.parent.localScale;

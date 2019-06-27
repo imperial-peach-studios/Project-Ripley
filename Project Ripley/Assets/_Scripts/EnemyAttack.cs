@@ -6,20 +6,25 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] float attackRate = 1f;
     [SerializeField] float distanceToFromAttack;
+    [SerializeField] int damage;
+
+    [SerializeField] EnemyAttackCollision eAC;
 
     private float attackTimer = 0f;
     private bool readyToAttack = false;
     private bool attack = false;
     EnemyInfo enemyInfo;
 
-    private void Start()
+    void Awake()
     {
         enemyInfo = GetComponent<EnemyInfo>();
     }
 
     void Update()
     {
-        if(enemyInfo.GetKnockedDown())
+        eAC.SetDamage(damage);
+
+        if (enemyInfo.GetKnockedDown())
         {
             attackTimer = 0;
             readyToAttack = false;

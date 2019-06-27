@@ -28,7 +28,7 @@ public class EnemySight : MonoBehaviour
 
     Patrol patrol;
 
-    void Start()
+    void Awake()
     {
         patrol = GetComponent<Patrol>();
         col = transform.Find("AI Circle Collision").GetComponent<CircleCollider2D>();
