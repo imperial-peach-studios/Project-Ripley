@@ -12,9 +12,11 @@ public class PlayerHealth : MonoBehaviour
     PlayerAttack pA;
     NewPlayerInvetory pI;
     InteractionHandler iH;
-
+    
     void Awake()
     {
+        GameData.OnSavePlayer += OnSave;
+        GameData.OnLoadPlayer += OnLoad;
         //currentHealth = playerHP.Health;
 
         pM = GetComponent<PlayerMovement>();
@@ -59,5 +61,14 @@ public class PlayerHealth : MonoBehaviour
         bool oldDead = secondaryDead;
         secondaryDead = false;
         return oldDead;
+    }
+
+    public void OnSave()
+    {
+        GameData.aData.pData.health = playerHP.Health;
+    }
+    public void OnLoad()
+    {
+        playerHP.EqualHP(GameData.aData.pData.health);
     }
 }

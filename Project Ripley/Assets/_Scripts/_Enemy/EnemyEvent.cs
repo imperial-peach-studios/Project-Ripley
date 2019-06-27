@@ -49,7 +49,9 @@ public class EnemyEvent : MonoBehaviour
 
             if (waitTimer > waitAmount)
             {
-                path.destination = info.GetLastPosition();
+                info.SetSearchMode(false);
+                waitTimer = 0;
+                //path.destination = info.GetLastPosition();
             }
             else
             {

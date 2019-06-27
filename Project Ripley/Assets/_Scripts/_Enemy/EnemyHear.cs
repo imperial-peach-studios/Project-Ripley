@@ -34,7 +34,7 @@ public class EnemyHear : MonoBehaviour
 
                 if(p != null)
                 {
-                    if (p.IsInRange(transform.position))
+                    if (p.IsInRange(transform.position) && !PlayersMovementData.InsideASafeHouse)
                     {
                         info.SetLastSight(hit.transform.position);
                         info.SetHeardNoise(true);

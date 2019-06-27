@@ -16,6 +16,9 @@ public class NewPlayerInvetory : MonoBehaviour
 
     void Awake()
     {
+        GameData.OnSavePlayer += OnSave;
+        GameData.OnLoadPlayer += OnLoad;
+
         anim = GetComponent<Animator>();
         playerM = GetComponent<PlayerMovement>();
         parentPrimary = transform.Find("Primary").gameObject;
@@ -181,5 +184,14 @@ public class NewPlayerInvetory : MonoBehaviour
                 primary = null;
             }
         }
+    }
+
+    public void OnSave()
+    {
+        GameData.aData.pData.inventorySO = invetorySO;
+    }
+    public void OnLoad()
+    {
+        invetorySO = GameData.aData.pData.inventorySO;
     }
 }
