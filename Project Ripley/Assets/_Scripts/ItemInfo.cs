@@ -61,26 +61,28 @@ public class ItemInfo : MonoBehaviour
 
     public void UpdateInfo()
     {
-        itemSettings = GetComponent<ItemSettings>();
-        itemSettings.UpdateStats();
-
-        if(itemSettings.meleeOS != null)
+        if(GetComponent<ItemSettings>() != null)
         {
-            melee = itemSettings.meleeOS;
+            itemSettings = GetComponent<ItemSettings>();
+            itemSettings.UpdateStats();
 
-            itemInfo = melee.info;
-            uiIcon = melee.uiIcon;
-            animationID = melee.animationID;
-        }
-        else if(itemSettings.gunOS != null)
-        {
-            gun = itemSettings.gunOS;
+            if (itemSettings.meleeOS != null)
+            {
+                melee = itemSettings.meleeOS;
 
-            itemInfo = gun.info;
-            uiIcon = gun.uiIcon;
-            animationID = gun.animationID;
+                itemInfo = melee.info;
+                uiIcon = melee.uiIcon;
+                animationID = melee.animationID;
+            }
+            else if (itemSettings.gunOS != null)
+            {
+                gun = itemSettings.gunOS;
+
+                itemInfo = gun.info;
+                uiIcon = gun.uiIcon;
+                animationID = gun.animationID;
+            }
         }
-        
     }
 
     public void DecreaseStats()

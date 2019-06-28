@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] PlayerHP playerHP;
     bool isDead = false;
     bool secondaryDead = false;
+    float waitBeforeDeathTimer = 0;
+    [SerializeField] float waitBeforeDeathLength;
     PlayerMovement pM;
     PlayerDash pD;
     PlayerAttack pA;
@@ -48,6 +50,15 @@ public class PlayerHealth : MonoBehaviour
             pA.enabled = false;
             pI.enabled = false;
             iH.enabled = false;
+
+            waitBeforeDeathTimer += Time.deltaTime;
+
+            if (waitBeforeDeathTimer > waitBeforeDeathLength)
+            {
+                GameData data = GameData.data;
+                data.Load();
+                waitBeforeDeathTimer = 0;
+            }
         }
     }
 
@@ -70,5 +81,13 @@ public class PlayerHealth : MonoBehaviour
     public void OnLoad()
     {
         playerHP.EqualHP(GameData.aData.pData.health);
+        isDead = false;
+        secondaryDead = false;
+
+        pM.enabled = true;
+        pD.enabled = true;
+        pA.enabled = true;
+        pI.enabled = true;
+        iH.enabled = true;
     }
 }

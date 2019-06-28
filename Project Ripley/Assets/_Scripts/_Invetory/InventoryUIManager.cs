@@ -7,7 +7,7 @@ public class InventoryUIManager : MonoBehaviour
 {
     public GameObject toolbarParent;
     public GameObject uiParent;
-    public InventorySO myInventory;
+    public InventorySO iSO;
     private Transform bar1, bar2;
     public GameObject UIpanel;
 
@@ -19,14 +19,14 @@ public class InventoryUIManager : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < myInventory.myInventory.Count; i++) //Go Throught The Inventory List
+        for (int i = 0; i < iSO.myInventory.Count; i++) //Go Throught The Inventory List
         {
-            if (myInventory.myInventory[i] != null) //If The Current Inventory Slot Has An Item.    
+            if (iSO.myInventory[i] != null) //If The Current Inventory Slot Has An Item.    
             {
-                myInventory.myInventory[i].GetComponent<ItemInfo>().UpdateInfo(); //Update The Inventory Slots Item Info
+                iSO.myInventory[i].GetComponent<ItemInfo>().UpdateInfo(); //Update The Inventory Slots Item Info
 
                 uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().enabled = true; //Enable The Image Component
-                uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().sprite = myInventory.myInventory[i].GetComponent<ItemInfo>().GetUISprite();//Get The Correct-
+                uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[i].GetComponent<ItemInfo>().GetUISprite();//Get The Correct-
                 //-Sprite.
             }
             else //If The Current Inventory Slot Is Empty
@@ -35,13 +35,13 @@ public class InventoryUIManager : MonoBehaviour
                 uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().sprite = null; //Remove The Sprite
             }
 
-            if (myInventory.primaryIndex == i && myInventory.currentWeapon == 1)
+            if (iSO.primaryIndex == i && iSO.currentWeapon == 1)
             {
-                uiParent.transform.Find("Bar " + (i + 1)).GetComponent<Image>().sprite = myInventory.blueGrid;
+                uiParent.transform.Find("Bar " + (i + 1)).GetComponent<Image>().sprite = iSO.blueGrid;
             }
-            if (myInventory.secondaryIndex == i && myInventory.currentWeapon == 2)
+            if (iSO.secondaryIndex == i && iSO.currentWeapon == 2)
             {
-                uiParent.transform.Find("Bar " + (i + 1)).GetComponent<Image>().sprite = myInventory.blueGrid;
+                uiParent.transform.Find("Bar " + (i + 1)).GetComponent<Image>().sprite = iSO.blueGrid;
             }
             else
             {
@@ -49,10 +49,10 @@ public class InventoryUIManager : MonoBehaviour
             }
         }
 
-        if (myInventory.primary != null && myInventory.myInventory[myInventory.primaryIndex] != null) //If Primary Equipped Item Exists & If Currently Equipped Item
+        if (iSO.primary != null && iSO.myInventory[iSO.primaryIndex] != null) //If Primary Equipped Item Exists & If Currently Equipped Item
         { //Exists In The Invetory.
             bar1.GetChild(0).GetComponent<Image>().enabled = true;
-            bar1.GetChild(0).GetComponent<Image>().sprite = myInventory.myInventory[myInventory.primaryIndex].GetComponent<ItemInfo>().GetUISprite();
+            bar1.GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[iSO.primaryIndex].GetComponent<ItemInfo>().GetUISprite();
         }
         else
         {
@@ -60,10 +60,10 @@ public class InventoryUIManager : MonoBehaviour
             bar1.GetChild(0).GetComponent<Image>().sprite = null;
         }
 
-        if (myInventory.secondary != null && myInventory.myInventory[myInventory.secondaryIndex] != null) //If Secondary Bar Has Something And The invetory Position Exists.
+        if (iSO.secondary != null && iSO.myInventory[iSO.secondaryIndex] != null) //If Secondary Bar Has Something And The invetory Position Exists.
         {
             bar2.GetChild(0).GetComponent<Image>().enabled = true;
-            bar2.GetChild(0).GetComponent<Image>().sprite = myInventory.myInventory[myInventory.secondaryIndex].GetComponent<ItemInfo>().GetUISprite();
+            bar2.GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[iSO.secondaryIndex].GetComponent<ItemInfo>().GetUISprite();
         }
         else
         {
@@ -104,7 +104,7 @@ public class InventoryUIManager : MonoBehaviour
 
     void ManageBars(Transform firstBar, Transform secondBar, int number)
     {
-        if(myInventory.currentWeapon == number)
+        if(iSO.currentWeapon == number)
         {
             firstBar.localScale = new Vector2(1.5f, 1.5f);
             secondBar.localScale = new Vector2(1f, 1f);
@@ -114,8 +114,8 @@ public class InventoryUIManager : MonoBehaviour
                 firstBar.SetAsLastSibling();
             }
 
-            firstBar.GetComponent<Image>().sprite = myInventory.blueGrid;
-            secondBar.GetComponent<Image>().sprite = myInventory.greyGrid;
+            firstBar.GetComponent<Image>().sprite = iSO.blueGrid;
+            secondBar.GetComponent<Image>().sprite = iSO.greyGrid;
         }
     }
 }

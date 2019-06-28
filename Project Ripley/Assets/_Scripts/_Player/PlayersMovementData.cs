@@ -15,11 +15,11 @@ public class PlayersMovementData : MonoBehaviour
 
     public void OnSave()
     {
-        GameData.aData.pData.position = transform.position;
+        GameData.aData.pData.SetPosition(transform.position);
     }
 
     public void OnLoad()
     {
-        transform.position = GameData.aData.pData.position;
+        transform.position = GameData.aData.pData.GetPosition();
     }
 }

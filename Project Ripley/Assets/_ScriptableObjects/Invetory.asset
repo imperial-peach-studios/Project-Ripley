@@ -13,30 +13,39 @@ MonoBehaviour:
   m_Name: Invetory
   m_EditorClassIdentifier: 
   myInventory:
-  - {fileID: 1892117904190520, guid: 5a4c7482c1f5db143b8dbd918849ad7a, type: 3}
-  - {fileID: 1112092450411854, guid: 99f75b9d87fa69b449df19b22964009e, type: 3}
-  - {fileID: 1892117904190520, guid: 5a4c7482c1f5db143b8dbd918849ad7a, type: 3}
-  - {fileID: 1398376741426114, guid: a0553da92edf850408f7857995ccaa28, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  primary: {fileID: 1892117904190520, guid: 5a4c7482c1f5db143b8dbd918849ad7a, type: 3}
-  secondary: {fileID: 1398376741426114, guid: a0553da92edf850408f7857995ccaa28, type: 3}
-  currentWeapon: 2
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  primary: {fileID: 0}
+  secondary: {fileID: 0}
+  currentWeapon: 1
   primaryImage: {fileID: 0}
   secondaryImage: {fileID: 0}
-  availableSlot: 3
-  nextAvailableSlot: 3
+  availableSlot: 2
+  nextAvailableSlot: 2
   pickUpObject: {fileID: 1791209926192018, guid: 5cf6d6045ca84a1458d6450b2470151e,
     type: 3}
   availableToDrop: 1
   mouseOverInvetory: 0
-  mouseOverIndex: 3
+  mouseOverIndex: 2
   inventoryFull: 0
   currentItemTag: Melee Weapon
+  allItems:
+  - {fileID: 1112092450411854, guid: 99f75b9d87fa69b449df19b22964009e, type: 3}
+  - {fileID: 1892117904190520, guid: 5a4c7482c1f5db143b8dbd918849ad7a, type: 3}
+  - {fileID: 1398376741426114, guid: a0553da92edf850408f7857995ccaa28, type: 3}
+  - {fileID: 1440600187946938, guid: 60034656eb1780745801282ae9dbdfeb, type: 3}
+  - {fileID: 1772286433238828, guid: fd90b2b1d2ffbf045a3cfb4ff3e2ec25, type: 3}
+  - {fileID: 1719187163271948, guid: 23fc656b4c86a6e499f55f73474f1235, type: 3}
+  - {fileID: 1990719700017036, guid: b229736c05125684d8fa755fa7fde708, type: 3}
+  - {fileID: 1023764248135358, guid: 5532dcf5d9baccf4f83809c3c984e4fc, type: 3}
   looting: 0
   newGunSprite: {fileID: 21300000, guid: 9e7ce569a7048614da21acc7d41687b1, type: 3}
   greenGrid: {fileID: -967075902070693528, guid: 3ee377192b1df0a4d9d47cbfd98b86a4,
@@ -47,5 +56,5 @@ MonoBehaviour:
     type: 3}
   pickUpBoxSize: {x: 0, y: 0}
   pickUpBoxOffset: {x: 0, y: 0}
-  primaryIndex: 2
-  secondaryIndex: 3
+  primaryIndex: -1
+  secondaryIndex: 9

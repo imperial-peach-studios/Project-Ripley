@@ -31,6 +31,15 @@ public class ItemSettings : MonoBehaviour
     {
         
     }
+    
+    public float GetDurability()
+    {
+        return durability;
+    }
+    public void SetDurability(float value)
+    {
+        durability = value;
+    }
 
     public void Decrease()
     {

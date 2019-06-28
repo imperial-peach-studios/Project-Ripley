@@ -37,8 +37,6 @@ public class SafePlace : MonoBehaviour
             pressText.CrossFadeAlpha(0f, fadeSpeed, false);
             saveText.CrossFadeAlpha(1f, fadeSpeed, false);
 
-            //Save Here
-
             waitTimer += Time.deltaTime;
 
             if (waitTimer > waitLength)
@@ -70,6 +68,8 @@ public class SafePlace : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    data.Save();
+                    //Debug.Log("HEJ");
                     saving = true;
                 }
             }

@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class InventorySO : ScriptableObject
 {
     public List<GameObject> myInventory = new List<GameObject>();
-    [Space]
     public GameObject primary, secondary;
     public int currentWeapon;
     public Image primaryImage;
@@ -20,6 +19,7 @@ public class InventorySO : ScriptableObject
     public int mouseOverIndex;
     public bool inventoryFull = false;
     public string currentItemTag;
+    public List<GameObject> allItems = new List<GameObject>();
 
     [SerializeField] bool looting = false;
 
@@ -231,7 +231,7 @@ public class InventorySO : ScriptableObject
 
         if (myInventory[inventoryBarIndex] != null)
         {
-            GameObject newPickUp = Instantiate(pickUpObject, GameObject.Find("Player").transform.position + new Vector3(0f, 0f), Quaternion.identity);
+            GameObject newPickUp = (Instantiate(pickUpObject, GameObject.Find("Player").transform.position + new Vector3(0f, 0f), Quaternion.identity) as GameObject);
 
             //newPickUp.GetComponent<PickUpItem>().pickItem = myInventory[inventoryBarIndex];
             newPickUp.GetComponent<InteractionGiver>().AddItem(myInventory[inventoryBarIndex]);
