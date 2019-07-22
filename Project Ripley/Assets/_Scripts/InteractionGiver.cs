@@ -22,7 +22,7 @@ public class InteractionGiver : MonoBehaviour
 
     void Awake()
     {
-        OnStart.Invoke();
+        //OnStart.Invoke();
     }
 
     void OnTriggerEnter2D(Collider2D collision)

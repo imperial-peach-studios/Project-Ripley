@@ -37,8 +37,8 @@ public class IconMouseOver : MonoBehaviour
             transform.localScale = new Vector2(1, 1);
             if (currentIndex == iSO.primaryIndex || currentIndex == iSO.secondaryIndex)
             {
-                if (currentIndex == iSO.primaryIndex && iSO.currentWeapon == 1 
-                    || iSO.currentWeapon == 2 && currentIndex == iSO.secondaryIndex)
+                if ((currentIndex == iSO.primaryIndex && iSO.currentWeapon == 1 )
+                    || (iSO.currentWeapon == 2 && currentIndex == iSO.secondaryIndex))
                 {
                     transform.localScale = new Vector2(1.5f, 1.5f);
                     transform.SetAsLastSibling();

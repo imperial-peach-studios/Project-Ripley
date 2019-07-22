@@ -28,6 +28,7 @@ public class InventoryUIManager : MonoBehaviour
                 uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().enabled = true; //Enable The Image Component
                 uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[i].GetComponent<ItemInfo>().GetUISprite();//Get The Correct-
                 //-Sprite.
+                
             }
             else //If The Current Inventory Slot Is Empty
             {

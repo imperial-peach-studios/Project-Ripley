@@ -41,9 +41,10 @@ public class NewPlayerInvetory : MonoBehaviour
             anim.SetFloat("ItemAttackID", 0);
         }
 
-        UpdatePrimaries(myPrimary, myPrimaryIndex, invetorySO.primaryIndex, invetorySO.primary, parentPrimary, mySecondary);
+        //Doesn't Seem to do anything, real lazy method.
+        //UpdatePrimaries(myPrimary, myPrimaryIndex, invetorySO.primaryIndex, invetorySO.primary, parentPrimary, mySecondary);
 
-        UpdatePrimaries(mySecondary, mySecondaryIndex, invetorySO.secondaryIndex, invetorySO.secondary, parentSecondary, myPrimary);
+        //UpdatePrimaries(mySecondary, mySecondaryIndex, invetorySO.secondaryIndex, invetorySO.secondary, parentSecondary, myPrimary);
 
 
         if (invetorySO.currentWeapon == 1)

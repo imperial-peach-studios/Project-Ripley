@@ -9,9 +9,9 @@ public class InventorySO : ScriptableObject
     public List<GameObject> myInventory = new List<GameObject>();
     public GameObject primary, secondary;
     public int currentWeapon;
-    public Image primaryImage;
-    public Image secondaryImage;
-    public int availableSlot = 0;
+    //public Image primaryImage;
+    //public Image secondaryImage;
+    public int availableSlot = 0; 
     public int nextAvailableSlot;
     public GameObject pickUpObject;
     public bool availableToDrop = false;
@@ -140,48 +140,49 @@ public class InventorySO : ScriptableObject
         }
     }
 
-    public void MoveToToolbar(int inputIndex, int inventoryBarIndex)
+    public void MoveToToolbar(int primaryNotPrimary, int currentIndex)
     {
-        if (inputIndex == 1)
+        if (primaryNotPrimary == 1)
         {
-            if (primaryIndex != inventoryBarIndex)
+            if (primaryIndex != currentIndex)
             {
-                if (myInventory[inventoryBarIndex] == null)
+                if (myInventory[currentIndex] == null)
                 {
+                    
                     primary = null;
-                    primaryIndex = inventoryBarIndex;
+                    primaryIndex = currentIndex;
                 }
                 else //If A Object Exists In That Invetory Spot
                 {
-                    if (secondary == myInventory[inventoryBarIndex].gameObject && secondaryIndex == inventoryBarIndex)
+                    if (secondary == myInventory[currentIndex].gameObject && secondaryIndex == currentIndex)
                     {
                         secondary = null;
                         secondaryIndex = -1;
                     }
-                    primary = myInventory[inventoryBarIndex].gameObject;
-                    primaryIndex = inventoryBarIndex;
+                    primary = myInventory[currentIndex].gameObject;
+                    primaryIndex = currentIndex;
                     currentItemTag = primary.tag;
                 }
             }
         }
-        else if (inputIndex == 2)
+        else if (primaryNotPrimary == 2)
         {
-            if (secondaryIndex != inventoryBarIndex)
+            if (secondaryIndex != currentIndex)
             {
-                if (myInventory[inventoryBarIndex] == null)
+                if (myInventory[currentIndex] == null)
                 {
                     secondary = null;
-                    secondaryIndex = inventoryBarIndex;
+                    secondaryIndex = currentIndex;
                 }
                 else
                 {
-                    if (primary == myInventory[inventoryBarIndex].gameObject && primaryIndex == inventoryBarIndex)
+                    if (primary == myInventory[currentIndex].gameObject && primaryIndex == currentIndex)
                     {
                         primary = null;
                         primaryIndex = -1;
                     }
-                    secondary = myInventory[inventoryBarIndex].gameObject;
-                    secondaryIndex = inventoryBarIndex;
+                    secondary = myInventory[currentIndex].gameObject;
+                    secondaryIndex = currentIndex;
                     currentItemTag = secondary.tag;
                 }
             }

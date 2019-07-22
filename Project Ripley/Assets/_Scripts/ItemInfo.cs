@@ -5,7 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ItemInfo : MonoBehaviour
 {
-    private Sprite uiIcon;
+    [SerializeField] Sprite uiIcon;
     private string itemInfo;
     private Vector2 CollisionBoxSize;
     private Vector2 pickUpBoxSize;

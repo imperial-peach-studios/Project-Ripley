@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf736b56491124ab5d064149fac9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiIcon: {fileID: 21300006, guid: aed0adec49e33434a89929dbb4f616c6, type: 3}
 --- !u!114 &114585368289780930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeOS: {fileID: 11400000, guid: 69f8e6c8c14a8d6479383ecb4a7b4d32, type: 2}
-  durability: 0
-  maxDurability: 0
-  durabilityDecrease: 0
+  gunOS: {fileID: 0}
+  durability: 5
+  maxDurability: 5
+  durabilityDecrease: 1
