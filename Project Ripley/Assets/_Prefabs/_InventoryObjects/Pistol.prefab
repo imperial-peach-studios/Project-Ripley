@@ -76,6 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf736b56491124ab5d064149fac9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiIcon: {fileID: 21300022, guid: aed0adec49e33434a89929dbb4f616c6, type: 3}
+  melee: {fileID: 0}
+  gun: {fileID: 11400000, guid: 48b9e5f81426fe24ba7d0c44837d8cd2, type: 2}
+  typeOfItem: 2
 --- !u!114 &114607497664908160
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,9 +24,11 @@ public class InventoryBarUI : MonoBehaviour
         invUI = transform.parent.parent.parent.GetComponent<InventoryUI>();
 
         barImage = GetComponent<Image>();
-        barImage.sprite = invUI.greyGrid;
 
         slotImage = transform.GetChild(0).GetComponent<Image>();
+
+        //Equipment.Instance.OnPrimaryChanged += OnPrimary;
+        //Equipment.Instance.OnSecondaryChanged += OnSecondary;
     }
     
     void Update()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,9 +12,11 @@ public class Equipment : MonoBehaviour
     public int Primary
     {
         get => primary;
-        set {
-            OnPrimaryChanged?.Invoke(primary, value);
+        set
+        {
+            var old = primary;
             primary = value;
+            OnPrimaryChanged?.Invoke(old, value);
         }
     }
     int secondary;
@@ -22,8 +25,9 @@ public class Equipment : MonoBehaviour
         get => secondary;
         set
         {
-            OnSecondaryChanged?.Invoke(secondary, value);
+            var old = secondary;
             secondary = value;
+            OnSecondaryChanged?.Invoke(old, value);
         }
     }
 
@@ -31,10 +35,18 @@ public class Equipment : MonoBehaviour
     public event OnChangedEquipment OnPrimaryChanged;
     public event OnChangedEquipment OnSecondaryChanged;
 
-    Selected selectedEQ = Selected.Primary;
+    public delegate void OnSelectedChanged(Selected newSelected);
+    public event OnSelectedChanged OnSelectedHasChanged;
+
+    private Selected _selectedEQ;
     public Selected SelectedEQ
     {
-        get => selectedEQ;
+        get => _selectedEQ;
+        private set
+        {
+            _selectedEQ = value;
+            OnSelectedHasChanged?.Invoke(value);
+        }
     }
 
     void Awake()
@@ -48,26 +60,46 @@ public class Equipment : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Inventory.Instance.OnInventoryChanged += OnInvetoryChanged;
+    }
+
+    void Start()
+    {
+        SelectedEQ = Selected.Primary;
+        Primary = 0;
+        Secondary = 1;
+    }
+
+    void OnInvetoryChanged(int slot)
+    {
+        if(Primary == slot)
+        {
+            OnPrimaryChanged?.Invoke(slot, slot);
+        }
+        else if(Secondary == slot)
+        {
+            OnSecondaryChanged?.Invoke(slot, slot);
+        }
+    }
+
+    public void SwapEquipment()
+    {
+        int temp = Primary;
+
+        Primary = Secondary;
+        Secondary = temp;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            selectedEQ = Selected.Primary;
+            SelectedEQ = Selected.Primary;
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            selectedEQ = Selected.Secondary;
-        }
-        
-        if (selectedEQ == Selected.Primary)
-        {
-
-        }
-        else if(selectedEQ == Selected.Secondary)
-        {
-
+            SelectedEQ = Selected.Secondary;
         }
     }
 }

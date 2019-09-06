@@ -13,7 +13,7 @@ public class MeleeAttackEvent : MonoBehaviour
 
     void Awake()
     {
-        invetory = GetComponent<NewPlayerInvetory>().invetorySO;
+        //invetory = GetComponent<NewPlayerInvetory>().invetorySO;
         pA = GetComponent<PlayerAttack>();
         attackA = attackActor.GetComponent<AttackActorCollision>();
         fireA = attackActor.GetComponent<FireActor>();
@@ -49,19 +49,19 @@ public class MeleeAttackEvent : MonoBehaviour
 
     public void Fire()
     {
-        fireA.enabled = true;
+        //fireA.enabled = true;
 
-        if (invetory.currentWeapon == 1)
-        {
-            itemSettings = invetory.primary.GetComponent<ItemSettings>();
-        }
-        else
-        {
-            itemSettings = invetory.secondary.GetComponent<ItemSettings>();
-        }
-        GunSO gunSO = itemSettings.gunOS;
+        //if (invetory.currentWeapon == 1)
+        //{
+        //    itemSettings = invetory.primary.GetComponent<ItemSettings>();
+        //}
+        //else
+        //{
+        //    itemSettings = invetory.secondary.GetComponent<ItemSettings>();
+        //}
+        //GunSO gunSO = itemSettings.gunOS;
 
-        fireA.GetFireInfo(gunSO.weaponBullet, gunSO.damage, gunSO.firingRate, gunSO.numberOfBulletsFired, gunSO.spreadFactor, gunSO.knockBack, gunSO.knockLength, gunSO.stunLength, GetComponentInParent<Animator>());
+        //fireA.GetFireInfo(gunSO.weaponBullet, gunSO.damage, gunSO.firingRate, gunSO.numberOfBulletsFired, gunSO.spreadFactor, gunSO.knockBack, gunSO.knockLength, gunSO.stunLength, GetComponentInParent<Animator>());
     }
 }
 

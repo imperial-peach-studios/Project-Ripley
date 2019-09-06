@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public GameObject[] inventory = new GameObject[10];
     public bool IsInventoryFull => GetFirstEmptySlot() == -1;
 
-    public event Action OnInventoryChanged;
+    public event Action<int> OnInventoryChanged;
 
     public GameObject GetInventorySlot(int index) => inventory[index];
 
@@ -54,6 +54,7 @@ public class Inventory : MonoBehaviour
     public bool AddItem(GameObject pickUpItem)
     {
         int slot = GetFirstEmptySlot();
+        pickUpItem.GetComponent<ItemInfo>().Enable();
         return AddItemToSlot(pickUpItem, slot);
     }
 
@@ -66,7 +67,7 @@ public class Inventory : MonoBehaviour
             return false;
 
         inventory[slot] = pickUpItem;
-
+        OnInventoryChanged?.Invoke(slot);
         return true;
     }
 
@@ -81,6 +82,8 @@ public class Inventory : MonoBehaviour
             newPickUp.GetComponent<SpriteRenderer>().sprite = inventory[slotIndex].GetComponent<ItemInfo>().GetUISprite();
 
             inventory[slotIndex] = null;
+
+            OnInventoryChanged?.Invoke(slotIndex);
         }
     }
 }

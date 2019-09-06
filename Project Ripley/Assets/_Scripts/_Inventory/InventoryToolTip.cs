@@ -16,7 +16,7 @@ public class InventoryToolTip : MonoBehaviour
         invUI.OnMouseEnter += OnMouseEnterSlot;
     }
 
-    private void OnMouseEnterSlot(InventorySlotUI slot)
+    private void OnMouseEnterSlot(InventorySlotColl slot)
     {
         gameObject.SetActive(true);
         var text = "Just Hands, You Use Them To Fight";

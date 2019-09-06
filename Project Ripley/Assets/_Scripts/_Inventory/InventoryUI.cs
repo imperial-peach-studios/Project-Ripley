@@ -8,13 +8,13 @@ public class InventoryUI : MonoBehaviour
     public Sprite greyGrid;
     public Sprite blueGrid;
 
-    public delegate void OnMouse(InventorySlotUI slot);
+    public delegate void OnMouse(InventorySlotColl slot);
 
     public event OnMouse OnMouseExit;
-    public void InvokeOnMouseExit(InventorySlotUI slot) => OnMouseExit?.Invoke(slot);
+    public void InvokeOnMouseExit(InventorySlotColl slot) => OnMouseExit?.Invoke(slot);
 
     public event OnMouse OnMouseEnter;
-    public void InvokeOnMouseEnter(InventorySlotUI slot) => OnMouseEnter?.Invoke(slot);
+    public void InvokeOnMouseEnter(InventorySlotColl slot) => OnMouseEnter?.Invoke(slot);
 
     static int onMouseIndex;
     static bool IsMouseOver = false;
@@ -25,7 +25,7 @@ public class InventoryUI : MonoBehaviour
         OnMouseExit += slot => IsMouseOver = false;
     }
 
-    void OnMouseEnterSlot(InventorySlotUI slot)
+    void OnMouseEnterSlot(InventorySlotColl slot)
     {
         onMouseIndex = slot.slotIndex;
 

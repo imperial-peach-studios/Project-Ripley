@@ -11,52 +11,31 @@ public class ItemInfo : MonoBehaviour
     private Vector2 pickUpBoxSize;
     private int animationID;
     ItemSettings itemSettings;
-    MeleeWeaponsSO melee;
-    GunSO gun;
+    [SerializeField] MeleeWeaponsSO melee;
+    [SerializeField] GunSO gun;
+    public TypeOfItem typeOfItem;
 
     bool updateOnce = false;
 
-    void Start()
-   {
-        //       if (GetComponent<ConsumableItemManager>() != null)
-        //       {
-        //           itemInfo = GetComponent<ConsumableItemManager>().consumableItem.info;
-        //           uiIcon = GetComponent<ConsumableItemManager>().consumableItem.UIIcon;
-        //           CollisionBoxSize = GetComponent<ConsumableItemManager>().consumableItem.CollisionBoxSize;
-        //           pickUpBoxSize = GetComponent<ConsumableItemManager>().consumableItem.pickUpBoxSize;
-        //       }
-        //       else if(GetComponent<WeaponManager>() != null)
-        //       {
-        //           itemInfo = GetComponent<WeaponManager>().weaponCreator.info;
-        //           uiIcon = GetComponent<WeaponManager>().weaponCreator.uiIcon;
-        //           CollisionBoxSize = GetComponent<WeaponManager>().weaponCreator.CollisionBoxSize;
-        //           pickUpBoxSize = GetComponent<WeaponManager>().weaponCreator.pickUpBoxSize;
-        //       }
+    public enum TypeOfItem
+    {
+        None,
+        Melee,
+        Range,
+        Consumable
+    }
 
-        //if (GetComponent<ConsumableItemManager>() != null)
-        //{
-        //    itemInfo = GetComponent<ConsumableItemManager>().consumableItem.info;
-        //    uiIcon = GetComponent<ConsumableItemManager>().consumableItem.UIIcon;
-        //    CollisionBoxSize = GetComponent<ConsumableItemManager>().consumableItem.CollisionBoxSize;
-        //    pickUpBoxSize = GetComponent<ConsumableItemManager>().consumableItem.pickUpBoxSize;
-        //    animationID = GetComponent<ConsumableItemManager>().consumableItem.animationID;
-        //}
-        //else if (GetComponent<GunManager>() != null)
-        //{
-        //    itemInfo = GetComponent<GunManager>().gunSO.info;
-        //    uiIcon = GetComponent<GunManager>().gunSO.uiIcon;
-        //    CollisionBoxSize = GetComponent<GunManager>().gunSO.CollisionBoxSize;
-        //    pickUpBoxSize = GetComponent<GunManager>().gunSO.pickUpBoxSize;
-        //    animationID = GetComponent<GunManager>().gunSO.animationID;
-        //}
-        //else if (GetComponent<MeleeWeaponManager>() != null)
-        //{
-        //    itemInfo = GetComponent<MeleeWeaponManager>().meleeWeaponsSO.info;
-        //    uiIcon = GetComponent<MeleeWeaponManager>().meleeWeaponsSO.uiIcon;
-        //    CollisionBoxSize = GetComponent<MeleeWeaponManager>().meleeWeaponsSO.CollisionBoxSize;
-        //    pickUpBoxSize = GetComponent<MeleeWeaponManager>().meleeWeaponsSO.pickUpBoxSize;
-        //    animationID = GetComponent<MeleeWeaponManager>().meleeWeaponsSO.animationID;
-        //}
+    public void Enable()
+    {
+        if(melee != null)
+        {
+            typeOfItem = TypeOfItem.Melee;
+            animationID = melee.animationID;
+        }
+        else if(gun != null)
+        {
+            typeOfItem = TypeOfItem.Range;
+        }
     }
 
     public void UpdateInfo()
@@ -89,7 +68,6 @@ public class ItemInfo : MonoBehaviour
     {
         itemSettings.Decrease();
     }
-
     public string GetItemInfo()
     {
         return itemInfo;
@@ -102,7 +80,6 @@ public class ItemInfo : MonoBehaviour
     {
         return pickUpBoxSize;
     }
-
     public Sprite GetUISprite()
     {
         return uiIcon;

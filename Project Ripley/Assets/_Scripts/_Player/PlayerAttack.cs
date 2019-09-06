@@ -36,7 +36,8 @@ public class PlayerAttack : MonoBehaviour
     {
         MouseDatabase.UpdateMousePosition();
 
-        AnimationController();
+        //AnimationController();
+        Action();
     }
 
     void AnimationController()
@@ -162,6 +163,90 @@ public class PlayerAttack : MonoBehaviour
                     //animHorizontal = (int)CalculateDirectionNonDisplay(mousePosition).x;
                     //animVertical = (int)CalculateDirectionNonDisplay(mousePosition).y;
                 }
+            }
+        }
+    }
+
+    void Action()
+    {
+        int selectedIndex = (int)Equipment.Instance.SelectedEQ;
+
+        int itemIndex = -1;
+        if (selectedIndex == 0)
+            itemIndex = Equipment.Instance.Primary;
+        else
+            itemIndex = Equipment.Instance.Secondary;
+
+        GameObject item = Inventory.Instance?.GetInventorySlot(itemIndex);
+
+        ItemInfo info = item?.GetComponent<ItemInfo>();
+
+        if(!GetComponent<PlayerDash>().HasDashed)
+        {
+            if (info?.typeOfItem == ItemInfo.TypeOfItem.Melee)
+            {
+                Melee(info);
+            }
+            else if(info?.typeOfItem == ItemInfo.TypeOfItem.Range)
+            {
+                Range(info);
+            }
+        }
+
+        CharacterFollowMouse();
+    }
+
+    void Melee(ItemInfo info)
+    {
+        if (Input.GetMouseButtonDown(0) && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Click Attacks") && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover")) //When We Get Input
+        {
+            myAnim.SetFloat("ItemAttackID", info.GetAnimationID());
+            myAnim.Play("Click Attacks");
+            playerMovement.StopMoving = true;
+            followMouse = true;
+        }
+
+        if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover"))
+            playerMovement.StopMoving = false;
+    }
+
+    void Range(ItemInfo info)
+    {
+        if (Input.GetMouseButton(0) && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Hold & Click"))
+        {
+            myAnim.SetFloat("ItemAttackID", info.GetAnimationID());
+            myAnim.Play("Hold & Click");
+            followMouse = true;
+            playerMovement.StopMoving = true;
+        }
+
+        if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover"))
+            playerMovement.StopMoving = false;
+    }
+
+    void CharacterFollowMouse()
+    {
+        int x = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform).x;
+        int y = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform).y;
+
+        if (followMouse == true)
+        {
+            movementDatabase.SetAnim(new Vector2(x, y));
+
+            followMouseTimer = 0;
+            followMouse = false;
+        }
+
+        if (followMouseTimer >= 0 && movementDatabase.GetMoving() == 0)
+        {
+            followMouseTimer += Time.deltaTime;
+            if (followMouseTimer > followMouseRate)
+            {
+                followMouseTimer = -1;
+            }
+            else if (playerMovement.StopMoving == false)
+            {
+                movementDatabase.SetAnim(new Vector2(x, y));
             }
         }
     }

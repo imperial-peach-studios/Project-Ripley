@@ -89,6 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPoint: {fileID: 1183545189064635955}
+  yOffset: 1.8
+  currentlyKnocking: 1
+  currentlyStunning: 1
 --- !u!1 &1183545188438924858
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,9 +239,9 @@ GameObject:
   - component: {fileID: 1183545188613039455}
   - component: {fileID: 1183545188613039434}
   - component: {fileID: 1183545188613039433}
-  - component: {fileID: 1183545188613039432}
-  - component: {fileID: 1183545188613039440}
   - component: {fileID: 430792548}
+  - component: {fileID: 800456809762807678}
+  - component: {fileID: 430792563}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -303,7 +306,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -993660871
   m_SortingLayer: 2
-  m_SortingOrder: 74
+  m_SortingOrder: 86
   m_Sprite: {fileID: 21300000, guid: 8c29346359dec464cbeb1ec30c269916, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -408,8 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b4a14fa65e85c48a9921b25dd2bac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningSpeed: 10
-  sneakingSpeed: 5
+  runningSpeed: 5
+  sneakingSpeed: 3
   isSneaking: 0
   stopMoving: 0
   disableMove: 0
@@ -435,7 +438,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183545188613039450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cec791c76555ad4c8428e9f090aad22, type: 3}
   m_Name: 
@@ -469,47 +472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackActor: {fileID: 1377998762}
---- !u!114 &1183545188613039432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183545188613039450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d584b70dcb8c944ca9852b34d835e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorySO: {fileID: 11400000, guid: 52eced5a913e36248a8d5aff3d8a2a50, type: 2}
-  uiArrow: {fileID: 0}
-  layersToCollide:
-    serializedVersion: 2
-    m_Bits: 4096
-  pickUpKey: 101
-  radius: 1
-  lootText: Loot With
-  pickUpText: Pick Up With
-  speakText: Speak With
-  lootTag: InteractionLoot
-  pickUpTag: InteractionPickUp
-  speakTag: InteractionInput
---- !u!114 &1183545188613039440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183545188613039450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28cbd30f3e52674c93fab1d6d1f3580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invetorySO: {fileID: 11400000, guid: 52eced5a913e36248a8d5aff3d8a2a50, type: 2}
-  notIgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 31287
 --- !u!114 &430792548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,6 +501,42 @@ MonoBehaviour:
     soundPlayed: 0
     hideCircle: 0
     ignore: 0
+--- !u!114 &800456809762807678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183545188613039450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd72451a7be71ba4ab9b5eb38e73734b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
+  showRadius: 0
+  layersToCollide:
+    serializedVersion: 2
+    m_Bits: 397312
+  interactableLayerName: Interactable
+  pickUpLayerName: PickUp
+  lookLayerName: Loot
+  pickUpKey: 101
+  offsetY: 2
+--- !u!114 &430792563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183545188613039450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8488ca332168e439dbf698a71b1aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 11400000, guid: 1068f2aba0bf73b4685ef7d78eaa4a29, type: 2}
+  waitBeforeDeathLength: 3
 --- !u!1 &1183545188950898471
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class InventorySlotUI : MonoBehaviour
     Image barImage;
     Image slotImage;
 
-    void Start()
+    void Awake()
     {
         slotIndex = int.Parse(transform.name[transform.name.Length - 1].ToString());
         //index is 1-9 and then 0
@@ -21,44 +21,47 @@ public class InventorySlotUI : MonoBehaviour
         if (slotIndex == -1)
             slotIndex = 9;
 
+        barImage = GetComponent<Image>();
+        slotImage = transform.GetChild(0).GetComponent<Image>();
         invUI = transform.parent.parent.parent.GetComponent<InventoryUI>();
 
-        barImage = GetComponent<Image>();
-        barImage.sprite = invUI.greyGrid;
-
-        slotImage = transform.GetChild(0).GetComponent<Image>();
+        Equipment.Instance.OnSelectedHasChanged += a =>  OnEQChanged(-1,-1);
 
         Equipment.Instance.OnPrimaryChanged += OnEQChanged;
         Equipment.Instance.OnSecondaryChanged += OnEQChanged;
     }
 
-    void Update()
-    {
-        if (Inventory.Instance.GetInventorySlot(slotIndex) != null)
-        {
-            GameObject slotItem = Inventory.Instance.GetInventorySlot((slotIndex));
-            
-            slotImage.sprite = slotItem.GetComponent<ItemInfo>().GetUISprite();
-            slotImage.enabled = true;
-        }
-        else
-        {
-            slotImage.enabled = false;
-        }
-    }
 
     void OnEQChanged(int oldEQ, int newEQ)
     {
-        if (oldEQ == slotIndex)
+        if (slotIndex == Equipment.Instance.Primary || slotIndex == Equipment.Instance.Secondary)
+        {
+            barImage.sprite = invUI.blueGrid;
+            //Debug.Log("Set to blue " + newEQ);
+        }
+        else
         {
             barImage.sprite = invUI.greyGrid;
         }
-        else if (newEQ == slotIndex)
+
+        UpdateScale();
+        
+    }
+
+
+    void UpdateScale()
+    {
+        if (slotIndex == Equipment.Instance.Primary && Equipment.Instance.SelectedEQ == Equipment.Selected.Primary
+            || slotIndex == Equipment.Instance.Secondary && Equipment.Instance.SelectedEQ == Equipment.Selected.Secondary)
         {
-            barImage.sprite = invUI.blueGrid;
+            barImage.transform.localScale = Vector3.one * iconSize;
+        }
+        else
+        {
+            barImage.transform.localScale = Vector3.one;
         }
     }
-    
+
     void OnMouseEnter()
     {
         Vector3 scale = transform.localScale;
@@ -67,41 +70,50 @@ public class InventorySlotUI : MonoBehaviour
         transform.localScale = scale;
 
         transform.SetAsLastSibling();
-        invUI.InvokeOnMouseEnter(this);
+        //invUI.InvokeOnMouseEnter(this);
     }
 
     void OnMouseOver()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && slotIndex != Equipment.Instance.Secondary)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Equipment.Instance.Primary = slotIndex;
+            if (slotIndex != Equipment.Instance.Secondary)
+                Equipment.Instance.Primary = slotIndex;
+            else
+                Equipment.Instance.SwapEquipment();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && slotIndex != Equipment.Instance.Primary)
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Equipment.Instance.Secondary = slotIndex;
+            if (slotIndex != Equipment.Instance.Primary)
+                Equipment.Instance.Secondary = slotIndex;
+            else
+                Equipment.Instance.SwapEquipment();
         }
 
-        if(slotIndex != Equipment.Instance.Primary && slotIndex != Equipment.Instance.Secondary)
-        {
-            barImage.sprite = invUI.greenGrid;
-        }
+        //if (slotIndex == Equipment.Instance.Primary || slotIndex == Equipment.Instance.Secondary)
+        //{
+        //    barImage.sprite = invUI.blueGrid;
+        //}
+
+        //if (slotIndex != Equipment.Instance.Primary && slotIndex != Equipment.Instance.Secondary)
+        //{
+        //    barImage.sprite = invUI.greenGrid;
+        //}
 
         if (Input.GetKeyDown(KeyCode.Q) && Inventory.Instance.CanDrop()) //&& !iSO.GetLootingMode()
         {
             Inventory.Instance.TryToRemoveItem(slotIndex);
         }
     }
-    
+
     void OnMouseExit()
     {
-        Vector3 scale = transform.localScale;
-        scale.x = 1;
-        scale.y = 1;
-        transform.localScale = scale;
+        UpdateScale();
 
         transform.SetSiblingIndex(slotIndex);
 
-        barImage.sprite = invUI.greyGrid;
-        invUI.InvokeOnMouseExit(this);
+        //if(barImage.sprite == invUI.greenGrid)
+        //     barImage.sprite = invUI.greyGrid;
+        //invUI.InvokeOnMouseExit(this);
     }
 }

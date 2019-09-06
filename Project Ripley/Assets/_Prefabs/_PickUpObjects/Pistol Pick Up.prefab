@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 61104033552282810}
   - component: {fileID: 114478196587565054}
   - component: {fileID: 8460495040541618883}
-  m_Layer: 12
+  - component: {fileID: 4226499666284072368}
+  m_Layer: 17
   m_Name: Pistol Pick Up
   m_TagString: InteractionPickUp
   m_Icon: {fileID: 0}
@@ -59,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -127,7 +129,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113405647053708}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 832fdc6f51074a54fa2c638138bfdfed, type: 3}
   m_Name: 
@@ -181,3 +183,16 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &4226499666284072368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113405647053708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad79d3ae280a290489286e47c8d8b0c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedItem: {fileID: 1719187163271948, guid: 23fc656b4c86a6e499f55f73474f1235, type: 3}
