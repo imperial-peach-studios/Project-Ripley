@@ -5,17 +5,18 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ItemInfo : MonoBehaviour
 {
-    [SerializeField] Sprite uiIcon;
+    Sprite uiIcon;
     private string itemInfo;
     private Vector2 CollisionBoxSize;
     private Vector2 pickUpBoxSize;
     private int animationID;
     ItemSettings itemSettings;
-    [SerializeField] MeleeWeaponsSO melee;
-    [SerializeField] GunSO gun;
+    public MeleeWeaponsSO melee;
+    public GunSO gun;
     public TypeOfItem typeOfItem;
 
-    bool updateOnce = false;
+    private Properties p;
+    public Properties Properties { get { return p; } }
 
     public enum TypeOfItem
     {
@@ -25,17 +26,26 @@ public class ItemInfo : MonoBehaviour
         Consumable
     }
 
-    public void Enable()
+    public void UpdateI()
     {
-        if(melee != null)
+        if(p == null)
         {
-            typeOfItem = TypeOfItem.Melee;
-            animationID = melee.animationID;
-        }
-        else if(gun != null)
-        {
-            typeOfItem = TypeOfItem.Range;
-        }
+            if (melee != null)
+            {
+                typeOfItem = TypeOfItem.Melee;
+                animationID = melee.animationID;
+                uiIcon = melee.uiIcon;
+                p = new Properties(melee.durability, melee.durabilityDecrease, 0, 0, melee.attackRate, melee.knockBack, melee.knockLength, melee.stanLength, melee.damage, 0);
+            }
+            else if (gun != null)
+            {
+                typeOfItem = TypeOfItem.Range;
+                animationID = gun.animationID;
+                uiIcon = gun.uiIcon;
+                p = new Properties(gun.durability, gun.durabilityDecrease, gun.bullet, gun.numberOfBulletsFired, gun.firingRate, gun.knockBack, gun.knockLength, gun.stunLength, gun.damage, gun.spreadFactor);
+                p.SetBullet(gun.weaponBullet);
+            }
+        }   
     }
 
     public void UpdateInfo()
@@ -87,5 +97,45 @@ public class ItemInfo : MonoBehaviour
     public int GetAnimationID()
     {
         return animationID;
+    }
+}
+
+public class Properties
+{
+    public int bullet;
+    public int numberOfBulletsFired;
+    public float firingRate;
+    public float knockBack;
+    public float knockLength;
+    public float stunLength;
+    public float damage;
+    public float spreadFactor;
+    public float durability;
+    public float durabilityDecrease;
+
+    public GameObject bulletObject;
+
+    public Properties(float dura, float duraDecrase, int bull, int numberOfBullets, float firingR, float knockB, float knockL, float stunL, float damag, float spreadF)
+    {
+        durability = dura;
+        durabilityDecrease = duraDecrase;
+        bullet = bull;
+        numberOfBulletsFired = numberOfBullets;
+        firingRate = firingR;
+        knockBack = knockB;
+        knockLength = knockL;
+        stunLength = stunL;
+        damage = damag;
+        spreadFactor = spreadF;
+    }
+
+    public void SetBullet(GameObject b)
+    {
+        bulletObject = b;
+    }
+
+    public void Decrease()
+    {
+        durability -= durabilityDecrease;
     }
 }

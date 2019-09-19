@@ -25,6 +25,11 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] bool followMouse = false;
 
+    [SerializeField] float attackCombo = 0;
+    [SerializeField] float maxCombos = 3;
+    float comboWaitingTimer = 0;
+    [SerializeField] float comboWaitingLength;
+
     void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -202,26 +207,64 @@ public class PlayerAttack : MonoBehaviour
         {
             myAnim.SetFloat("ItemAttackID", info.GetAnimationID());
             myAnim.Play("Click Attacks");
+            attackCombo += 1;
+            myAnim.SetFloat("AttackCombo", attackCombo);
             playerMovement.StopMoving = true;
             followMouse = true;
+            GetComponent<PlayerDash>().enabled = false;
         }
 
-        if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover"))
+        if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover"))
+        {
             playerMovement.StopMoving = false;
+            GetComponent<PlayerDash>().enabled = true;
+            attackCombo = 0;
+        }
+
+        if (attackCombo > 0)
+        {
+            comboWaitingTimer += Time.deltaTime;
+
+            if (comboWaitingTimer > comboWaitingLength || attackCombo >= 4)
+            {
+                attackCombo = 0;
+                comboWaitingTimer = 0;
+            }
+        }
     }
 
     void Range(ItemInfo info)
     {
-        if (Input.GetMouseButton(0) && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Hold & Click"))
+        //if (Input.GetMouseButton(0) && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Hold & Click"))
+        //{
+        //    myAnim.SetFloat("ItemAttackID", info.GetAnimationID());
+        //    myAnim.Play("Hold & Click");
+        //    followMouse = true;
+        //    playerMovement.StopMoving = true;
+        //}
+
+        if(Input.GetMouseButton(0))
         {
-            myAnim.SetFloat("ItemAttackID", info.GetAnimationID());
-            myAnim.Play("Hold & Click");
             followMouse = true;
             playerMovement.StopMoving = true;
+            GetComponent<PlayerDash>().enabled = false;
+
+            if (!myAnim.GetCurrentAnimatorStateInfo(0).IsName("Hold & Click"))
+            {
+                myAnim.SetFloat("ItemAttackID", info.GetAnimationID());
+                myAnim.Play("Hold & Click");
+            }
         }
 
-        if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover"))
+        if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover") && Input.GetMouseButtonUp(0) || !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover") && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Hold & Click"))
+        {
             playerMovement.StopMoving = false;
+            GetComponent<PlayerDash>().enabled = true;
+            //Debug.Log("HEGJ");
+
+        }
+           
+
     }
 
     void CharacterFollowMouse()

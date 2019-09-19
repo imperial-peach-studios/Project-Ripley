@@ -16,6 +16,7 @@ public class BulletBehaviour : MonoBehaviour
     public float knockBackPower;
     public float knockBackLength;
     public float stunLength;
+    public Properties p;
 
     public float SpreadFactor
     {
@@ -33,9 +34,9 @@ public class BulletBehaviour : MonoBehaviour
     }
 
 
-    void Awake ()
+    void Start()
     {
-        direction += Random.Range(-spreadFactor, spreadFactor);
+        direction += Random.Range(-p.spreadFactor, p.spreadFactor);
 	}
 
     void Update()
@@ -62,12 +63,14 @@ public class BulletBehaviour : MonoBehaviour
             knockBackDirection.Normalize();
 
             EnemyKnockedBack enemyKnock = other.GetComponent<EnemyKnockedBack>();
-            enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, knockBackLength, knockBackPower);
+            //enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, knockBackLength, knockBackPower);
+            enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, p.knockLength, p.knockBack);
+
             EnemyStunned enemyStunned = other.GetComponent<EnemyStunned>();
-            enemyStunned.GetStunnedInfo(stun, stunLength);
+            enemyStunned.GetStunnedInfo(stun, p.stunLength);
 
             EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-            enemyHealth.DecreaseHealthWith(damage);
+            enemyHealth.DecreaseHealthWith(p.damage);
 
             Destroy(gameObject);
         }

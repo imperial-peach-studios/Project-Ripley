@@ -18,7 +18,7 @@ MonoBehaviour:
   animationID: 10
   attackRate: 1
   damage: 1
-  durability: 0
+  durability: 20
   durabilityDecrease: 0
   knockBack: 0.01
   knockLength: 0.2

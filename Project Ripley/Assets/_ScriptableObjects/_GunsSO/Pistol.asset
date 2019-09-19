@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -14,16 +15,19 @@ MonoBehaviour:
   weaponsName: 
   uiIcon: {fileID: 21300022, guid: aed0adec49e33434a89929dbb4f616c6, type: 3}
   weaponBullet: {fileID: 1118674735674506, guid: ff7639e92dff42f44b03b9099b02c50c,
-    type: 2}
+    type: 3}
   twoHanded: 0
   animationID: 6
-  bullet: -6
+  bullet: 10
   bulletPoint: {fileID: 0}
   numberOfBulletsFired: 1
-  firingRate: 0.5
+  firingRate: 0.1
+  knockBack: 0
+  knockLength: 0
+  stunLength: 0
   damage: 1
   spreadFactor: 0
-  durability: -6
+  durability: 4
   durabilityDecrease: 1
   CollisionBoxSize: {x: 0.6, y: 0.6}
   pickUpBoxSize: {x: 0.4, y: 0.4}

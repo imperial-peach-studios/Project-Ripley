@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf736b56491124ab5d064149fac9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiIcon: {fileID: 21300022, guid: aed0adec49e33434a89929dbb4f616c6, type: 3}
   melee: {fileID: 0}
   gun: {fileID: 11400000, guid: 48b9e5f81426fe24ba7d0c44837d8cd2, type: 2}
   typeOfItem: 2
@@ -102,7 +101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719187163271948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3279a8a650323914390420d2ae7986da, type: 3}
   m_Name: 

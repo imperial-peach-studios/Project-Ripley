@@ -91,6 +91,18 @@ public class Equipment : MonoBehaviour
         Secondary = temp;
     }
 
+    public GameObject CurrentSelectedItem()
+    {
+        int currentIndex = -1;
+
+        if(_selectedEQ == Selected.Primary)
+            currentIndex = primary;
+        else if(_selectedEQ == Selected.Secondary)
+            currentIndex = secondary;
+
+        return Inventory.Instance.GetInventorySlot(currentIndex);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))

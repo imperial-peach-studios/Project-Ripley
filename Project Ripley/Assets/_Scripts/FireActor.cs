@@ -19,8 +19,9 @@ public class FireActor : MonoBehaviour
     float knockBack;
     float knockBackLength;
     float stunLength;
-    Animator anim;
+    [SerializeField] Animator anim;
     float fireTimer = 0;
+    bool hasFired = false;
 
     void Update()
     {
@@ -34,36 +35,59 @@ public class FireActor : MonoBehaviour
 
         fireTimer += Time.deltaTime;
         
-        if (Input.GetButton("Fire1") || Input.GetButtonDown("Fire1"))
-        {
-            if (anim != null)
-            {
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hold & Click"))
-                {
-                    if (fireTimer > fireRate)
-                    {
-                        for (int i = 0; i < numberOfBulletsFired; i++) //Spawn Number Of Bullets
-                        {
-                            GameObject newBullet = Instantiate(bullet, shooPoint, bulletPoint.transform.rotation) as GameObject;
+        //if (Input.GetButton("Fire1") || Input.GetButtonDown("Fire1"))
+        //{
+        //    if (anim != null)
+        //    {
+        //        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hold & Click"))
+        //        {
+        //            if (fireTimer > fireRate)
+        //            {
+        //                for (int i = 0; i < numberOfBulletsFired; i++) //Spawn Number Of Bullets
+        //                {
+        //                    GameObject newBullet = Instantiate(bullet, shooPoint, bulletPoint.transform.rotation) as GameObject;
 
-                            newBullet.GetComponent<BulletBehaviour>().SpreadFactor = fireSpreadFactor;
-                            newBullet.GetComponent<BulletBehaviour>().Damage = damage;
-                            newBullet.GetComponent<BulletBehaviour>().knockBack = currentlyKnocking;
-                            newBullet.GetComponent<BulletBehaviour>().stun = currentlyStunning;
-                            newBullet.GetComponent<BulletBehaviour>().knockBackPower = knockBack;
-                            newBullet.GetComponent<BulletBehaviour>().knockBackLength = knockBackLength;
-                            newBullet.GetComponent<BulletBehaviour>().stunLength = stunLength;
-                        }
-                        fireTimer = 0;
-                    }
+        //                    newBullet.GetComponent<BulletBehaviour>().SpreadFactor = fireSpreadFactor;
+        //                    newBullet.GetComponent<BulletBehaviour>().Damage = damage;
+        //                    newBullet.GetComponent<BulletBehaviour>().knockBack = currentlyKnocking;
+        //                    newBullet.GetComponent<BulletBehaviour>().stun = currentlyStunning;
+        //                    newBullet.GetComponent<BulletBehaviour>().knockBackPower = knockBack;
+        //                    newBullet.GetComponent<BulletBehaviour>().knockBackLength = knockBackLength;
+        //                    newBullet.GetComponent<BulletBehaviour>().stunLength = stunLength;
+        //                }
+        //                fireTimer = 0;
+        //            }
+        //        }
+        //    }
+        //}
+
+        if (hasFired)
+        {
+            Properties p = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>()?.Properties;
+
+            if (fireTimer > p.firingRate)
+            {
+                for (int i = 0; i < p.numberOfBulletsFired; i++) //Spawn Number Of Bullets
+                {
+                    GameObject newBullet = Instantiate(p.bulletObject, shooPoint, bulletPoint.transform.rotation) as GameObject;
+
+                    newBullet.GetComponent<BulletBehaviour>().p = p;
                 }
+
+                hasFired = false;
+                fireTimer = 0;
             }
         }
 
-        if (Input.GetButtonUp("Fire1"))
-        {
-            fireTimer = 0;
-        }
+        //if (Input.GetButtonUp("Fire1"))
+        //{
+        //    fireTimer = 0;
+        //}
+    }
+
+    public void SetIfFired(bool fired)
+    {
+        hasFired = fired;
     }
 
     public void GetFireInfo(GameObject bullet, float damage, float fireRate, float numberOfBulletsFired, float fireSpread, float knockBack, float knockLength, float stunLength, Animator anim)

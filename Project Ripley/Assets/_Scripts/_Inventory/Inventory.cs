@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
     public bool AddItem(GameObject pickUpItem)
     {
         int slot = GetFirstEmptySlot();
-        pickUpItem.GetComponent<ItemInfo>().Enable();
+        pickUpItem.GetComponent<ItemInfo>().UpdateI();
         return AddItemToSlot(pickUpItem, slot);
     }
 

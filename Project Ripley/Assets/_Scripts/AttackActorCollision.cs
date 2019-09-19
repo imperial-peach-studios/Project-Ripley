@@ -15,7 +15,7 @@ public class AttackActorCollision : MonoBehaviour
     float waitAfterAttackTimer = 0;
     [SerializeField] float waitAfterAttackLength;
     
-    Animator anim;
+    [SerializeField] Animator anim;
     Vector3 previousScale;
     [SerializeField] Vector3 shrinkSize;
     [SerializeField] float shrinkSpeed;
@@ -48,25 +48,28 @@ public class AttackActorCollision : MonoBehaviour
         {
             Debug.Log("Gave Damage To Enemy: " + enemyHit.name);
 
+            Properties p = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>()?.Properties;
+             
             Vector2 knockBackDirection = enemyHit.transform.position - transform.position;
-            //Debug.Log(knockBackDirection);
             knockBackDirection.Normalize();
 
             EnemyKnockedBack enemyKnock = enemyHit.GetComponent<EnemyKnockedBack>();
-            enemyKnock.GetKockedBackInfo(currentlyKnocking, knockBackDirection, knockLength, knockBack);
+            enemyKnock.GetKockedBackInfo(currentlyKnocking, knockBackDirection, p.knockLength, p.knockBack);
             EnemyStunned enemyStunned = enemyHit.GetComponent<EnemyStunned>();
-            enemyStunned.GetStunnedInfo(currentlyStunning, stan);
+            enemyStunned.GetStunnedInfo(currentlyStunning, p.stunLength);
 
             EnemyHealth enemyHealth = enemyHit.GetComponent<EnemyHealth>();
-            enemyHealth.DecreaseHealthWith(damage);
+            enemyHealth.DecreaseHealthWith(p.damage);
 
-            itemSettings.Decrease();
+            //itemSettings.Decrease();
+            p.Decrease();
 
             previousScale = transform.parent.localScale;
             //transform.parent.localScale *= shrinkSize;
             transform.parent.localScale = new Vector3(transform.parent.localScale.x * shrinkSize.x, transform.parent.localScale.y * shrinkSize.y, transform.parent.localScale.z * shrinkSize.z);
+
             anim.speed = 0f;
-           // anim.playbackTime = 0.10f;
+            //anim.playbackTime = 0.10f;
             //anim.StopPlayback();
             giveDamage = true;
         }
