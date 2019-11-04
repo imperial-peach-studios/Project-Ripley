@@ -19,7 +19,7 @@ MonoBehaviour:
   attackRate: 1
   damage: 1
   durability: 20
-  durabilityDecrease: 0
+  durabilityDecrease: 1
   knockBack: 0.01
   knockLength: 0.2
   stanLength: 1

@@ -104,9 +104,9 @@ public struct PlayerData
 {
     [SerializeField] float x, y, z;
     [SerializeField] public int health;
-    //[SerializeField] public InventorySO inventorySO;
     [SerializeField] public List<string> inventoryIndex;
     [SerializeField] public List<float> durabilities;
+    [SerializeField] public int primary, secondary, selected;
     int primaryIndex;
     int secondaryIndex;
     int currentWeapon;
@@ -124,33 +124,67 @@ public struct PlayerData
 
     public void SaveInvetoryData(List<string> inventoryNames, int primaryIndex, int secondaryIndex, int currentWeapon, List<float> durability)
     {
-        this.inventoryIndex = inventoryNames;
-        this.primaryIndex = primaryIndex;
-        this.secondaryIndex = secondaryIndex;
-        this.currentWeapon = currentWeapon;
-        this.durabilities = durability;
+        //this.inventoryIndex = inventoryNames;
+        //this.primaryIndex = primaryIndex;
+        //this.secondaryIndex = secondaryIndex;
+        //this.currentWeapon = currentWeapon;
+        //this.durabilities = durability;
+    }
+    public void SaveInventoriesData(List<string> itemNamesList)
+    {
+        inventoryIndex = itemNamesList;
+    }
+
+    public void SaveEquipmentData(int p, int s, int se)
+    {
+        primary = p;
+        secondary = s;
+        selected = se;
     }
     public void LoadInventoryData(ref List<GameObject> inventory, ref int newPrimary, ref int newSecondary, ref int newCurrentWeapon, List<GameObject> allItems)
     {
-        for(int i = 0; i < inventory.Count; i++)
+        //for(int i = 0; i < inventory.Count; i++)
+        //{
+        //    if(inventory[i] != null)
+        //    {
+        //        inventory[i] = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/_Prefabs/_InventoryObjects/" + inventoryIndex[i], typeof(GameObject));
+        //        for(int x = 0; x < allItems.Count; x++)
+        //        {
+        //            if(allItems[x].ToString() == inventoryIndex[i])
+        //            {
+        //                inventory[i] = allItems[x];
+        //                //inventory[i].GetComponent<ItemSettings>().SetDurability(durabilities[i]);
+        //            }
+        //        }
+        //    }
+        //}
+
+        //newPrimary = primaryIndex;
+        //newSecondary = secondaryIndex;
+        //newCurrentWeapon = this.currentWeapon;
+    }
+
+    public void LoadInventoriesData(ref GameObject[] inventory, List<GameObject> allItems)
+    {
+        for(int i = 0; i < inventory.Length; i++)
         {
-            if(inventory[i] != null)
+            inventory[i] = null;
+
+            for(int x = 0; x < allItems.Count; x++)
             {
-                inventory[i] = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/_Prefabs/_InventoryObjects/" + inventoryIndex[i], typeof(GameObject));
-                for(int x = 0; x < allItems.Count; x++)
+                if(allItems[x].name == inventoryIndex[i])
                 {
-                    if(allItems[x].ToString() == inventoryIndex[i])
-                    {
-                        inventory[i] = allItems[x];
-                        //inventory[i].GetComponent<ItemSettings>().SetDurability(durabilities[i]);
-                    }
+                    inventory[i] = allItems[x];
                 }
             }
         }
+    }
 
-        newPrimary = primaryIndex;
-        newSecondary = secondaryIndex;
-        newCurrentWeapon = this.currentWeapon;
+    public void LoadEquipmentData(ref int p, ref int s, ref int se)
+    {
+        p = primary;
+        s = secondary;
+        se = selected;
     }
 }
 

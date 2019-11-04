@@ -45,10 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf736b56491124ab5d064149fac9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiIcon: {fileID: 21300002, guid: aed0adec49e33434a89929dbb4f616c6, type: 3}
-  melee: {fileID: 11400000, guid: bd52a3ee32710904ba60e9b5f5e4f933, type: 2}
+  uiIcon: {fileID: 0}
+  animationID: 0
+  melee: {fileID: 0}
   gun: {fileID: 0}
-  typeOfItem: 0
+  typeOfItem: 2
+  durability: 0
+  durabilityDecrease: 0
+  damage: 0
+  knockBack: 0
+  knockLength: 0
+  stunLength: 0
+  bullet: 0
+  numberOfBulletsFired: 0
+  firingRate: 0
+  spreadFactor: 0
+  bulletObject: {fileID: 0}
+  noDurability: 0
 --- !u!114 &114670678424973074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +85,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772286433238828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3279a8a650323914390420d2ae7986da, type: 3}
   m_Name: 

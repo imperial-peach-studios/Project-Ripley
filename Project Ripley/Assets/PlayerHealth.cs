@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     PlayerDash pD;
     PlayerAttack pA;
     NewPlayerInvetory pI;
-    InteractionHandler iH;
+    InteractReceiver iR;
     
     void Awake()
     {
@@ -24,8 +24,8 @@ public class PlayerHealth : MonoBehaviour
         pM = GetComponent<PlayerMovement>();
         pD = GetComponent<PlayerDash>();
         pA = GetComponent<PlayerAttack>();
-        pI = GetComponent<NewPlayerInvetory>();
-        iH = GetComponent<InteractionHandler>();
+        //pI = GetComponent<NewPlayerInvetory>();
+        iR = GetComponent<InteractReceiver>();
     }
 
     void Update()
@@ -48,8 +48,8 @@ public class PlayerHealth : MonoBehaviour
             pM.enabled = false;
             pD.enabled = false;
             pA.enabled = false;
-            pI.enabled = false;
-            iH.enabled = false;
+            //pI.enabled = false;
+            iR.enabled = false;
 
             waitBeforeDeathTimer += Time.deltaTime;
 
@@ -87,7 +87,7 @@ public class PlayerHealth : MonoBehaviour
         pM.enabled = true;
         pD.enabled = true;
         pA.enabled = true;
-        pI.enabled = true;
-        iH.enabled = true;
+        //pI.enabled = true;
+        iR.enabled = true;
     }
 }

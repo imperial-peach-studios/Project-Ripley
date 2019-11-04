@@ -50,6 +50,14 @@ public class BulletBehaviour : MonoBehaviour
         }
     }
 
+    public void GetHitInfo(float knockL, float knockB, float stunL, float d)
+    {
+        knockBackLength = knockL;
+        knockBackPower = knockB;
+        stunLength = stunL;
+        damage = d;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.tag == "Wall")
@@ -64,13 +72,16 @@ public class BulletBehaviour : MonoBehaviour
 
             EnemyKnockedBack enemyKnock = other.GetComponent<EnemyKnockedBack>();
             //enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, knockBackLength, knockBackPower);
-            enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, p.knockLength, p.knockBack);
+            //enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, p.knockLength, p.knockBack);
+            enemyKnock.GetKockedBackInfo(knockBack, knockBackDirection, knockBackLength, knockBackPower);
 
             EnemyStunned enemyStunned = other.GetComponent<EnemyStunned>();
-            enemyStunned.GetStunnedInfo(stun, p.stunLength);
+            //enemyStunned.GetStunnedInfo(stun, p.stunLength);
+            enemyStunned.GetStunnedInfo(stun, stunLength);
 
             EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-            enemyHealth.DecreaseHealthWith(p.damage);
+            //enemyHealth.DecreaseHealthWith(p.damage);
+            enemyHealth.DecreaseHealthWith(damage);
 
             Destroy(gameObject);
         }

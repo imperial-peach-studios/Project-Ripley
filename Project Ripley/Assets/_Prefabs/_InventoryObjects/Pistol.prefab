@@ -76,9 +76,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf736b56491124ab5d064149fac9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiIcon: {fileID: 21300022, guid: aed0adec49e33434a89929dbb4f616c6, type: 3}
+  animationID: 0
   melee: {fileID: 0}
-  gun: {fileID: 11400000, guid: 48b9e5f81426fe24ba7d0c44837d8cd2, type: 2}
-  typeOfItem: 2
+  gun: {fileID: 0}
+  typeOfItem: 1
+  durability: 0
+  durabilityDecrease: 0
+  damage: 0
+  knockBack: 0
+  knockLength: 0
+  stunLength: 0
+  bullet: 0
+  numberOfBulletsFired: 0
+  firingRate: 0
+  spreadFactor: 0
+  bulletObject: {fileID: 0}
+  noDurability: 0
 --- !u!114 &114607497664908160
 MonoBehaviour:
   m_ObjectHideFlags: 0

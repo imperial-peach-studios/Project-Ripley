@@ -184,19 +184,30 @@ public class PlayerAttack : MonoBehaviour
 
         GameObject item = Inventory.Instance?.GetInventorySlot(itemIndex);
 
-        ItemInfo info = item?.GetComponent<ItemInfo>();
+        //ItemInfo info = item?.GetComponent<ItemInfo>();
 
-        if(!GetComponent<PlayerDash>().HasDashed)
-        {
-            if (info?.typeOfItem == ItemInfo.TypeOfItem.Melee)
-            {
-                Melee(info);
-            }
-            else if(info?.typeOfItem == ItemInfo.TypeOfItem.Range)
-            {
-                Range(info);
-            }
-        }
+        //if (!GetComponent<PlayerDash>().HasDashed && info?.noDurability == false)
+        //{
+        //    if (info?.typeOfItem == ItemInfo.TypeOfItem.Melee)
+        //    {
+        //        Melee(info);
+        //    }
+        //    else if(info?.typeOfItem == ItemInfo.TypeOfItem.Range)
+        //    {
+        //        Range(info);
+        //    }
+        //}
+
+        //if (info?.noDurability == true)
+        //{
+        //    Inventory.Instance.DestroyItem(itemIndex);
+
+        //    attackCombo = 0;
+        //    comboWaitingTimer = 0;
+        //    myAnim.SetBool("ExitRecovery", true);
+        //    playerMovement.StopMoving = false;
+        //    GetComponent<PlayerDash>().enabled = true;
+        //}
 
         CharacterFollowMouse();
     }
@@ -209,28 +220,65 @@ public class PlayerAttack : MonoBehaviour
             myAnim.Play("Click Attacks");
             attackCombo += 1;
             myAnim.SetFloat("AttackCombo", attackCombo);
+            myAnim.SetBool("ExitRecovery", false);
+
+            comboWaitingTimer = 0;
+
             playerMovement.StopMoving = true;
             followMouse = true;
             GetComponent<PlayerDash>().enabled = false;
         }
 
+        //if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack Before Recovery"))
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        myAnim.Play("Click Attacks");
+        //        attackCombo += 1;
+        //        myAnim.SetFloat("AttackCombo", attackCombo);
+
+        //        comboWaitingTimer = 0;
+        //        return;
+        //    }
+        //}
+
         if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("Recover"))
         {
-            playerMovement.StopMoving = false;
-            GetComponent<PlayerDash>().enabled = true;
-            attackCombo = 0;
-        }
+            //attackCombo = 0;
+            //comboWaitingTimer = 0;
 
-        if (attackCombo > 0)
-        {
             comboWaitingTimer += Time.deltaTime;
 
-            if (comboWaitingTimer > comboWaitingLength || attackCombo >= 4)
+            if(comboWaitingTimer < comboWaitingLength && attackCombo < 3)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    myAnim.Play("Click Attacks");
+                    attackCombo += 1;
+                    myAnim.SetFloat("AttackCombo", attackCombo);
+                    comboWaitingTimer = 0;
+                }
+            }
+            else
             {
                 attackCombo = 0;
                 comboWaitingTimer = 0;
+                myAnim.SetBool("ExitRecovery", true);
+                playerMovement.StopMoving = false;
+                GetComponent<PlayerDash>().enabled = true;
             }
         }
+
+        //if (attackCombo > 0)
+        //{
+        //    comboWaitingTimer += Time.deltaTime;
+
+        //    if (comboWaitingTimer > comboWaitingLength || attackCombo >= 4)
+        //    {
+        //        attackCombo = 0;
+        //        comboWaitingTimer = 0;
+        //    }
+        //}
     }
 
     void Range(ItemInfo info)

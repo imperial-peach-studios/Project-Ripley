@@ -5,15 +5,31 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ItemInfo : MonoBehaviour
 {
-    Sprite uiIcon;
+    public Sprite uiIcon;
     private string itemInfo;
     private Vector2 CollisionBoxSize;
     private Vector2 pickUpBoxSize;
-    private int animationID;
+    public int animationID;
     ItemSettings itemSettings;
     public MeleeWeaponsSO melee;
     public GunSO gun;
     public TypeOfItem typeOfItem;
+
+    public float startDurability;
+    public float durability;
+    public float durabilityDecrease;
+    public float damage;
+    public float knockBack;
+    public float knockLength;
+    public float stunLength;
+    public int bullet;
+    public int numberOfBulletsFired;
+    public float firingRate;
+    public float spreadFactor;
+
+    public GameObject bulletObject;
+
+    public bool noDurability = false;
 
     private Properties p;
     public Properties Properties { get { return p; } }
@@ -28,24 +44,32 @@ public class ItemInfo : MonoBehaviour
 
     public void UpdateI()
     {
+        durability = startDurability;
+        noDurability = false;
         if(p == null)
         {
             if (melee != null)
             {
-                typeOfItem = TypeOfItem.Melee;
-                animationID = melee.animationID;
-                uiIcon = melee.uiIcon;
-                p = new Properties(melee.durability, melee.durabilityDecrease, 0, 0, melee.attackRate, melee.knockBack, melee.knockLength, melee.stanLength, melee.damage, 0);
+                //typeOfItem = TypeOfItem.Melee;
+                //animationID = melee.animationID;
+                //uiIcon = melee.uiIcon;
+                //p = new Properties(melee.durability, melee.durabilityDecrease, 0, 0, melee.attackRate, melee.knockBack, melee.knockLength, melee.stanLength, melee.damage, 0);
             }
             else if (gun != null)
             {
-                typeOfItem = TypeOfItem.Range;
-                animationID = gun.animationID;
-                uiIcon = gun.uiIcon;
-                p = new Properties(gun.durability, gun.durabilityDecrease, gun.bullet, gun.numberOfBulletsFired, gun.firingRate, gun.knockBack, gun.knockLength, gun.stunLength, gun.damage, gun.spreadFactor);
-                p.SetBullet(gun.weaponBullet);
+                //typeOfItem = TypeOfItem.Range;
+                //animationID = gun.animationID;
+                //uiIcon = gun.uiIcon;
+                //p = new Properties(gun.durability, gun.durabilityDecrease, gun.bullet, gun.numberOfBulletsFired, gun.firingRate, gun.knockBack, gun.knockLength, gun.stunLength, gun.damage, gun.spreadFactor);
+                //p.SetBullet(gun.weaponBullet);
+                //bulletObject = gun.weaponBullet;
             }
         }   
+        //animationID = 
+    }
+    public bool GetDura()
+    {
+        return noDurability;
     }
 
     public void UpdateInfo()
@@ -78,6 +102,20 @@ public class ItemInfo : MonoBehaviour
     {
         itemSettings.Decrease();
     }
+
+    public void DecreaseDurability()
+    {
+        //p.Decrease();
+        durability -= durabilityDecrease;
+
+        if(durability <= 0)
+        {
+            durability = 0;
+            noDurability = true;
+        }
+
+        Debug.Log("Dura " + durability);
+    }
     public string GetItemInfo()
     {
         return itemInfo;
@@ -100,6 +138,7 @@ public class ItemInfo : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class Properties
 {
     public int bullet;
@@ -137,5 +176,8 @@ public class Properties
     public void Decrease()
     {
         durability -= durabilityDecrease;
+
+        
+
     }
 }

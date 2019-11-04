@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class PickUpGiver : MonoBehaviour
 {
+    [SerializeField] string itemName;
     [SerializeField] GameObject storedItem;
     private bool addTolist = false;
 
@@ -15,7 +16,12 @@ public class PickUpGiver : MonoBehaviour
             int currentSlotIndex = InventoryUI.GetCurrentMouseOverSlotIndex();
 
             Inventory.Instance.TryToRemoveItem(currentSlotIndex);
-            Inventory.Instance.AddItemToSlot(storedItem, currentSlotIndex);
+
+            GameObject newItem = Instantiate(gameObject, Inventory.Instance.transform);
+
+            Destroy(newItem.GetComponent<PickUpGiver>());
+            
+            Inventory.Instance.AddItemToSlot(newItem, currentSlotIndex);
 
             if(Input.GetKey(KeyCode.LeftControl))
             {

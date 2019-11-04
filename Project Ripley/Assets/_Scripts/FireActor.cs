@@ -12,13 +12,6 @@ public class FireActor : MonoBehaviour
     [SerializeField] bool currentlyStunning;
     GameObject enemyHit;
     bool giveDamage = false;
-    float damage;
-    float fireRate;
-    float fireSpreadFactor;
-    float numberOfBulletsFired;
-    float knockBack;
-    float knockBackLength;
-    float stunLength;
     [SerializeField] Animator anim;
     float fireTimer = 0;
     bool hasFired = false;
@@ -63,15 +56,17 @@ public class FireActor : MonoBehaviour
 
         if (hasFired)
         {
-            Properties p = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>()?.Properties;
+            //Properties p = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>()?.Properties;
+            ItemInfo iI = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>();
 
-            if (fireTimer > p.firingRate)
+            if (fireTimer > iI.firingRate)
             {
-                for (int i = 0; i < p.numberOfBulletsFired; i++) //Spawn Number Of Bullets
+                for (int i = 0; i < iI.numberOfBulletsFired; i++) //Spawn Number Of Bullets
                 {
-                    GameObject newBullet = Instantiate(p.bulletObject, shooPoint, bulletPoint.transform.rotation) as GameObject;
+                    GameObject newBullet = Instantiate(iI.bulletObject, shooPoint, bulletPoint.transform.rotation) as GameObject; //p.bulletObject
 
-                    newBullet.GetComponent<BulletBehaviour>().p = p;
+                    //newBullet.GetComponent<BulletBehaviour>().p = p;
+                    newBullet.GetComponent<BulletBehaviour>().GetHitInfo(iI.knockLength, iI.knockBack, iI.stunLength, iI.damage);
                 }
 
                 hasFired = false;
@@ -90,17 +85,17 @@ public class FireActor : MonoBehaviour
         hasFired = fired;
     }
 
-    public void GetFireInfo(GameObject bullet, float damage, float fireRate, float numberOfBulletsFired, float fireSpread, float knockBack, float knockLength, float stunLength, Animator anim)
-    {
-        this.bullet = bullet;
-        //this.bulletPoint = bulletPoint;
-        this.damage = damage;
-        this.fireRate = fireRate;
-        this.numberOfBulletsFired = numberOfBulletsFired;
-        this.fireSpreadFactor = fireSpread;
-        this.knockBack = knockBack;
-        this.knockBackLength = knockLength;
-        this.stunLength = stunLength;
-        this.anim = anim;
-    }
+    //public void GetFireInfo(GameObject bullet, float damage, float fireRate, float numberOfBulletsFired, float fireSpread, float knockBack, float knockLength, float stunLength, Animator anim)
+    //{
+    //    this.bullet = bullet;
+    //    //this.bulletPoint = bulletPoint;
+    //    this.damage = damage;
+    //    this.fireRate = fireRate;
+    //    this.numberOfBulletsFired = numberOfBulletsFired;
+    //    this.fireSpreadFactor = fireSpread;
+    //    this.knockBack = knockBack;
+    //    this.knockBackLength = knockLength;
+    //    this.stunLength = stunLength;
+    //    this.anim = anim;
+    //}
 }

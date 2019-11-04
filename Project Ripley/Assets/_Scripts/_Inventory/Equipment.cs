@@ -62,6 +62,26 @@ public class Equipment : MonoBehaviour
         }
 
         Inventory.Instance.OnInventoryChanged += OnInvetoryChanged;
+        GameData.OnSavePlayer += OnSaveEquipmentData;
+        GameData.OnLoadPlayer += OnLoadEquipmentData;
+    }
+
+    void OnSaveEquipmentData()
+    {
+        GameData.aData.pData.SaveEquipmentData(primary, secondary, (int)_selectedEQ);
+    }
+
+    void OnLoadEquipmentData()
+    {
+        int p = 0;
+        int s = 0;
+        int se = 0;
+
+        GameData.aData.pData.LoadEquipmentData(ref p, ref s, ref se);
+
+        Primary = p;
+        Secondary = s;
+        SelectedEQ = (Selected)se;
     }
 
     void Start()

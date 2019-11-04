@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour
     [SerializeField] LayerMask collideWithLayer;
     [SerializeField] GameObject pickUpObject;
 
+    [SerializeField] List<GameObject> allItems = new List<GameObject>();
+
     void Awake()
     {
         inventory = new GameObject[10];
@@ -32,7 +34,44 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    void Start()
+    {
+        GameData.OnSavePlayer += OnSavePlayerInventory;
+        GameData.OnLoadPlayer += OnLoadPlayerInventory;
+    }
+
+    void OnSavePlayerInventory()
+    {
+        List<string> itemNames = new List<string>();
+
+        for(int i = 0; i < inventory.Length; i++)
+        {
+            if(inventory[i] != null)
+            {
+                itemNames.Add(inventory[i].name);
+            }
+            else
+            {
+                itemNames.Add("");
+            }
+        }
+
+        GameData.aData.pData.SaveInventoriesData(itemNames);
+    }
+    void OnLoadPlayerInventory()
+    {
+        GameData.aData.pData.LoadInventoriesData(ref inventory, allItems);
+        for(int i = 0; i < inventory.Length; i++)
+        {
+            if(inventory[i] != null)
+            {
+                //inventory[i].GetComponent<ItemInfo>().UpdateI();
+            }
+            OnInventoryChanged?.Invoke(i);
+        }
+    }
+
     public int GetFirstEmptySlot()
     {
         for (int i = 0; i < inventory.Length; i++)
@@ -85,5 +124,11 @@ public class Inventory : MonoBehaviour
 
             OnInventoryChanged?.Invoke(slotIndex);
         }
+    }
+
+    public void DestroyItem(int slotIndex)
+    {
+        inventory[slotIndex] = null;
+        OnInventoryChanged?.Invoke(slotIndex);
     }
 }

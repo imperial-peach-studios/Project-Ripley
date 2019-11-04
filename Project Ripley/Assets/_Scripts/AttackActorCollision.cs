@@ -48,21 +48,23 @@ public class AttackActorCollision : MonoBehaviour
         {
             Debug.Log("Gave Damage To Enemy: " + enemyHit.name);
 
-            Properties p = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>()?.Properties;
+            //Properties p = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>()?.Properties;
+            ItemInfo iI = Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>();
              
             Vector2 knockBackDirection = enemyHit.transform.position - transform.position;
             knockBackDirection.Normalize();
 
             EnemyKnockedBack enemyKnock = enemyHit.GetComponent<EnemyKnockedBack>();
-            enemyKnock.GetKockedBackInfo(currentlyKnocking, knockBackDirection, p.knockLength, p.knockBack);
+            enemyKnock.GetKockedBackInfo(currentlyKnocking, knockBackDirection, iI.knockLength, iI.knockBack);
             EnemyStunned enemyStunned = enemyHit.GetComponent<EnemyStunned>();
-            enemyStunned.GetStunnedInfo(currentlyStunning, p.stunLength);
+            enemyStunned.GetStunnedInfo(currentlyStunning, iI.stunLength);
 
             EnemyHealth enemyHealth = enemyHit.GetComponent<EnemyHealth>();
-            enemyHealth.DecreaseHealthWith(p.damage);
+            enemyHealth.DecreaseHealthWith(iI.damage);
 
             //itemSettings.Decrease();
-            p.Decrease();
+            //p.Decrease();
+            Equipment.Instance.CurrentSelectedItem()?.GetComponent<ItemInfo>().DecreaseDurability();
 
             previousScale = transform.parent.localScale;
             //transform.parent.localScale *= shrinkSize;
