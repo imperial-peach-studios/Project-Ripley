@@ -14,7 +14,7 @@ public class EnemyEvent : MonoBehaviour
     float playerInSightTimer = 0;
     [SerializeField] float playerInSightForgetTime;
 
-    void Start()
+    void Awake()
     {
         info = GetComponent<EnemyInfo>();
         path = GetComponent<AIPath>();
@@ -49,7 +49,9 @@ public class EnemyEvent : MonoBehaviour
 
             if (waitTimer > waitAmount)
             {
-                path.destination = info.GetLastPosition();
+                info.SetSearchMode(false);
+                waitTimer = 0;
+                //path.destination = info.GetLastPosition();
             }
             else
             {

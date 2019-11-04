@@ -10,15 +10,15 @@ public class PlayerHPManager : MonoBehaviour
 	public Slider myHPSlider;
     public Image hpImage;
 	
-	void Start ()
+	void Awake ()
     {
-		for(int i = 0; i < transform.childCount; i++)
-        {
-            if(myChilds.Contains(transform.GetChild(i).gameObject) != true)
-            {
-                myChilds.Add(transform.GetChild(i).gameObject);
-            }
-        }
+		//for(int i = 0; i < transform.childCount; i++)
+  //      {
+  //          if(myChilds.Contains(transform.GetChild(i).gameObject) != true)
+  //          {
+  //              myChilds.Add(transform.GetChild(i).gameObject);
+  //          }
+  //      }
 		myHPSlider.maxValue = hp.MaxHealth;
 	}
 	

@@ -28,7 +28,7 @@ public class EnemySight : MonoBehaviour
 
     Patrol patrol;
 
-    void Start()
+    void Awake()
     {
         patrol = GetComponent<Patrol>();
         col = transform.Find("AI Circle Collision").GetComponent<CircleCollider2D>();
@@ -193,7 +193,7 @@ public class EnemySight : MonoBehaviour
 
                 if (hit)
                 {
-                    if (hit.transform.tag == "Player") //If our raycast hits the player
+                    if (hit.transform.tag == "Player" && !PlayersMovementData.InsideASafeHouse) //If our raycast hits the player
                     {
                         info.SetSearchMode(false);
                         info.SetCurrentSight(true); //Set PlayerInSight To True
@@ -203,11 +203,11 @@ public class EnemySight : MonoBehaviour
                     else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
                     {
                         TypeOfObstacle tOO = hit.transform.gameObject.GetComponent<TypeOfObstacle>();
-                        if(!tOO.GetIfFullHide())
+                        if (!tOO.GetIfFullHide())
                         {
                             bool canSeePlayer = tOO.IsPlayerCrouching(other.transform.position);
 
-                            if(!canSeePlayer)
+                            if (!canSeePlayer)
                             {
                                 info.SetSearchMode(false);
                                 info.SetCurrentSight(true); //Set PlayerInSight To True

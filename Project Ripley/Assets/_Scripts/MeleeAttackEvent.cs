@@ -11,9 +11,9 @@ public class MeleeAttackEvent : MonoBehaviour
     AttackActorCollision attackA;
     FireActor fireA;
 
-    void Start()
+    void Awake()
     {
-        invetory = GetComponent<NewPlayerInvetory>().invetorySO;
+        //invetory = GetComponent<NewPlayerInvetory>().invetorySO;
         pA = GetComponent<PlayerAttack>();
         attackA = attackActor.GetComponent<AttackActorCollision>();
         fireA = attackActor.GetComponent<FireActor>();
@@ -21,46 +21,48 @@ public class MeleeAttackEvent : MonoBehaviour
 
     public void AttackTriggerEnable()
     {
-        attackA.enabled = true;
+        //fireA.enabled = false;
+        //attackA.enabled = true;
+        //GetComponentInParent<Animator>().speed = 1;
+        //ItemInfo itemInfo;
 
-        ItemInfo itemInfo;
+        //if(invetory.currentWeapon == 1)
+        //{
+        //    itemSettings = invetory.primary.GetComponent<ItemSettings>();
+        //}
+        //else
+        //{
+        //    itemSettings = invetory.secondary.GetComponent<ItemSettings>();
+        //}
 
-        if(invetory.currentWeapon == 1)
-        {
-            itemSettings = invetory.primary.GetComponent<ItemSettings>();
-        }
-        else
-        {
-            itemSettings = invetory.secondary.GetComponent<ItemSettings>();
-        }
-
-        attackA.UpdateStats(itemSettings.meleeOS.knockBack, itemSettings.meleeOS.knockLength, itemSettings.meleeOS.stanLength, itemSettings.meleeOS.damage, itemSettings, GetComponentInParent<Animator>());
+        //attackA.UpdateStats(itemSettings.meleeOS.knockBack, itemSettings.meleeOS.knockLength, itemSettings.meleeOS.stanLength, itemSettings.meleeOS.damage, itemSettings, GetComponentInParent<Animator>());
         
         attackA.SetHasAttacked(true);
     }
     public void AttackTriggerDisable()
     {
-        attackA.SetHasAttacked(false);
+        //attackA.SetHasAttacked(false);
         attackA.ResetEnemyHit();
-
-        attackA.enabled = false;
+        
+        //attackA.enabled = false;
     }
 
     public void Fire()
     {
-        fireA.enabled = true;
+        //fireA.enabled = true;
 
-        if (invetory.currentWeapon == 1)
-        {
-            itemSettings = invetory.primary.GetComponent<ItemSettings>();
-        }
-        else
-        {
-            itemSettings = invetory.secondary.GetComponent<ItemSettings>();
-        }
-        GunSO gunSO = itemSettings.gunOS;
+        //if (invetory.currentWeapon == 1)
+        //{
+        //    itemSettings = invetory.primary.GetComponent<ItemSettings>();
+        //}
+        //else
+        //{
+        //    itemSettings = invetory.secondary.GetComponent<ItemSettings>();
+        //}
+        //GunSO gunSO = itemSettings.gunOS;
 
-        fireA.GetFireInfo(gunSO.weaponBullet, gunSO.damage, gunSO.firingRate, gunSO.numberOfBulletsFired, gunSO.spreadFactor);
+        //fireA.GetFireInfo(gunSO.weaponBullet, gunSO.damage, gunSO.firingRate, gunSO.numberOfBulletsFired, gunSO.spreadFactor, gunSO.knockBack, gunSO.knockLength, gunSO.stunLength, GetComponentInParent<Animator>());
+        fireA.SetIfFired(true);
     }
 }
 

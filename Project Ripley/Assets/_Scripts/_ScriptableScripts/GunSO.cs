@@ -20,6 +20,9 @@ public class GunSO : ScriptableObject
     [Header("How Many Bullets Are Fired When Shooting")]
     public int numberOfBulletsFired;
     public float firingRate;
+    public float knockBack;
+    public float knockLength;
+    public float stunLength;
     public float damage;
     public float spreadFactor;
     [Header("A Weapons Durability/How Long It Lasts Before Vanishing")]

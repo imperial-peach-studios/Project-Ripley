@@ -26,10 +26,21 @@ public class ItemSettings : MonoBehaviour
         durability = maxDurability;
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         
+    }
+    
+    public float GetDurability()
+    {
+        return durability;
+    }
+    public void SetDurability(float value)
+    {
+        durability = value;
     }
 
     public void Decrease()

@@ -8,12 +8,14 @@ public class PlayerAnimation : MonoBehaviour
     MovementDatabase movementDatabase;
     PlayerDash pD;
     PlayerMovement pM;
+    PlayerHealth pH;
 
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
         pM = GetComponent<PlayerMovement>();
         pD = GetComponent<PlayerDash>();
+        pH = GetComponent<PlayerHealth>();
         movementDatabase = GetComponent<PlayersMovementData>().movementDatabaseSO;
     }
 
@@ -22,6 +24,18 @@ public class PlayerAnimation : MonoBehaviour
         if (movementDatabase.GetDisableEnableMove() == false)
         {
             AnimInput();
+        }
+
+        if(pH.IsDead())
+        {
+            anim.SetBool("Dead", true);
+        }
+        else
+        {
+            if(anim.GetBool("Dead"))
+            {
+               anim.SetBool("Dead", false);
+            }
         }
     }
     

@@ -8,7 +8,7 @@ public class IconMouseOver : MonoBehaviour
     public int currentIndex;
     public float iconSize;
     bool changed = false;
-    InventorySO inventorySO;
+    InventorySO iSO;
     InventoryUIManager invetoryManager;
     Image myImage;
     Text infoText;
@@ -21,24 +21,24 @@ public class IconMouseOver : MonoBehaviour
             currentIndex = 9;
         }
 
-        inventorySO = transform.parent.parent.parent.GetComponent<InventoryUIManager>().myInventory;
+        iSO = transform.parent.parent.parent.GetComponent<InventoryUIManager>().iSO;
         invetoryManager = transform.parent.parent.parent.GetComponent<InventoryUIManager>();
 
         myImage = GetComponent<Image>();
-        myImage.sprite = inventorySO.greyGrid;
+        myImage.sprite = iSO.greyGrid;
 
         infoText = invetoryManager.UIpanel.transform.GetChild(1).GetComponent<Text>();
     }
 
     void Update()
     {
-        if(changed == false && inventorySO.mouseOverInvetory == false)
+        if(changed == false && iSO.mouseOverInvetory == false)
         {
             transform.localScale = new Vector2(1, 1);
-            if (currentIndex == inventorySO.primaryIndex || currentIndex == inventorySO.secondaryIndex)
+            if (currentIndex == iSO.primaryIndex || currentIndex == iSO.secondaryIndex)
             {
-                if (currentIndex == inventorySO.primaryIndex && inventorySO.currentWeapon == 1 
-                    || inventorySO.currentWeapon == 2 && currentIndex == inventorySO.secondaryIndex)
+                if ((currentIndex == iSO.primaryIndex && iSO.currentWeapon == 1 )
+                    || (iSO.currentWeapon == 2 && currentIndex == iSO.secondaryIndex))
                 {
                     transform.localScale = new Vector2(1.5f, 1.5f);
                     transform.SetAsLastSibling();
@@ -52,9 +52,9 @@ public class IconMouseOver : MonoBehaviour
                 transform.localScale = new Vector2(1, 1);
             }
         }
-        if (currentIndex == inventorySO.primaryIndex || currentIndex == inventorySO.secondaryIndex)
+        if (currentIndex == iSO.primaryIndex || currentIndex == iSO.secondaryIndex)
         {
-            myImage.sprite = inventorySO.blueGrid;
+            myImage.sprite = iSO.blueGrid;
             //GetComponent<Image>().color = Color.cyan;
         }
         else
@@ -62,7 +62,7 @@ public class IconMouseOver : MonoBehaviour
             //GetComponent<Image>().color = Color.white;
             if(changed == false)
             {
-                myImage.sprite = inventorySO.greyGrid;
+                myImage.sprite = iSO.greyGrid;
             }
         }
     }
@@ -80,9 +80,9 @@ public class IconMouseOver : MonoBehaviour
             changed = true;
 
             invetoryManager.UIpanel.SetActive(true);
-            if(inventorySO.myInventory[currentIndex] != null)
+            if(iSO.myInventory[currentIndex] != null)
             {
-                infoText.text = inventorySO.GetItemInfoText(currentIndex);
+                infoText.text = iSO.GetItemInfoText(currentIndex);
             }
             else
             {
@@ -92,24 +92,24 @@ public class IconMouseOver : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            inventorySO.MoveToToolbar(1, currentIndex);
+            iSO.MoveToToolbar(1, currentIndex);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            inventorySO.MoveToToolbar(2, currentIndex);
+            iSO.MoveToToolbar(2, currentIndex);
         }
 
-        if(currentIndex != inventorySO.primaryIndex && currentIndex != inventorySO.secondaryIndex)
+        if(currentIndex != iSO.primaryIndex && currentIndex != iSO.secondaryIndex)
         {
-            GetComponent<Image>().sprite = inventorySO.greenGrid;
+            GetComponent<Image>().sprite = iSO.greenGrid;
         }
-        inventorySO.MouseOverInvetoryInfo(currentIndex);
-        inventorySO.mouseOverInvetory = true;
+        iSO.MouseOverInvetoryInfo(currentIndex);
+        iSO.mouseOverInvetory = true;
 
         
-        if (Input.GetKeyDown(KeyCode.Q) && inventorySO.availableToDrop == true && !inventorySO.GetLootingMode())
+        if (Input.GetKeyDown(KeyCode.Q) && iSO.availableToDrop == true && !iSO.GetLootingMode())
         {
-            inventorySO.RemoveItem(currentIndex);
+            iSO.RemoveItem(currentIndex);
         }
     }
 
@@ -128,7 +128,7 @@ public class IconMouseOver : MonoBehaviour
             invetoryManager.UIpanel.SetActive(false);
         }
 
-		myImage.sprite = inventorySO.greyGrid;
-        inventorySO.mouseOverInvetory = false;
+		myImage.sprite = iSO.greyGrid;
+        iSO.mouseOverInvetory = false;
     }
 }

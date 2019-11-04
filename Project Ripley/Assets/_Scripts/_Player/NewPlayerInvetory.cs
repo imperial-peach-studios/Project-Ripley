@@ -14,8 +14,11 @@ public class NewPlayerInvetory : MonoBehaviour
     Animator anim;
     InteractionHandler iHandler;
 
-    void Start()
+    void Awake()
     {
+        GameData.OnSavePlayer += OnSave;
+        GameData.OnLoadPlayer += OnLoad;
+
         anim = GetComponent<Animator>();
         playerM = GetComponent<PlayerMovement>();
         parentPrimary = transform.Find("Primary").gameObject;
@@ -38,9 +41,10 @@ public class NewPlayerInvetory : MonoBehaviour
             anim.SetFloat("ItemAttackID", 0);
         }
 
-        UpdatePrimaries(myPrimary, myPrimaryIndex, invetorySO.primaryIndex, invetorySO.primary, parentPrimary, mySecondary);
+        //Doesn't Seem to do anything, real lazy method.
+        //UpdatePrimaries(myPrimary, myPrimaryIndex, invetorySO.primaryIndex, invetorySO.primary, parentPrimary, mySecondary);
 
-        UpdatePrimaries(mySecondary, mySecondaryIndex, invetorySO.secondaryIndex, invetorySO.secondary, parentSecondary, myPrimary);
+        //UpdatePrimaries(mySecondary, mySecondaryIndex, invetorySO.secondaryIndex, invetorySO.secondary, parentSecondary, myPrimary);
 
 
         if (invetorySO.currentWeapon == 1)
@@ -181,5 +185,37 @@ public class NewPlayerInvetory : MonoBehaviour
                 primary = null;
             }
         }
+    }
+
+    public void OnSave()
+    {
+        //GameData.aData.pData.inventorySO = invetorySO;
+        List<string> inventoryNames = new List<string>();
+        List<float> durabilities = new List<float>();
+
+        for(int i = 0; i < invetorySO.myInventory.Count; i++)
+        {
+            if(invetorySO.myInventory[i] != null)
+            {
+                inventoryNames.Add(invetorySO.myInventory[i].ToString());
+                durabilities.Add(invetorySO.myInventory[i].GetComponent<ItemSettings>().GetDurability());
+            }
+            else
+            {
+                inventoryNames.Add("");
+            }
+        }
+        
+        GameData.aData.pData.SaveInvetoryData(inventoryNames, invetorySO.primaryIndex, invetorySO.secondaryIndex, invetorySO.currentWeapon, durabilities);
+    }
+    public void OnLoad()
+    {
+        //invetorySO = GameData.aData.pData.inventorySO;
+        invetorySO.primary = null;
+        invetorySO.secondary = null;
+        GameData.aData.pData.LoadInventoryData(ref invetorySO.myInventory, ref invetorySO.primaryIndex, ref invetorySO.secondaryIndex, ref invetorySO.currentWeapon, invetorySO.allItems);
+
+        invetorySO.primary = invetorySO.myInventory[invetorySO.primaryIndex];
+        invetorySO.secondary = invetorySO.myInventory[invetorySO.secondaryIndex];
     }
 }

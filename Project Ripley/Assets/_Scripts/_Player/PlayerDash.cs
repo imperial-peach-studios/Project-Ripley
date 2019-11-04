@@ -16,7 +16,7 @@ public class PlayerDash : MonoBehaviour
     float dashTimer = 0;
     Rigidbody2D rb;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         movementDatabase = GetComponent<PlayersMovementData>().movementDatabaseSO;
