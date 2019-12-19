@@ -56,6 +56,7 @@ LineRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -185,7 +186,8 @@ MonoBehaviour:
     useGraphRaycasting: 0
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask: -1
+  graphMask:
+    value: -1
 --- !u!114 &1562589256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
+  radius: 0.5
+  height: 2
   repathRate: 0.5
   canSearch: 1
   canMove: 0
@@ -207,8 +211,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  centerOffset: 1
-  rotationIn2D: 1
+  centerOffsetCompatibility: 1
+  orientation: 1
+  enableRotation: 1
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 0
@@ -323,6 +328,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -380,7 +386,6 @@ GameObject:
   - component: {fileID: 3991317232593304863}
   - component: {fileID: 3991317232593304862}
   - component: {fileID: 3991317232593304861}
-  - component: {fileID: 632999307}
   - component: {fileID: 1770124787413815451}
   - component: {fileID: 3991317232373155231}
   - component: {fileID: 3991317232373155230}
@@ -472,7 +477,8 @@ MonoBehaviour:
     useGraphRaycasting: 0
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask: -1
+  graphMask:
+    value: -1
 --- !u!114 &3991317232593304863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +492,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
+  radius: 0.5
+  height: 2
   repathRate: 0.5
   canSearch: 1
   canMove: 1
@@ -494,8 +502,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  centerOffset: 1
-  rotationIn2D: 1
+  centerOffsetCompatibility: NaN
+  orientation: 1
+  enableRotation: 1
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 0
@@ -538,24 +547,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   delay: 1
---- !u!114 &632999307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3991317232593305059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db45a8641e79b0a45b35f9ad4ea9f3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInSight: 0
-  heardNoice: 0
-  previousPlayerInSight: 0
-  searchMode: 0
-  personalLastSighting: {x: 0, y: 0}
-  currentDirection: {x: 0, y: 0}
 --- !u!114 &1770124787413815451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +559,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d36c74adc6ff1241ab65a3c156593b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info:
+    objectName: 
+    playerInSight: 0
+    previousPlayerInSight: 0
+    heardNoice: 0
+    searchMode: 0
+    readyToAttack: 0
+    attacked: 0
+    personalLastSightingX: 0
+    personalLastSightingY: 0
+    currentDirectionX: 0
+    currentDirectionY: 0
+    knockedDown: 0
+    stunned: 0
   distanceOffset: 15
+  waitTimer: 0
   waitAmount: 0.5
   playerInSightForgetTime: 0
 --- !u!114 &3991317232373155231
@@ -590,6 +596,7 @@ MonoBehaviour:
   notIgnoreCollision:
     serializedVersion: 2
     m_Bits: 6967
+  directions: 0
 --- !u!114 &3991317232373155230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9caed3fd7725e7840ad3bf77b47e24f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heardSound: 0
   hearingRange: 19
   collideWithLayers:
     serializedVersion: 2

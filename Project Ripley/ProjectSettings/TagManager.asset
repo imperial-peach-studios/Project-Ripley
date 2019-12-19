@@ -37,7 +37,7 @@ TagManager:
   - PickUp
   - Loot
   - House
-  - 
+  - BoundaryPoint
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2790057837
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Inhouse Floor
     uniqueID: 2592851557
@@ -68,14 +71,14 @@ TagManager:
   - name: House Roof
     uniqueID: 1543683935
     locked: 0
-  - name: House Black Background
-    uniqueID: 284319195
-    locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Enemies
     uniqueID: 4086228749
+    locked: 0
+  - name: NPC
+    uniqueID: 1871895269
+    locked: 0
+  - name: House Black Background
+    uniqueID: 284319195
     locked: 0
   - name: Player
     uniqueID: 3301306425

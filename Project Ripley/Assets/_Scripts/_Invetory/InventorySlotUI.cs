@@ -102,7 +102,7 @@ public class InventorySlotUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && Inventory.Instance.CanDrop()) //&& !iSO.GetLootingMode()
         {
-            Inventory.Instance.TryToRemoveItem(slotIndex);
+            //Inventory.Instance.TryToRemoveItem(slotIndex);
         }
     }
 

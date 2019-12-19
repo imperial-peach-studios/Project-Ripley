@@ -23,10 +23,10 @@ public class InventoryUIManager : MonoBehaviour
         {
             if (iSO.myInventory[i] != null) //If The Current Inventory Slot Has An Item.    
             {
-                iSO.myInventory[i].GetComponent<ItemInfo>().UpdateInfo(); //Update The Inventory Slots Item Info
+                //iSO.myInventory[i].GetComponent<ItemInfo>().UpdateInfo(); //Update The Inventory Slots Item Info
 
                 uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().enabled = true; //Enable The Image Component
-                uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[i].GetComponent<ItemInfo>().GetUISprite();//Get The Correct-
+                //uiParent.transform.Find("Bar " + (i + 1)).GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[i].GetComponent<ItemInfo>().GetUISprite();//Get The Correct-
                 //-Sprite.
                 
             }
@@ -53,7 +53,7 @@ public class InventoryUIManager : MonoBehaviour
         if (iSO.primary != null && iSO.myInventory[iSO.primaryIndex] != null) //If Primary Equipped Item Exists & If Currently Equipped Item
         { //Exists In The Invetory.
             bar1.GetChild(0).GetComponent<Image>().enabled = true;
-            bar1.GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[iSO.primaryIndex].GetComponent<ItemInfo>().GetUISprite();
+            //bar1.GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[iSO.primaryIndex].GetComponent<ItemInfo>().GetUISprite();
         }
         else
         {
@@ -64,7 +64,7 @@ public class InventoryUIManager : MonoBehaviour
         if (iSO.secondary != null && iSO.myInventory[iSO.secondaryIndex] != null) //If Secondary Bar Has Something And The invetory Position Exists.
         {
             bar2.GetChild(0).GetComponent<Image>().enabled = true;
-            bar2.GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[iSO.secondaryIndex].GetComponent<ItemInfo>().GetUISprite();
+            //bar2.GetChild(0).GetComponent<Image>().sprite = iSO.myInventory[iSO.secondaryIndex].GetComponent<ItemInfo>().GetUISprite();
         }
         else
         {

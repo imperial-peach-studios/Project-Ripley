@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4324633636636518}
   - component: {fileID: 212464677806089066}
   - component: {fileID: 61768142157229458}
-  - component: {fileID: 2006639955825730193}
-  - component: {fileID: -2741205217327682641}
+  - component: {fileID: 192833240327153934}
+  - component: {fileID: -6029062860685974908}
   m_Layer: 17
   m_Name: Pick Up
   m_TagString: InteractionPickUp
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -896164523
-  m_SortingLayer: -5
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,67 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &2006639955825730193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791209926192018}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832fdc6f51074a54fa2c638138bfdfed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2006639955825730193}
-        m_MethodName: AddItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnInteractBySelf:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnInteractByOther:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2006639955825730193}
-        m_MethodName: SendItemToInventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2006639955825730193}
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &-2741205217327682641
+--- !u!114 &192833240327153934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +118,97 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791209926192018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad79d3ae280a290489286e47c8d8b0c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c73fb2e3f283b84f83d2e2069b3e9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storedItem: {fileID: 0}
+--- !u!114 &-6029062860685974908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791209926192018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccaf736b56491124ab5d064149fac9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteIconName: 
+  iconNames:
+  - Knife_UI
+  - Paddel_UI
+  - Crowbar_UI
+  - Pan_UI
+  - M4
+  - Pistol_UI
+  - Revolver_UI
+  - Shotgun_UI
+  - SmallMedicine_UI
+  - BigMedicine_UI
+  - Snack_UI
+  - Can_UI
+  - 
+  - 
+  meleeIconIndex: 0
+  rangeIconIndex: 0
+  consumableIndex: 0
+  lootItem: 0
+  atIndex: 0
+  meele:
+    state: 
+    spriteName: 
+    objectName: 
+    selectedIconIndex: 0
+    x: 0
+    y: 0
+    lootedItem: 0
+    typeOfItem: 0
+    animationID: 0
+    startDurability: 0
+    durability: 0
+    durabilityDecrease: 0
+    noDurability: 0
+    damage: 0
+    knockBackPower: 0
+    knockBackLength: 0
+    stunLength: 0
+  raange:
+    state: 
+    spriteName: 
+    objectName: 
+    selectedIconIndex: 0
+    x: 0
+    y: 0
+    lootedItem: 0
+    typeOfItem: 0
+    animationID: 0
+    startDurability: 0
+    durability: 0
+    durabilityDecrease: 0
+    noDurability: 0
+    damage: 0
+    knockBackPower: 0
+    knockBackLength: 0
+    stunLength: 0
+    numberOfBulletsFired: 0
+    firingRate: 0
+    spreadFactor: 0
+  consumable:
+    state: 
+    spriteName: 
+    objectName: 
+    selectedIconIndex: 0
+    x: 0
+    y: 0
+    lootedItem: 0
+    typeOfItem: 0
+    animationID: 0
+    startDurability: 0
+    durability: 0
+    durabilityDecrease: 0
+    noDurability: 0
+    healthIncrease: 0
+    hungerIncrease: 0
+    consumeTimeRate: 0
+  typeOfItem: 0
+  hey: 2s

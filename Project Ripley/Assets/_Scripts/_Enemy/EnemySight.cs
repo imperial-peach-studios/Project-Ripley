@@ -33,7 +33,8 @@ public class EnemySight : MonoBehaviour
         patrol = GetComponent<Patrol>();
         col = transform.Find("AI Circle Collision").GetComponent<CircleCollider2D>();
         line = transform.Find("Line Renderer").GetComponent<LineRenderer>();
-        info = GetComponent<EnemyInfo>();
+        //info = GetComponent<EnemyInfo>();
+        info = GetComponent<EnemyEvent>().GetEnemyInfo();
         info.SetCurrentDirection(new Vector2(0, -1));
     }
     

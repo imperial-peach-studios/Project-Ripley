@@ -51,7 +51,7 @@ MonoBehaviour:
   gun: {fileID: 0}
   typeOfItem: 1
   startDurability: 3
-  durability: 17
+  durability: 20
   durabilityDecrease: 1
   damage: 1
   knockBack: 0.01

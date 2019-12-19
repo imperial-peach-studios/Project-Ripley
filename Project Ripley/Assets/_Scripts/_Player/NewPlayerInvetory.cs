@@ -73,7 +73,7 @@ public class NewPlayerInvetory : MonoBehaviour
             invetorySO.currentWeapon = 2;
         }
         
-        invetorySO.AvailableToDrop(transform, notIgnoreLayers); 
+        //invetorySO.AvailableToDrop(transform, notIgnoreLayers); 
 
         if(!invetorySO.GetLootingMode())
         {

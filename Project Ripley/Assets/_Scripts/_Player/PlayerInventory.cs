@@ -215,23 +215,23 @@ public class PlayerInventory : MonoBehaviour
             //mySecondary.GetComponent<SpriteRenderer>().sortingOrder = transform.GetComponent<SpriteRenderer>().sortingOrder + 1;
         }
 
-        if(myInventory.myInventory[myInventory.mouseOverIndex] != null)
-        {
-            RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position,
-                myInventory.myInventory[myInventory.mouseOverIndex].GetComponent<ItemInfo>().GetCollisionBoxSize(), 0f, Vector2.zero, notIgnoreLayers);
-            for (int i = 0; i < hit.Length; i++)
-            {
-                if(hit[i].transform.tag != "PickUpBoxes")
-                {
-                    myInventory.availableToDrop = true;
-                }
-                else if(hit[i].transform.tag == "PickUpBoxes")
-                {
-                    myInventory.availableToDrop = false;
-                }
-                Debug.DrawRay(transform.position, hit[i].transform.position);
-            }
-        }
+        //if(myInventory.myInventory[myInventory.mouseOverIndex] != null)
+        //{
+        //    RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position,
+        //        myInventory.myInventory[myInventory.mouseOverIndex].GetComponent<ItemInfo>().GetCollisionBoxSize(), 0f, Vector2.zero, notIgnoreLayers);
+        //    for (int i = 0; i < hit.Length; i++)
+        //    {
+        //        if(hit[i].transform.tag != "PickUpBoxes")
+        //        {
+        //            myInventory.availableToDrop = true;
+        //        }
+        //        else if(hit[i].transform.tag == "PickUpBoxes")
+        //        {
+        //            myInventory.availableToDrop = false;
+        //        }
+        //        Debug.DrawRay(transform.position, hit[i].transform.position);
+        //    }
+        //}
     }
 
     public void TriggerStay(GameObject other, GameObject sender, List<GameObject> others, bool destroy)

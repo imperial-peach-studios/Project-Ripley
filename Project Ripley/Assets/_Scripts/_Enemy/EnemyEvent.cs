@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class EnemyEvent : MonoBehaviour
 {
-    EnemyInfo info;
+    [SerializeField] EnemyInfo info;
     AIPath path;
     Patrol patrol;
     public float distanceOffset;
@@ -13,12 +13,80 @@ public class EnemyEvent : MonoBehaviour
     [SerializeField] float waitAmount;
     float playerInSightTimer = 0;
     [SerializeField] float playerInSightForgetTime;
+    [SerializeField] Vector3 startPosition;
 
     void Awake()
     {
-        info = GetComponent<EnemyInfo>();
+        GameData.OnSavePlayer += OnSave;
+        GameData.OnLoadPlayer += OnLoad;
+        GameData.BeforeLoadPlayer += OnBeforeLoad;
+    }
+
+    void Start()
+    {
         path = GetComponent<AIPath>();
         patrol = GetComponent<Patrol>();
+
+        startPosition = transform.position;
+    }
+
+    void OnSave()
+    {
+        if(this != null)
+        {
+            info.objectName = transform.name;
+            if(this.gameObject != null)
+            {
+                info.SetPosition(startPosition);
+            }
+            GameData.aData.eData.OnSave(info);
+        }
+    }
+
+    void OnLoad()
+    {
+        if(this != null)
+        {
+            if (!GameData.aData.eData.ExistsInTheSavedList(info))
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            info = GameData.aData.eData.OnLoad(info);
+
+            if(this.gameObject != null)
+            {
+                transform.position = info.GetPosition();
+            }
+
+            patrol.ResetIndex();
+            waitTimer = 0;
+            playerInSightTimer = 0;
+
+            GameData.data.AllItemsFinishedLoading();
+        }
+    }
+
+    void OnBeforeLoad()
+    {
+        if (this != null)
+        {
+            if (info == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            info.objectName = transform.name;
+
+            GameData.aData.eData.ExistsInDestroyedList(info, true);
+        }
+    }
+
+    public EnemyInfo GetEnemyInfo()
+    {
+        return info;
     }
 
     void Update()

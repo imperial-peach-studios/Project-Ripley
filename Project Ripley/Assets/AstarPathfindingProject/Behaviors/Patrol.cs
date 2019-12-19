@@ -55,5 +55,10 @@ namespace Pathfinding {
 
 			if (search) agent.SearchPath();
 		}
+
+        public void ResetIndex()
+        {
+            index = 0;
+        }
 	}
 }

@@ -8,11 +8,11 @@ public class EnemyHear : MonoBehaviour
     [Range(0, 20)] [SerializeField] float hearingRange;
     [SerializeField] LayerMask collideWithLayers;
     [SerializeField] AIPath path;
-    EnemyInfo info;
+    EnemyEvent enemyEvent;
     
     void Awake()
     {
-        info = GetComponent<EnemyInfo>();
+        enemyEvent = GetComponent<EnemyEvent>();
     }
 
     void Update()
@@ -36,8 +36,8 @@ public class EnemyHear : MonoBehaviour
                 {
                     if (p.IsInRange(transform.position) && !PlayersMovementData.InsideASafeHouse)
                     {
-                        info.SetLastSight(hit.transform.position);
-                        info.SetHeardNoise(true);
+                        enemyEvent.GetEnemyInfo().SetLastSight(hit.transform.position);
+                        enemyEvent.GetEnemyInfo().SetHeardNoise(true);
                     }
                 }
             }

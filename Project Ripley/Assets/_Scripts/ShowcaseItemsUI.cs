@@ -138,7 +138,7 @@ public class ShowcaseItemsUI : MonoBehaviour
     {
         if(iGiver.enabled)
         {
-            iGiver.GetItem().GetComponent<ItemInfo>().UpdateInfo();
+            //iGiver.GetItem().GetComponent<ItemInfo>().UpdateInfo();
 
             linker = iGiver.gameObject;
             transform.position = position;
@@ -153,7 +153,7 @@ public class ShowcaseItemsUI : MonoBehaviour
                 lootMouseOver.SetCurrentObject(iGiver.GetItem());
                 currentIcon = -1;
             }
-            child.sprite = lootMouseOver.currentGameObject.GetComponent<ItemInfo>().GetUISprite();
+            //child.sprite = lootMouseOver.currentGameObject.GetComponent<ItemInfo>().GetUISprite();
 
             if (currentIcon == 0)
             {

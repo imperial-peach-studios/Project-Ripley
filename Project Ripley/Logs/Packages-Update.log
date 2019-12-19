@@ -86,3 +86,11 @@ Update Mode: updateDependencies
 
 The following packages were added:
   com.unity.ugui@1.0.0
+
+=== Wed Nov 13 12:49:35 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ide.vscode from version 1.0.7 to 1.1.2

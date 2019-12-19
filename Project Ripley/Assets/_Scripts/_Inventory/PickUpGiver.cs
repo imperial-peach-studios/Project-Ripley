@@ -15,13 +15,16 @@ public class PickUpGiver : MonoBehaviour
         {
             int currentSlotIndex = InventoryUI.GetCurrentMouseOverSlotIndex();
 
-            Inventory.Instance.TryToRemoveItem(currentSlotIndex);
+            //Inventory.Instance.TryToRemoveItem(currentSlotIndex);
 
-            GameObject newItem = Instantiate(gameObject, Inventory.Instance.transform);
-
-            Destroy(newItem.GetComponent<PickUpGiver>());
+            //Inventory.Instance.AddItemToSlot(gameObject, currentSlotIndex);
             
-            Inventory.Instance.AddItemToSlot(newItem, currentSlotIndex);
+            //Inventory.Instance.AddItem(storedItem);
+
+            
+
+            //ItemInfo i = GetComponent<ItemInfo>();
+            //Inventory.Instance.AddItemInventory(ref i);
 
             if(Input.GetKey(KeyCode.LeftControl))
             {
@@ -37,20 +40,20 @@ public class PickUpGiver : MonoBehaviour
         }
         else
         {
-            Inventory.Instance.AddItem(storedItem);
+            //Inventory.Instance.AddItem(storedItem);
         }
 
         if(gameObject.layer == LayerMask.NameToLayer("Loot"))
         {
             gameObject.layer = 0;
-            Destroy(this);
+           // Destroy(this);
         }
         else
         {
-            Destroy(this.gameObject);
+           //Destroy(this.gameObject);
         }
 
-        storedItem = null;
+        //storedItem = null;
     }
 
     public void StoreItem(GameObject newItem)

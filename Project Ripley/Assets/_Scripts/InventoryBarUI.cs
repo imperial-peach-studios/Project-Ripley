@@ -31,37 +31,37 @@ public class InventoryBarUI : MonoBehaviour
         //Equipment.Instance.OnSecondaryChanged += OnSecondary;
     }
     
-    void Update()
-    {
-        Equipment.Selected selectedBar = Equipment.Instance.SelectedEQ;
+    //void Update()
+    //{
+    //    Equipment.Selected selectedBar = Equipment.Instance.SelectedEQ;
 
-        if (selectedBar == Equipment.Selected.Primary && slotIndex == 1)
-        {
-            if (Inventory.Instance.GetInventorySlot(Equipment.Instance.Primary) != null)
-            {
-                GameObject slotItem = Inventory.Instance.GetInventorySlot((Equipment.Instance.Primary));
+    //    if (selectedBar == Equipment.Selected.Primary && slotIndex == 1)
+    //    {
+    //        if (Inventory.Instance.GetInventorySlot(Equipment.Instance.Primary) != null)
+    //        {
+    //            GameObject slotItem = Inventory.Instance.GetInventorySlot((Equipment.Instance.Primary));
 
-                slotImage.sprite = slotItem.GetComponent<ItemInfo>().GetUISprite();
-                slotImage.enabled = true;
-            }
-            else
-            {
-                slotImage.enabled = false;
-            }
-        }
-        else if(selectedBar == Equipment.Selected.Secondary && slotIndex == 2)
-        {
-            if (Inventory.Instance.GetInventorySlot(Equipment.Instance.Secondary) != null)
-            {
-                GameObject slotItem = Inventory.Instance.GetInventorySlot((Equipment.Instance.Secondary));
+    //            slotImage.sprite = slotItem.GetComponent<ItemInfo>().GetUISprite();
+    //            slotImage.enabled = true;
+    //        }
+    //        else
+    //        {
+    //            slotImage.enabled = false;
+    //        }
+    //    }
+    //    else if(selectedBar == Equipment.Selected.Secondary && slotIndex == 2)
+    //    {
+    //        if (Inventory.Instance.GetInventorySlot(Equipment.Instance.Secondary) != null)
+    //        {
+    //            GameObject slotItem = Inventory.Instance.GetInventorySlot((Equipment.Instance.Secondary));
 
-                slotImage.sprite = slotItem.GetComponent<ItemInfo>().GetUISprite();
-                slotImage.enabled = true;
-            }
-            else
-            {
-                slotImage.enabled = false;
-            }
-        }
-    }
+    //            slotImage.sprite = slotItem.GetComponent<ItemInfo>().GetUISprite();
+    //            slotImage.enabled = true;
+    //        }
+    //        else
+    //        {
+    //            slotImage.enabled = false;
+    //        }
+    //    }
+    //}
 }

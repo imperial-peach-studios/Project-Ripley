@@ -82,7 +82,7 @@ public class IconMouseOver : MonoBehaviour
             invetoryManager.UIpanel.SetActive(true);
             if(iSO.myInventory[currentIndex] != null)
             {
-                infoText.text = iSO.GetItemInfoText(currentIndex);
+                //infoText.text = iSO.GetItemInfoText(currentIndex);
             }
             else
             {

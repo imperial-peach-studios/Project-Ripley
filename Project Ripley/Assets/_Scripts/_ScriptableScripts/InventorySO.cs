@@ -47,10 +47,10 @@ public class InventorySO : ScriptableObject
 
     }
 
-    public string GetItemInfoText(int id)
-    {
-        return myInventory[id].GetComponent<ItemInfo>().GetItemInfo();
-    }
+    //public string GetItemInfoText(int id)
+    //{
+    //    return myInventory[id].GetComponent<ItemInfo>().GetItemInfo();
+    //}
 
     public void SetLootingMode(bool mode)
     {
@@ -107,38 +107,38 @@ public class InventorySO : ScriptableObject
         }
     }
 
-    public void AvailableToDrop(Transform myTransform, LayerMask notIgnoreLayers)
-    {
-        if (myInventory[mouseOverIndex] != null && myInventory[mouseOverIndex] != null)
-        {
-            Collider2D[] hit = Physics2D.OverlapBoxAll(myTransform.position,
-                myInventory[mouseOverIndex].GetComponent<ItemInfo>().GetCollisionBoxSize(), 0f, notIgnoreLayers);
+    //public void AvailableToDrop(Transform myTransform, LayerMask notIgnoreLayers)
+    //{
+    //    if (myInventory[mouseOverIndex] != null && myInventory[mouseOverIndex] != null)
+    //    {
+    //        Collider2D[] hit = Physics2D.OverlapBoxAll(myTransform.position,
+    //            myInventory[mouseOverIndex].GetComponent<ItemInfo>().GetCollisionBoxSize(), 0f, notIgnoreLayers);
 
-            if (hit.Length == 0)
-            {
-                availableToDrop = true;
-            }
-            else
-            {
-                availableToDrop = false;
-                //for (int i = 0; i < hit.Length; i++)
-                //{
-                    //availableToDrop = false;
-                    //if (hit[i].transform.tag != "PickUpBoxes")
-                    //{
-                    //    Debug.Log("AVAIBLABLE");
-                    //    availableToDrop = true;
-                    //}
-                    //else if (hit[i].transform.tag == "PickUpBoxes")
-                    //{
-                    //    Debug.Log("NOT AVAIBLABLE");
-                    //    availableToDrop = false;
-                    //}
-                    //Debug.DrawRay(myTransform.position, hit[i].transform.position);
-                //}
-            }
-        }
-    }
+    //        if (hit.Length == 0)
+    //        {
+    //            availableToDrop = true;
+    //        }
+    //        else
+    //        {
+    //            availableToDrop = false;
+    //            //for (int i = 0; i < hit.Length; i++)
+    //            //{
+    //                //availableToDrop = false;
+    //                //if (hit[i].transform.tag != "PickUpBoxes")
+    //                //{
+    //                //    Debug.Log("AVAIBLABLE");
+    //                //    availableToDrop = true;
+    //                //}
+    //                //else if (hit[i].transform.tag == "PickUpBoxes")
+    //                //{
+    //                //    Debug.Log("NOT AVAIBLABLE");
+    //                //    availableToDrop = false;
+    //                //}
+    //                //Debug.DrawRay(myTransform.position, hit[i].transform.position);
+    //            //}
+    //        }
+    //    }
+    //}
 
     public void MoveToToolbar(int primaryNotPrimary, int currentIndex)
     {
@@ -237,10 +237,10 @@ public class InventorySO : ScriptableObject
             //newPickUp.GetComponent<PickUpItem>().pickItem = myInventory[inventoryBarIndex];
             newPickUp.GetComponent<InteractionGiver>().AddItem(myInventory[inventoryBarIndex]);
 
-            newPickUp.GetComponent<BoxCollider2D>().size = myInventory[inventoryBarIndex].GetComponent<ItemInfo>().GetCollisionBoxSize();
-            newPickUp.GetComponentInChildren<BoxCollider2D>().size = myInventory[inventoryBarIndex].GetComponent<ItemInfo>().GetPickUpBoxSize();
+            //newPickUp.GetComponent<BoxCollider2D>().size = myInventory[inventoryBarIndex].GetComponent<ItemInfo>().GetCollisionBoxSize();
+            //newPickUp.GetComponentInChildren<BoxCollider2D>().size = myInventory[inventoryBarIndex].GetComponent<ItemInfo>().GetPickUpBoxSize();
 
-            newPickUp.GetComponent<SpriteRenderer>().sprite = myInventory[inventoryBarIndex].GetComponent<ItemInfo>().GetUISprite();
+           // newPickUp.GetComponent<SpriteRenderer>().sprite = myInventory[inventoryBarIndex].GetComponent<ItemInfo>().GetUISprite();
         }
         myInventory[inventoryBarIndex] = null;
     }
