@@ -5,7 +5,7 @@
 			<value>Heartbeat</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{a5d42ef4-7274-4d62-b960-e56f5bf727f7}</destination>
@@ -76,9 +76,6 @@
 	<object class="MarkerTrack" id="{cecaff66-9743-42aa-9828-13d0d6793f95}" />
 	<object class="GroupTrack" id="{f5bb3d3e-47e7-46b7-ac54-bac85395ade2}">
 		<relationship name="modules">
-			<destination>{e44cb0d5-9af9-4ecd-9339-09f90b016a5a}</destination>
-			<destination>{9bee59ef-eac3-4456-85a4-c80165adf73e}</destination>
-			<destination>{b34cdf50-e847-4100-b741-287ed5b766c0}</destination>
 			<destination>{130cd36d-4487-4cb9-973c-845bebc7e5b3}</destination>
 			<destination>{f64b7356-6247-440f-9e76-311f1bf3ed39}</destination>
 		</relationship>
@@ -101,9 +98,6 @@
 	</object>
 	<object class="Timeline" id="{6eae4dfc-b8ff-4bc1-8b1b-27e6ba37f9fc}">
 		<relationship name="modules">
-			<destination>{e44cb0d5-9af9-4ecd-9339-09f90b016a5a}</destination>
-			<destination>{9bee59ef-eac3-4456-85a4-c80165adf73e}</destination>
-			<destination>{b34cdf50-e847-4100-b741-287ed5b766c0}</destination>
 			<destination>{c0f8fcd4-ed85-482b-a374-36cf246fc47f}</destination>
 		</relationship>
 		<relationship name="markers">
@@ -160,39 +154,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{178f2080-eb7e-4753-b523-bc64b0fb69f7}" />
-	<object class="SingleSound" id="{e44cb0d5-9af9-4ecd-9339-09f90b016a5a}">
-		<property name="start">
-			<value>8</value>
-		</property>
-		<property name="length">
-			<value>50.5</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{94c61e00-5195-4163-802f-6e72ba3c5f15}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{9bee59ef-eac3-4456-85a4-c80165adf73e}">
-		<property name="start">
-			<value>104</value>
-		</property>
-		<property name="length">
-			<value>48</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{fc0fa6dc-867d-4cdd-89be-6c90a56c7643}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{b34cdf50-e847-4100-b741-287ed5b766c0}">
-		<property name="start">
-			<value>64</value>
-		</property>
-		<property name="length">
-			<value>26.024096385542165</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{917271d9-b77c-45a7-88df-dcc1341a212b}</destination>
-		</relationship>
-	</object>
 	<object class="TransitionSourceSound" id="{130cd36d-4487-4cb9-973c-845bebc7e5b3}">
 		<property name="length">
 			<value>2</value>

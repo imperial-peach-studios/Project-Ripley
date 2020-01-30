@@ -5,7 +5,7 @@
 			<value>Snackbar</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d50dae6e-b95a-41b2-9128-37a024af3095}</destination>
@@ -95,12 +95,6 @@
 		<property name="length">
 			<value>0.82474999999999998</value>
 		</property>
-		<relationship name="sounds">
-			<destination>{533e6133-bf3d-4df6-97d3-07e8bb805ed8}</destination>
-			<destination>{16e2fb03-172f-4143-987e-f2d6dc9968dd}</destination>
-			<destination>{53274275-1661-4302-90b4-b55467f32e8a}</destination>
-			<destination>{295b191b-df26-45ba-9350-142ec8169ead}</destination>
-		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{47e7800c-cc02-4f0b-b126-5a0b2179d120}">
 		<property name="name">
@@ -123,26 +117,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{7cebddb7-3491-4345-bffc-5ef0ed70552d}" />
 	<object class="MixerBusFader" id="{67f29774-07a4-4016-8409-a4ab64470c6f}" />
-	<object class="SingleSound" id="{533e6133-bf3d-4df6-97d3-07e8bb805ed8}">
-		<relationship name="audioFile">
-			<destination>{486a4a16-258a-4e8d-a654-3f051f40cf0c}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{16e2fb03-172f-4143-987e-f2d6dc9968dd}">
-		<relationship name="audioFile">
-			<destination>{053cba57-62a5-490f-a9d4-09e242839169}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{53274275-1661-4302-90b4-b55467f32e8a}">
-		<relationship name="audioFile">
-			<destination>{e07da2c8-c525-4327-8ecf-42b915068833}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{295b191b-df26-45ba-9350-142ec8169ead}">
-		<relationship name="audioFile">
-			<destination>{fa0fdd98-4276-4975-8d75-6af4c719e973}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{16670c2e-6419-450b-9a35-1c7d36bd9acf}">
 		<relationship name="effects">
 			<destination>{48209981-cde6-4226-ac09-ffaed6a159b8}</destination>

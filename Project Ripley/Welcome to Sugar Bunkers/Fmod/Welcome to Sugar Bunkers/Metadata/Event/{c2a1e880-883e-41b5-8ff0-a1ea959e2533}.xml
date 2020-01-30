@@ -5,7 +5,7 @@
 			<value>Canned Food</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d50dae6e-b95a-41b2-9128-37a024af3095}</destination>
@@ -95,11 +95,6 @@
 		<property name="length">
 			<value>1.3147500000000001</value>
 		</property>
-		<relationship name="sounds">
-			<destination>{6bc0c60c-aeaa-4ce5-91af-aaf02aa51d05}</destination>
-			<destination>{64521546-a50c-4e6c-b81c-d4238dd43cb1}</destination>
-			<destination>{13d58297-be06-464a-8d26-454f2ad12e54}</destination>
-		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{eb8bfee8-0fad-4379-85e1-367cef2c5ddb}">
 		<property name="name">
@@ -122,21 +117,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{3dd72538-a9eb-4899-8630-d248b34f3ecd}" />
 	<object class="MixerBusFader" id="{3f2be7db-e821-4e13-a671-e5462420d1b3}" />
-	<object class="SingleSound" id="{6bc0c60c-aeaa-4ce5-91af-aaf02aa51d05}">
-		<relationship name="audioFile">
-			<destination>{03178c98-4617-4d85-a26c-fb2232a9fcf2}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{64521546-a50c-4e6c-b81c-d4238dd43cb1}">
-		<relationship name="audioFile">
-			<destination>{cab9fc8e-2ec6-4786-8bc6-342ce35bfac4}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{13d58297-be06-464a-8d26-454f2ad12e54}">
-		<relationship name="audioFile">
-			<destination>{18e2079f-1dd0-416a-a550-a7ecb1400653}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{48a0a6eb-f327-40a6-a282-313fe4978011}">
 		<relationship name="effects">
 			<destination>{f8da2aea-a511-43ff-ac7d-fb6569ea6f3a}</destination>

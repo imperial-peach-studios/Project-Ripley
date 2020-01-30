@@ -15,8 +15,9 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:\Users\WolfC\Documents\GitHub\Project-Ripley\Project Ripley\Welcome
-    to Sugar Bunkers\Fmod\Welcome to Sugar Bunkers\Welcome to Sugar Bunkers.fspro
+  sourceProjectPath: C:\Users\Simon\OneDrive\Documents\Imperial Peach\Project-Ripley\Project
+    Ripley\Welcome to Sugar Bunkers\Fmod\Welcome to Sugar Bunkers\Welcome to Sugar
+    Bunkers.fspro
   SourceProjectPathUnformatted: Welcome to Sugar Bunkers\Fmod\Welcome to Sugar Bunkers\Welcome
     to Sugar Bunkers.fspro
   SourceBankPathUnformatted: Welcome to Sugar Bunkers\Fmod\Welcome to Sugar Bunkers\Build
@@ -78,7 +79,8 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

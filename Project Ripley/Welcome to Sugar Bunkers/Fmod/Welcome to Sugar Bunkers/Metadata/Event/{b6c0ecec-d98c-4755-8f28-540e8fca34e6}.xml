@@ -91,15 +91,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e49e7bf4-3fa7-415f-98f9-c9413faf7382}" />
-	<object class="MultiSound" id="{a33d96d0-d779-4fbd-a0a6-28160ec25857}">
-		<relationship name="sounds">
-			<destination>{a524095b-f637-489a-848a-147175154a9e}</destination>
-			<destination>{cc04d384-99f9-4bb7-8e9f-6d908e316d26}</destination>
-			<destination>{1158eb6e-bd85-4b5e-95ee-1122dfcde802}</destination>
-			<destination>{96bc5a13-da75-40ae-877f-38d72b73ebbb}</destination>
-			<destination>{6132cbc8-97cd-40a8-8984-fd08b6c61dfb}</destination>
-		</relationship>
-	</object>
+	<object class="MultiSound" id="{a33d96d0-d779-4fbd-a0a6-28160ec25857}" />
 	<object class="EventMixerGroup" id="{8a32ade6-dfee-4e3e-9cca-ea066706c954}">
 		<property name="name">
 			<value>Audio 1</value>
@@ -122,31 +114,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{0383c457-7f3f-407b-a139-82f858de8995}" />
 	<object class="MixerBusFader" id="{85215202-8ec8-47bf-bfae-0b9e1c530b8d}" />
-	<object class="SingleSound" id="{a524095b-f637-489a-848a-147175154a9e}">
-		<relationship name="audioFile">
-			<destination>{77bd93ce-1824-43ff-aec2-2408ee410c3f}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{cc04d384-99f9-4bb7-8e9f-6d908e316d26}">
-		<relationship name="audioFile">
-			<destination>{77429740-2f0d-4cba-963b-fa4d64a98587}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{1158eb6e-bd85-4b5e-95ee-1122dfcde802}">
-		<relationship name="audioFile">
-			<destination>{9e68b902-7f54-4464-a649-59f3c43200e9}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{96bc5a13-da75-40ae-877f-38d72b73ebbb}">
-		<relationship name="audioFile">
-			<destination>{c9a219f9-953e-40e2-98de-1f2ebda784de}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{6132cbc8-97cd-40a8-8984-fd08b6c61dfb}">
-		<relationship name="audioFile">
-			<destination>{7e12dc28-b98b-4e22-b677-9af24b09605e}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{2bec9cfb-80e6-4bd1-9546-25bd2260ec49}">
 		<relationship name="effects">
 			<destination>{071fbfa3-4969-4f17-9dd9-4cc1c486217b}</destination>
