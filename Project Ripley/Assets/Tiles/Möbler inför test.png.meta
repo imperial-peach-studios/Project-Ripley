@@ -1,0 +1,799 @@
+fileFormatVersion: 2
+guid: 660d8d04b574f7b4c998b6f26aadc1e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8264820616811315771
+    second: "M\xF6bler inf\xF6r test_0"
+  - first:
+      213: -8742724063646483699
+    second: "M\xF6bler inf\xF6r test_1"
+  - first:
+      213: -7392497198328198865
+    second: "M\xF6bler inf\xF6r test_2"
+  - first:
+      213: -5600317098283053512
+    second: "M\xF6bler inf\xF6r test_3"
+  - first:
+      213: 4477180480034526653
+    second: "M\xF6bler inf\xF6r test_4"
+  - first:
+      213: 5847281602548516267
+    second: "M\xF6bler inf\xF6r test_5"
+  - first:
+      213: 6994408389864809251
+    second: "M\xF6bler inf\xF6r test_6"
+  - first:
+      213: -1524628355434518758
+    second: "M\xF6bler inf\xF6r test_7"
+  - first:
+      213: -8637361080867815982
+    second: "M\xF6bler inf\xF6r test_8"
+  - first:
+      213: -4093170103772966427
+    second: "M\xF6bler inf\xF6r test_9"
+  - first:
+      213: -6421301532945632471
+    second: "M\xF6bler inf\xF6r test_10"
+  - first:
+      213: -3970959520533762601
+    second: "M\xF6bler inf\xF6r test_11"
+  - first:
+      213: 1922921551364012098
+    second: "M\xF6bler inf\xF6r test_12"
+  - first:
+      213: 2178480888118826261
+    second: "M\xF6bler inf\xF6r test_13"
+  - first:
+      213: 381346093328158428
+    second: "M\xF6bler inf\xF6r test_14"
+  - first:
+      213: 1718953557153966653
+    second: "M\xF6bler inf\xF6r test_15"
+  - first:
+      213: -2698785271591530475
+    second: "M\xF6bler inf\xF6r test_16"
+  - first:
+      213: 6619288953563563913
+    second: "M\xF6bler inf\xF6r test_17"
+  - first:
+      213: -1348027235923807761
+    second: "M\xF6bler inf\xF6r test_18"
+  - first:
+      213: -5828040132238858076
+    second: "M\xF6bler inf\xF6r test_19"
+  - first:
+      213: -102081337915875235
+    second: "M\xF6bler inf\xF6r test_20"
+  - first:
+      213: 4904028657174957987
+    second: "M\xF6bler inf\xF6r test_21"
+  - first:
+      213: 7607345607241615055
+    second: "M\xF6bler inf\xF6r test_22"
+  - first:
+      213: -1107311493661956120
+    second: "M\xF6bler inf\xF6r test_23"
+  - first:
+      213: -1897344512445195971
+    second: "M\xF6bler inf\xF6r test_24"
+  - first:
+      213: 6300698055494301040
+    second: "M\xF6bler inf\xF6r test_25"
+  - first:
+      213: -7779167576686284566
+    second: "M\xF6bler inf\xF6r test_26"
+  - first:
+      213: -7736563098748289872
+    second: "M\xF6bler inf\xF6r test_27"
+  - first:
+      213: 3490476409665040284
+    second: "M\xF6bler inf\xF6r test_28"
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_0"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 460
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf45de475507944da28f93e008a7ab4
+      internalID: 8264820616811315771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_1"
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 460
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df027b3799b54c43af1ea2ec0d29474
+      internalID: -8742724063646483699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_2"
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 460
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc5683eb4b08e247b078668466eec83
+      internalID: -7392497198328198865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_3"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 460
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5027087916d9954478d6c6c7b8458be3
+      internalID: -5600317098283053512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_4"
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 402
+        width: 15
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f52ab474a8618749bf724aa6c17593e
+      internalID: 4477180480034526653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_5"
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 427
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a45b5672050ef9469c800b6463aa9f4
+      internalID: 5847281602548516267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_6"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 436
+        width: 20
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad07fbb3ca79d342a8dc5f60f941ec6
+      internalID: 6994408389864809251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_7"
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 436
+        width: 20
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0a4145018b77d4b845d0209d1c59c9
+      internalID: -1524628355434518758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_8"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 420
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66db9a6fea608341ae647f423420a28
+      internalID: -8637361080867815982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_9"
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 411
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34f77c5d4fe4074e941831444cfba72
+      internalID: -4093170103772966427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_10"
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 411
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3126bf30f5497ea47a0dd7ce2e2776c0
+      internalID: -6421301532945632471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_11"
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 390
+        width: 56
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bed927dbad72a4ea2b0592e2caeb3e
+      internalID: -3970959520533762601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_12"
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 368
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00548234d17dd2c46bf7f1b445ecb551
+      internalID: 1922921551364012098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_13"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 370
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1017b9d4feeba35409c3089931bb09a6
+      internalID: 2178480888118826261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_14"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 370
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a6e5b7a31ad644bbc51b240874dbb7
+      internalID: 381346093328158428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_15"
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 371
+        width: 62
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f9d33ea50c8a946bc8ce6a927dfce4
+      internalID: 1718953557153966653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_16"
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 325
+        width: 63
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc29f8ca8a04d4b49bdd39437b7e9273
+      internalID: -2698785271591530475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_17"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 233
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e43c34e8bd8ad54c94747eda62a6cc2
+      internalID: 6619288953563563913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_18"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 233
+        width: 77
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4124947cd162f49b1de2f7df40f634
+      internalID: -1348027235923807761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_19"
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 141
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9407ffbdb0c4749855f43a5afb8634
+      internalID: -5828040132238858076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_20"
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 141
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7f178613f152041b02af63b9b93c89
+      internalID: -102081337915875235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_21"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 29
+        width: 17
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95936cb87564ce45b65cac248dc542d
+      internalID: 4904028657174957987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_22"
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 30
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2cdaa3711ba674a804a6917c3ea0fd
+      internalID: 7607345607241615055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_23"
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 29
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9df4c61da614fb4f8ebedf0e936eebc
+      internalID: -1107311493661956120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_24"
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 30
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a657ca1c280a9f418ae8c7fa31b949a
+      internalID: -1897344512445195971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_25"
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 30
+        width: 13
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa6e7b22575b4f41a90c8350c8fb0bd
+      internalID: 6300698055494301040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_26"
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 29
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771ec6eb946267d48845f4d1750eb89c
+      internalID: -7779167576686284566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_27"
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 6
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9ce9fcafe49f14f977b49d2386c387
+      internalID: -7736563098748289872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xF6bler inf\xF6r test_28"
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 5
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e76d211085cac4d97ae254c8b97063
+      internalID: 3490476409665040284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

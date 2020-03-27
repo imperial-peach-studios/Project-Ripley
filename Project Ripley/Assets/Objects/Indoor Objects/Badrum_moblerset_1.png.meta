@@ -1,0 +1,1807 @@
+fileFormatVersion: 2
+guid: 1e75999afca848a49be80125f3b7d673
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5264664457272445694
+    second: Badrum_moblerset_1_0
+  - first:
+      213: 1783078236908873648
+    second: Badrum_moblerset_1_1
+  - first:
+      213: -8788011975917423307
+    second: Badrum_moblerset_1_2
+  - first:
+      213: 679825989363811949
+    second: Badrum_moblerset_1_3
+  - first:
+      213: -455247490633187603
+    second: Badrum_moblerset_1_4
+  - first:
+      213: 3247253209093678382
+    second: Badrum_moblerset_1_5
+  - first:
+      213: -6581354419371498875
+    second: Badrum_moblerset_1_6
+  - first:
+      213: 3131044928949376866
+    second: Badrum_moblerset_1_7
+  - first:
+      213: -2451261002527383783
+    second: Badrum_moblerset_1_8
+  - first:
+      213: 9148407379946023825
+    second: Badrum_moblerset_1_9
+  - first:
+      213: 6514576305576019987
+    second: Badrum_moblerset_1_10
+  - first:
+      213: -392759197380391064
+    second: Badrum_moblerset_1_11
+  - first:
+      213: 2864957636939945717
+    second: Badrum_moblerset_1_12
+  - first:
+      213: 5904471319891721956
+    second: Badrum_moblerset_1_13
+  - first:
+      213: 6182731838571766026
+    second: Badrum_moblerset_1_14
+  - first:
+      213: 4424266862528047818
+    second: Badrum_moblerset_1_15
+  - first:
+      213: 211257242514110280
+    second: Badrum_moblerset_1_16
+  - first:
+      213: -6371993779162136813
+    second: Badrum_moblerset_1_17
+  - first:
+      213: 849527647033606712
+    second: Badrum_moblerset_1_18
+  - first:
+      213: -8435677967703539170
+    second: Badrum_moblerset_1_19
+  - first:
+      213: 6333441334626409025
+    second: Badrum_moblerset_1_20
+  - first:
+      213: -4601079866506886624
+    second: Badrum_moblerset_1_21
+  - first:
+      213: 8010007788194847833
+    second: Badrum_moblerset_1_22
+  - first:
+      213: 6050160405621376505
+    second: Badrum_moblerset_1_23
+  - first:
+      213: -8426247309556146266
+    second: Badrum_moblerset_1_24
+  - first:
+      213: 6154797813123772020
+    second: Badrum_moblerset_1_25
+  - first:
+      213: -2851906610757105151
+    second: Badrum_moblerset_1_26
+  - first:
+      213: 4493329592681052269
+    second: Badrum_moblerset_1_27
+  - first:
+      213: -4208912596256430253
+    second: Badrum_moblerset_1_28
+  - first:
+      213: 3625845139557861761
+    second: Badrum_moblerset_1_29
+  - first:
+      213: -4866309421700631733
+    second: Badrum_moblerset_1_30
+  - first:
+      213: 8761888404939336265
+    second: Badrum_moblerset_1_31
+  - first:
+      213: 7117486727442533903
+    second: Badrum_moblerset_1_32
+  - first:
+      213: 5200150374485813260
+    second: Badrum_moblerset_1_33
+  - first:
+      213: -5049130993859235117
+    second: Badrum_moblerset_1_34
+  - first:
+      213: 4869423057657577363
+    second: Badrum_moblerset_1_35
+  - first:
+      213: 1182985742390543242
+    second: Badrum_moblerset_1_36
+  - first:
+      213: -4937695007205137680
+    second: Badrum_moblerset_1_37
+  - first:
+      213: -2594353687190777047
+    second: Badrum_moblerset_1_38
+  - first:
+      213: -8958476768096269242
+    second: Badrum_moblerset_1_39
+  - first:
+      213: 4839458682543219802
+    second: Badrum_moblerset_1_40
+  - first:
+      213: -6385791736366661662
+    second: Badrum_moblerset_1_41
+  - first:
+      213: 2834525951863106100
+    second: Badrum_moblerset_1_42
+  - first:
+      213: -1241325864687331249
+    second: Badrum_moblerset_1_43
+  - first:
+      213: 1149785954405574400
+    second: Badrum_moblerset_1_44
+  - first:
+      213: 455488985249076122
+    second: Badrum_moblerset_1_45
+  - first:
+      213: -8955084168135056202
+    second: Badrum_moblerset_1_46
+  - first:
+      213: 6927181294565313734
+    second: Badrum_moblerset_1_47
+  - first:
+      213: 7682659404493233610
+    second: Badrum_moblerset_1_48
+  - first:
+      213: -3668713646565897712
+    second: Badrum_moblerset_1_49
+  - first:
+      213: -4096356604031877495
+    second: Badrum_moblerset_1_50
+  - first:
+      213: 3786593650348667156
+    second: Badrum_moblerset_1_51
+  - first:
+      213: -118504557352287630
+    second: Badrum_moblerset_1_52
+  - first:
+      213: 5982981627839540625
+    second: Badrum_moblerset_1_53
+  - first:
+      213: 1904614800862623745
+    second: Badrum_moblerset_1_54
+  - first:
+      213: 7471034609784294255
+    second: Badrum_moblerset_1_55
+  - first:
+      213: 7669050009682206506
+    second: Badrum_moblerset_1_56
+  - first:
+      213: -3183763506696154671
+    second: Badrum_moblerset_1_57
+  - first:
+      213: -2903421217791967705
+    second: Badrum_moblerset_1_58
+  - first:
+      213: -6654970109914559625
+    second: Badrum_moblerset_1_59
+  - first:
+      213: 1470196640525517328
+    second: Badrum_moblerset_1_60
+  - first:
+      213: 5134555115492425815
+    second: Badrum_moblerset_1_61
+  - first:
+      213: -6202273252443284694
+    second: Badrum_moblerset_1_62
+  - first:
+      213: 6750395458398754781
+    second: Badrum_moblerset_1_63
+  - first:
+      213: -5085524285690508254
+    second: Badrum_moblerset_1_64
+  - first:
+      213: -8893956114388152133
+    second: Badrum_moblerset_1_65
+  - first:
+      213: -5239485913925601037
+    second: Badrum_moblerset_1_66
+  - first:
+      213: -2620789176537665930
+    second: Badrum_moblerset_1_67
+  - first:
+      213: 6621400151950141473
+    second: Badrum_moblerset_1_68
+  - first:
+      213: 8678368178132620349
+    second: Badrum_moblerset_1_69
+  - first:
+      213: -4434202721111092647
+    second: Badrum_moblerset_1_70
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 482
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66644b382227594d92d1caac24187ee
+      internalID: 5264664457272445694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 482
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faeee5b0eb2ac754ba8981036846e0d0
+      internalID: 1783078236908873648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 469
+        width: 24
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeae33ef6a03ffc4789673dce07a4e12
+      internalID: -8788011975917423307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 469
+        width: 24
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09f0b674a897e4449ef04a70306e5c9
+      internalID: 679825989363811949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 482
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fc351c03b358441abea6e2fa305e6e
+      internalID: -455247490633187603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 479
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9f4527251b9674ea0578c98ebeab5f
+      internalID: 3247253209093678382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_6
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 479
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be9144daa759974681d55adffe6cbbd
+      internalID: -6581354419371498875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_7
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 482
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3179c753f135d438fcaf85af084854
+      internalID: 3131044928949376866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 482
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2aaff5473024f4418b520e1a925a1b0
+      internalID: -2451261002527383783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 420
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d9575526c53694a87c5d25855c7219
+      internalID: 9148407379946023825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 420
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d27228189308494394d0934f385a627
+      internalID: 6514576305576019987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_11
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 420
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb4c65a23a60834bb380eff7d99b9d9
+      internalID: -392759197380391064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_12
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 408
+        width: 26
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f520215ee17d143b27718d77d597bb
+      internalID: 2864957636939945717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_13
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 408
+        width: 26
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e5837f938d3774cb21df069740e059
+      internalID: 5904471319891721956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_14
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 431
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b68b9521ce5ec14d8174246246bbac6
+      internalID: 6182731838571766026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_15
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 434
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2685ae493a66d44b7461c66498b650
+      internalID: 4424266862528047818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_16
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 434
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273bd73c38b736d4e84e291e37060abd
+      internalID: 211257242514110280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 431
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a09a506f36c184f834f80bb46f97c1
+      internalID: -6371993779162136813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 318
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e9e00001c55ef4db2059c2d6b25ae2
+      internalID: 849527647033606712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_19
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 347
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b6de3820c7f6a49bbea086c300fe4b
+      internalID: -8435677967703539170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_20
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 347
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed6f6c7d2d7df34fb40329fe49f7928
+      internalID: 6333441334626409025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_21
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 296
+        width: 39
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1676aef92caf549973775a3432d8eb
+      internalID: -4601079866506886624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_22
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 296
+        width: 39
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5daccdcdc61ea2a4797b17223903a240
+      internalID: 8010007788194847833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_23
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 257
+        width: 38
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415cc66e8b40edf4c93753ba39bf00b7
+      internalID: 6050160405621376505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_24
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 269
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c758539b82f6443bcddd608f50b308
+      internalID: -8426247309556146266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_25
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 275
+        width: 69
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a9fe52c68ff6442a698c482af7594c
+      internalID: 6154797813123772020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_26
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 271
+        width: 64
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daaae60bf6f95fc4eb18edf635e81ac4
+      internalID: -2851906610757105151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_27
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 206
+        width: 69
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53e373a5873ff2408a4aaeb3eae9da8
+      internalID: 4493329592681052269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_28
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 198
+        width: 38
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2e6b3f299e5964cbb0b8852d130cdb
+      internalID: -4208912596256430253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_29
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 204
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b916cc31380924478ea16a83caf480a
+      internalID: 3625845139557861761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_30
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 204
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c425e1b3869447843889e88ca05b071b
+      internalID: -4866309421700631733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_31
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 227
+        width: 64
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6fc610a25246c740a9de42a312f9c15
+      internalID: 8761888404939336265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 150
+        width: 69
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9038584fca723e48919e1aa0ffbb108
+      internalID: 7117486727442533903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_33
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 189
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0f329f5082e424eb21afb28002ce4f
+      internalID: 5200150374485813260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 190
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e4a1c49a608c646899c796011b1560
+      internalID: -5049130993859235117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_35
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 183
+        width: 64
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59f91b11f658c641a479e08c3b32536
+      internalID: 4869423057657577363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_36
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 120
+        width: 69
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5d10be3b4fbfb4d9982d0863c87e9d
+      internalID: 1182985742390543242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_37
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 173
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34bc6728b1b0a7f4db0e4c09573fd7d4
+      internalID: -4937695007205137680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_38
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 171
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124d88a44f6ac4b4f8cba249ca08ac7e
+      internalID: -2594353687190777047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_39
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 115
+        width: 14
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416f4953eb286ef4da3316222505a2d4
+      internalID: -8958476768096269242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_40
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 115
+        width: 25
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20b554c4a7f83b479afb8df3c2aaca9
+      internalID: 4839458682543219802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_41
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 142
+        width: 12
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7274751c78a5f4a9cd3139bae5a8c5
+      internalID: -6385791736366661662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 102
+        width: 69
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598daf2f42688984390e090a29873b66
+      internalID: 2834525951863106100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_43
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 145
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67004096091451e47a321d4ae403666a
+      internalID: -1241325864687331249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_44
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 145
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f775a342970e04481143b9e5bdbbab
+      internalID: 1149785954405574400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_45
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 138
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1fe194eb4c6c24a8b1771177a949bc
+      internalID: 455488985249076122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_46
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 138
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885f037902cb8b74792a1c9b3e14eefc
+      internalID: -8955084168135056202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_47
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 103
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bd29177fe29564d910355ea5660cec
+      internalID: 6927181294565313734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_48
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 119
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07c1c06408884742b362bcaf17c2585
+      internalID: 7682659404493233610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_49
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 110
+        width: 11
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f97c06994cef0459a5a3fb9a5e5dd0
+      internalID: -3668713646565897712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_50
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 107
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b18bc093062f146a9bd8184eca5582
+      internalID: -4096356604031877495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_51
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 78
+        width: 12
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057370706c7cf4c4ea60e308e93b1a61
+      internalID: 3786593650348667156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_52
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 54
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f80f19d6df7f54894d23bf7b2b5abd
+      internalID: -118504557352287630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_53
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 52
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa2c30771deb1643b87f8470bcf4949
+      internalID: 5982981627839540625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_54
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 53
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731a1e67c888dce449b2ff219f4c8218
+      internalID: 1904614800862623745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_55
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 53
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb56cebdfb4a054598c528aa6abea9a
+      internalID: 7471034609784294255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_56
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 69
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84cf8c111960c94fa66ec499d5f99dd
+      internalID: 7669050009682206506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_57
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 71
+        width: 11
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58ed8816a3dae14bb53ddd15ea3b8cd
+      internalID: -3183763506696154671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_58
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 93
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9f071f560de714fbabdbde8ba32fda
+      internalID: -2903421217791967705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_59
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 93
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e278bc67760b5245a503d6b37529132
+      internalID: -6654970109914559625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_60
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 91
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1001386692fdfe1439b70b37bca79f50
+      internalID: 1470196640525517328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_61
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 93
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d536e655d91f6474d8f049721ed0a762
+      internalID: 5134555115492425815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_62
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 92
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71395631b2a94d41bfa63b9dd96a983
+      internalID: -6202273252443284694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_63
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbea91fd09509d4fa55ca4c5b9a17e2
+      internalID: 6750395458398754781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_64
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 6
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e620ebabdb90d044fa6214a98bb3bfca
+      internalID: -5085524285690508254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_65
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 6
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3df52a9cbcb45847a9ba8b00ee202d0
+      internalID: -8893956114388152133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_66
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 6
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8b33f723215ae41b10273cfb09a2b8
+      internalID: -5239485913925601037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_67
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 6
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf48464a4cf1c64ea3544b61c5b8ae1
+      internalID: -2620789176537665930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_68
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 6
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0e378e1b376ef4d8432ee29885b194
+      internalID: 6621400151950141473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_69
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 6
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c41b7e5419e8f74eb93d09adb78bcb7
+      internalID: 8678368178132620349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Badrum_moblerset_1_70
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 6
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6931066638b3eb94e8dd3d2bbf5b3181
+      internalID: -4434202721111092647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
