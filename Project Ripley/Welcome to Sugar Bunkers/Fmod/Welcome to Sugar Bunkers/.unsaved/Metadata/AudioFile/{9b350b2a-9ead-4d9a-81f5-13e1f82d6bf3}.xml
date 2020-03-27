@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{9b350b2a-9ead-4d9a-81f5-13e1f82d6bf3}">
+		<property name="assetPath">
+			<value>Sounds/Kie/Throwing/Bottle/Impact flesh/Impact05.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7fed7cee-e3f3-4e92-a997-b7d772d33a6e}</destination>
+		</relationship>
+	</object>
+</objects>
