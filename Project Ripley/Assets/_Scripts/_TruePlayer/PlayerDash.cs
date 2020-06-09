@@ -8,6 +8,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] float dashCooldown;
     [SerializeField] bool hasDashed = false;
     MovementDatabase movementDatabase;
+
     public bool HasDashed
     {
         get { return hasDashed; }
@@ -33,7 +34,9 @@ public class PlayerDash : MonoBehaviour
             Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(movementDatabase.GetInput().y) > 0)
         {
             hasDashed = true;
-            GetComponent<PlayerMovement>().enabled = false;
+            //GetComponent<PlayerMovement>().enabled = false;
+            PlayerActivationManager.Instance.SetMovementActive(false);
+            //PlayerActivationManager.Instance.SetMovementActive()
         }
 
         if (hasDashed)
@@ -46,7 +49,8 @@ public class PlayerDash : MonoBehaviour
             {
                 hasDashed = false;
                 dashTimer = 0;
-                GetComponent<PlayerMovement>().enabled = true;
+                //GetComponent<PlayerMovement>().enabled = true;
+                PlayerActivationManager.Instance.SetMovementActive(true);
             }
         }
     }

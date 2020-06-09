@@ -8,7 +8,6 @@ public class InteractReceiver : MonoBehaviour
     [SerializeField] float radius;
     [SerializeField] bool showRadius = false;
     [SerializeField] LayerMask layersToCollide;
-    [SerializeField] string interactableLayerName, pickUpLayerName, lookLayerName;
     [SerializeField] KeyCode pickUpKey;
 
     GameObject previousObject;
@@ -26,6 +25,56 @@ public class InteractReceiver : MonoBehaviour
     public static OnItemLoot OnExitLoot;
 
     void Update()
+    {
+        FindClosestObject();
+
+        if (closestObject == null && previousObject != null)
+        {
+            if (previousObject.layer == 0)
+            {
+                OnExitLoot.Invoke(null, Vector3.zero);
+                previousObject = null;
+            }
+        }
+
+        if (closestObject == null)
+            return;
+
+        InteractionManager iI = closestObject.GetComponent<InteractionManager>();
+
+        if (Input.GetKeyDown(pickUpKey))
+        {
+            iI.Invoke();
+
+            //if (closestObject.layer == LayerMask.NameToLayer(interactableLayerName))
+            //{
+            //    closestObject.GetComponent<DialogueWaitInput>().FungusMessage();
+            //}
+            //else if (closestObject.layer == LayerMask.NameToLayer(pickUpLayerName) && closestObject.GetComponent<ItemInfo>().enabled
+            //    || closestObject.layer == LayerMask.NameToLayer(lookLayerName) && closestObject.GetComponent<ItemInfo>().enabled)
+            //{
+            //    //closestObject.GetComponent<PickUpGiver>().TryToAddItemToInventory();
+            //    closestObject.GetComponent<ItemInfo>().TryToAddItemToInventory();
+            //    previousLootShow = closestObject;
+            //    closestObject = null;
+            //    return;
+            //}
+        }
+
+        //if (closestObject.layer == LayerMask.NameToLayer(lookLayerName) && closestObject.GetComponent<ItemInfo>().enabled)
+        //{
+        //    Vector3 newPos = new Vector3(closestObject.transform.position.x, closestObject.transform.position.y + offsetY, closestObject.transform.position.z);
+
+        //    if (call)
+        //    {
+        //        //OnStartLoot.Invoke(iI, newPos);
+        //        call = false;
+        //    }
+        //   // OnUpdateLoot.Invoke(iI, newPos);
+        //}
+    }
+
+    void FindClosestObject()
     {
         RaycastHit2D[] circleHit = Physics2D.CircleCastAll(transform.position + new Vector3(0f, 0.5f, 0f), radius, Vector2.zero, 0f, layersToCollide);
 
@@ -48,62 +97,8 @@ public class InteractReceiver : MonoBehaviour
                 closestObject = r.transform.gameObject;
             }
         }
-        
-        if (closestObject != null)
-        {
-            ItemInfo iI = closestObject.GetComponent<ItemInfo>();
-
-            if (Vector3.Distance(transform.position, closestObject.transform.position) < radius)
-            {
-                if (Input.GetKeyDown(pickUpKey))
-                {
-                    if (closestObject.layer == LayerMask.NameToLayer(interactableLayerName))
-                    {
-                        closestObject.GetComponent<DialogueWaitInput>().FungusMessage();
-                    }
-                    else if (closestObject.layer == LayerMask.NameToLayer(pickUpLayerName) && closestObject.GetComponent<ItemInfo>().enabled
-                        || closestObject.layer == LayerMask.NameToLayer(lookLayerName) && closestObject.GetComponent<ItemInfo>().enabled)
-                    {
-                        //closestObject.GetComponent<PickUpGiver>().TryToAddItemToInventory();
-                        closestObject.GetComponent<ItemInfo>().TryToAddItemToInventory();
-                        previousLootShow = closestObject;
-                        closestObject = null;
-                        return;
-                    }
-                }
-
-                if (closestObject.layer == LayerMask.NameToLayer(lookLayerName) && closestObject.GetComponent<ItemInfo>().enabled)
-                {
-                    Vector3 newPos = new Vector3(closestObject.transform.position.x, closestObject.transform.position.y + offsetY, closestObject.transform.position.z);
-
-                    if (call)
-                    {
-                        OnStartLoot.Invoke(iI, newPos);
-                        call = false;
-                    }
-                    OnUpdateLoot.Invoke(iI, newPos);
-                }
-                //else if(!closestObject.GetComponent<ItemInfo>().enabled)
-                //{
-                //    OnExitLoot.Invoke(iI, Vector3.zero);
-                //}
-            }
-            else if (Vector3.Distance(transform.position, closestObject.transform.position) > radius &&
-                        previousObject != null && previousObject.layer == LayerMask.NameToLayer(lookLayerName))
-            {
-                OnExitLoot.Invoke(iI, Vector3.zero);
-            }
-        }
-
-        if (closestObject == null && previousObject != null)
-        {
-            if(previousObject.layer == 0)
-            {
-                OnExitLoot.Invoke(null, Vector3.zero);
-                previousObject = null;
-            }
-        }
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

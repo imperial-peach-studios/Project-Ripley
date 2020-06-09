@@ -41,6 +41,8 @@ public class CameraBehaviour : MonoBehaviour
         player = GameObject.Find("Player_0_2").transform;
         //playerBehaviour = player.GetComponent<PlayerBehaviour>();
         targetRB = player.GetComponent<Rigidbody2D>();
+        GetComponent<Camera>().transparencySortMode = TransparencySortMode.CustomAxis;
+        GetComponent<Camera>().transparencySortAxis = Vector3.up;
     }
 
     void Update()

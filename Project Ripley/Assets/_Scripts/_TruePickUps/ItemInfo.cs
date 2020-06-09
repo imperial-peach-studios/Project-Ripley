@@ -7,6 +7,7 @@ public class ItemInfo : MonoBehaviour
     SpriteRenderer spriteR;
     public string spriteIconName;
     [SerializeField] public string[] iconNames = { "Knife_UI", "Paddel_UI", "Crowbar_UI", "Pan_UI", "M4", "Pistol_UI", "Revolver_UI", "Shotgun_UI", "SmallMedicine_UI", "BigMedicine_UI", "Snack_UI", "Can_UI", "", "" };
+    [SerializeField] Sprite uiSprite;
     public int meleeIconIndex = 0;
     public int rangeIconIndex = 0;
     public int consumableIndex = 0;

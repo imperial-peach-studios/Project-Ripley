@@ -211,8 +211,9 @@ public class PlayerAttack : MonoBehaviour
             //myAnim.SetBool("DoneConsuming", false);
             comboWaitingTimer = 0;
             myAnim.SetBool("ExitRecovery", true);
-            playerMovement.StopMoving = false;
-            GetComponent<PlayerDash>().enabled = true;
+            //playerMovement.StopMoving = false;
+            //GetComponent<PlayerDash>().enabled = true;
+            PlayerActivationManager.Instance.SetAllMovementActive(true);
         }
 
         CharacterFollowMouse();
@@ -230,9 +231,10 @@ public class PlayerAttack : MonoBehaviour
 
             comboWaitingTimer = 0;
             //followMouseTimer = 0;
-            playerMovement.StopMoving = true;
             followMouse = true;
-            GetComponent<PlayerDash>().enabled = false;
+            //playerMovement.StopMoving = true;
+            //GetComponent<PlayerDash>().enabled = false;
+            PlayerActivationManager.Instance.SetAllMovementActive(false);
         }
 
         //if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack Before Recovery"))
@@ -265,6 +267,7 @@ public class PlayerAttack : MonoBehaviour
                     followMouse = true;
                     comboWaitingTimer = 0;
                     //followMouseTimer = 0;
+                    PlayerActivationManager.Instance.SetAllMovementActive(false);
                 }
             }
             else
@@ -272,8 +275,9 @@ public class PlayerAttack : MonoBehaviour
                 attackCombo = 0;
                 comboWaitingTimer = 0;
                 myAnim.SetBool("ExitRecovery", true);
-                playerMovement.StopMoving = false;
-                GetComponent<PlayerDash>().enabled = true;
+                //playerMovement.StopMoving = false;
+                //GetComponent<PlayerDash>().enabled = true;
+                PlayerActivationManager.Instance.SetAllMovementActive(true);
             }
         }
 
@@ -315,8 +319,9 @@ public class PlayerAttack : MonoBehaviour
 
         if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("RangeRecover") && Input.GetMouseButtonUp(0) || !myAnim.GetCurrentAnimatorStateInfo(0).IsName("RangeRecover") && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Range"))
         {
-            playerMovement.StopMoving = false;
-            GetComponent<PlayerDash>().enabled = true;
+            //playerMovement.StopMoving = false;
+            //GetComponent<PlayerDash>().enabled = true;
+            PlayerActivationManager.Instance.SetMovementActive(true);
 
             myAnim.SetBool("ExitRecovery", true);
             //Debug.Log("HEGJ");
