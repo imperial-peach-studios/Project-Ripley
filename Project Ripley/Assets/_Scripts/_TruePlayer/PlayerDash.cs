@@ -20,7 +20,7 @@ public class PlayerDash : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        movementDatabase = GetComponent<PlayersMovementData>().movementDatabaseSO;
+       // movementDatabase = GetComponent<PlayersMovementData>().movementDatabaseSO;
     }
 
     void Update()
@@ -30,12 +30,15 @@ public class PlayerDash : MonoBehaviour
 
     void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(movementDatabase.GetInput().x) > 0 ||
-            Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(movementDatabase.GetInput().y) > 0)
+        Vector2 input = Vector2.right * Input.GetAxisRaw("Horizontal") + Vector2.up * Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(input.x) > 0 ||
+            Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(input.y) > 0)
         {
             hasDashed = true;
             //GetComponent<PlayerMovement>().enabled = false;
-            PlayerActivationManager.Instance.SetMovementActive(false);
+            Player.Instance.SetMovementActive(false);
+            Player.Instance.SetAttackActive(false);
             //PlayerActivationManager.Instance.SetMovementActive()
         }
 
@@ -43,23 +46,26 @@ public class PlayerDash : MonoBehaviour
         {
             dashTimer += Time.deltaTime;
 
-            rb.AddForce(movementDatabase.GetInput() * dashSpeed, ForceMode2D.Impulse);
+            rb.AddForce(input * dashSpeed, ForceMode2D.Impulse);
 
             if (dashTimer > dashCooldown)
             {
                 hasDashed = false;
                 dashTimer = 0;
                 //GetComponent<PlayerMovement>().enabled = true;
-                PlayerActivationManager.Instance.SetMovementActive(true);
+                Player.Instance.SetMovementActive(true);    
+                Player.Instance.SetAttackActive(true);
             }
         }
     }
 
     void OnDrawGizmos()
     {
-        if(Input.GetKey(KeyCode.G))
+        Vector2 input = Vector2.right * Input.GetAxisRaw("Horizontal") + Vector2.up * Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKey(KeyCode.G))
         {
-            Gizmos.DrawWireCube(movementDatabase.GetInput() * dashSpeed, new Vector3(0.5f, 0.5f, 0));
+            Gizmos.DrawWireCube(input * dashSpeed, new Vector3(0.5f, 0.5f, 0));
         }
     }
 }

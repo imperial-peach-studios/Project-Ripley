@@ -46,6 +46,8 @@ public class GameData : MonoBehaviour
         // aData.eData = new EnemyData();
         aData.iData = new ItemsData();
         aData.eData = new EnemyData();
+
+        Player.Instance.SetPlayerActive(false);
     }
 
     void Update()

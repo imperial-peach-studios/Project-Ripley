@@ -4,17 +4,68 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ItemInfo : MonoBehaviour
 {
-    SpriteRenderer spriteR;
-    public string spriteIconName;
-    [SerializeField] public string[] iconNames = { "Knife_UI", "Paddel_UI", "Crowbar_UI", "Pan_UI", "M4", "Pistol_UI", "Revolver_UI", "Shotgun_UI", "SmallMedicine_UI", "BigMedicine_UI", "Snack_UI", "Can_UI", "", "" };
-    [SerializeField] Sprite uiSprite;
-    public int meleeIconIndex = 0;
-    public int rangeIconIndex = 0;
-    public int consumableIndex = 0;
+    public TypeOfItem typeOfItem;
 
-    public bool lootItem = false;
+    public enum TypeOfItem
+    {
+        None,
+        Melee,
+        Range,
+        Consumable
+    }
+
+    private Items i;
+    public Items I
+    {
+        get
+        {
+            if (typeOfItem == TypeOfItem.Melee)
+                return meele;
+            else if (typeOfItem == TypeOfItem.Range)
+                return raange;
+            else if (typeOfItem == TypeOfItem.Consumable)
+                return consumable;
+            return i;
+        }
+        set
+        {
+            if (typeOfItem == TypeOfItem.Melee)
+                meele = (Melee)value;
+            else if (typeOfItem == TypeOfItem.Range)
+                raange = (Range)value;
+            else if (typeOfItem == TypeOfItem.Consumable)
+                consumable = (Consumable)value;
+
+            //i = value;
+        }
+    }
+
+    SpriteRenderer spriteR;
+    [SerializeField] private Sprite uiSprite;
+    public Sprite UISprite
+    {
+        get
+        {
+            return uiSprite;
+        }
+        set
+        {
+            uiSprite = value;
+            if(uiSprite != null && I != null)
+            {
+                I.spriteName = uiSprite.name;
+            }
+        }
+    }
+
+    [HideInInspector] public string spriteIconName;
+    [SerializeField,HideInInspector] public string[] iconNames = { "Knife_UI", "Paddel_UI", "Crowbar_UI", "Pan_UI", "M4", "Pistol_UI", "Revolver_UI", "Shotgun_UI", "SmallMedicine_UI", "BigMedicine_UI", "Snack_UI", "Can_UI", "", "" };
+    [HideInInspector] public int meleeIconIndex = 0;
+    [HideInInspector] public int rangeIconIndex = 0;
+    [HideInInspector] public int consumableIndex = 0;
 
     public int atIndex;
+    public bool lootItem = false;
 
     private int selectedIconIndex;
     public int SelectedIconIndex
@@ -49,47 +100,15 @@ public class ItemInfo : MonoBehaviour
     public Range raange;
     public Consumable consumable;
 
-    private Items i;
-    public Items I
-    {
-        get
-        {
-            if (typeOfItem == TypeOfItem.Melee)
-                return meele;
-            else if (typeOfItem == TypeOfItem.Range)
-                return raange;
-            else if (typeOfItem == TypeOfItem.Consumable)
-                return consumable;
-            return i;
-        }
-        set
-        {
-            if (typeOfItem == TypeOfItem.Melee)
-                meele = (Melee)value;
-            else if (typeOfItem == TypeOfItem.Range)
-                raange = (Range)value;
-            else if (typeOfItem == TypeOfItem.Consumable)
-                consumable = (Consumable)value;
-
-            //i = value;
-        }
-    }
-
-    public TypeOfItem typeOfItem;
-
-    public enum TypeOfItem
-    {
-        None,
-        Melee,
-        Range,
-        Consumable
-    }
-
     void Start()
     {
         GameData.OnSavePlayer += OnNewSave;
         GameData.OnLoadPlayer += OnNewLoad;
         GameData.BeforeLoadPlayer += BeforeLoad;
+
+        spriteR = GetComponent<SpriteRenderer>();
+
+        spriteR.sprite = UISprite;
     }
 
     void BeforeLoad()
@@ -145,7 +164,11 @@ public class ItemInfo : MonoBehaviour
                 spriteR = GetComponent<SpriteRenderer>();
             }
 
-            spriteR.sprite = Inventory.Instance.GetSprite(I.spriteName, I);
+            //spriteR.sprite = Inventory.Instance.GetSprite(I.spriteName, I);
+            //spriteR.sprite = Player.Instance.inventory.GetSprite(I.spriteName, I);
+
+            uiSprite = Player.Instance.inventory.GetSprite(I.spriteName, I);
+            spriteR.sprite = UISprite;
             typeOfItem = I.typeOfItem;
             SelectedIconIndex = I.selectedIconIndex;
             lootItem = I.lootedItem;
@@ -167,43 +190,53 @@ public class ItemInfo : MonoBehaviour
         {
             int currentSlotIndex = InventoryUI.GetCurrentMouseOverSlotIndex();
 
-            Inventory.Instance.TryToRemoveItemAtIndex(currentSlotIndex);
+            //Inventory.Instance.TryToRemoveItemAtIndex(currentSlotIndex);
+            Player.Instance.inventory.TryToRemoveItemAtIndex(currentSlotIndex);
 
             //I.spriteName = iconNames[SelectedIconIndex];
-            
-            Inventory.Instance.AddItemToIndex(I, currentSlotIndex);
+
+            //Inventory.Instance.AddItemToIndex(I, currentSlotIndex);
+            Player.Instance.inventory.AddItemToIndex(I, currentSlotIndex);
 
             if (Input.GetKey(KeyCode.LeftControl))
             {
-                if (Equipment.Instance.SelectedEQ == Equipment.Selected.Primary)
+                //if (Equipment.Instance.SelectedEQ == Equipment.Selected.Primary)
+                //{
+                //    Equipment.Instance.Primary = currentSlotIndex;
+                //}
+                //else
+                //{
+                //    Equipment.Instance.Secondary = currentSlotIndex;
+                //}
+
+                if(Player.Instance.equipment.SelectedEQ == Equipment.Selected.Primary)
                 {
-                    Equipment.Instance.Primary = currentSlotIndex;
+                    Player.Instance.equipment.Primary = currentSlotIndex;
                 }
                 else
                 {
-                    Equipment.Instance.Secondary = currentSlotIndex;
+                    Player.Instance.equipment.Secondary = currentSlotIndex;
                 }
             }
         }
         else
         {
             //I.spriteName = iconNames[SelectedIconIndex];
-            Inventory.Instance.AddItemToFirstEmptySlot(I);
+
+            //Inventory.Instance.AddItemToFirstEmptySlot(I);
+            Player.Instance.inventory.AddItemToFirstEmptySlot(I);
         }
 
         if (gameObject.layer == LayerMask.NameToLayer("Loot"))
         {
             gameObject.layer = 0;
             lootItem = true;
-            //GameData.ItemDestroyed(I);
-            GameData.aData.iData.AddDestroyedItem(I);
-            //Destroy(this);
+            //GameData.aData.iData.AddDestroyedItem(I);
             this.enabled = false;
         }
         else
         {
-            //GameData.ItemDestroyed(I);
-            GameData.aData.iData.AddDestroyedItem(I);
+            //GameData.aData.iData.AddDestroyedItem(I);
             Destroy(gameObject);
         }
     }
@@ -237,7 +270,10 @@ public class ItemInfo : MonoBehaviour
         
         if(item is Melee me || item is Range ra || item is Consumable co)
         {
-            spriteR.sprite = Inventory.Instance?.GetSprite(spriteName, item);
+            //spriteR.sprite = Inventory.Instance?.GetSprite(spriteName, item);
+            //spriteR.sprite = Player.Instance.inventory.GetSprite(spriteName, item);
+            UISprite = Player.Instance.inventory.GetSprite(item.spriteName, item);
+            spriteR.sprite = UISprite;
         }
     }
 
@@ -257,7 +293,7 @@ public class ItemInfo : MonoBehaviour
         {
             I.typeOfItem = typeOfItem;
             I.selectedIconIndex = SelectedIconIndex;
-            I.spriteName = iconNames[SelectedIconIndex];
+            //I.spriteName = iconNames[SelectedIconIndex];
             if(this != null)
             {
                 I.SetPosition(transform.position);
@@ -269,7 +305,7 @@ public class ItemInfo : MonoBehaviour
         {
             I.typeOfItem = iI.typeOfItem;
             I.selectedIconIndex = iI.selectedIconIndex;
-            I.spriteName = iI.spriteName;
+            //I.spriteName = iI.spriteName;
             I.SetPosition(iI.GetPosition());
             I.objectName = iI.objectName;
             I.animationID = iI.animationID;
@@ -291,6 +327,9 @@ public class ItemInfo : MonoBehaviour
             spriteR = GetComponent<SpriteRenderer>();
         }
 
-        spriteR.sprite = Inventory.Instance?.GetSprite(iI.spriteName, iI);
+        //spriteR.sprite = Inventory.Instance?.GetSprite(iI.spriteName, iI);
+
+       // spriteR.sprite = Player.Instance.inventory.GetSprite(iI.spriteName, iI);
+        spriteR.sprite = UISprite;
     }
 }

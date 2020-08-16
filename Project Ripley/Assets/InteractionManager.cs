@@ -9,7 +9,10 @@ public class InteractionManager : MonoBehaviour
     
     void Start()
     {
-        
+        if(GetComponent<ItemInfo>() != null && OnInteract.GetPersistentEventCount() == 0)
+        {
+            OnInteract.AddListener(GetComponent<ItemInfo>().TryToAddItemToInventory);
+        }
     }
     
     void Update()
@@ -20,5 +23,8 @@ public class InteractionManager : MonoBehaviour
     public void Invoke()
     {
         OnInteract.Invoke();
+        
     }
+
+
 }

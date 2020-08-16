@@ -20,12 +20,6 @@ public class PlayerHealth : MonoBehaviour
         GameData.OnSavePlayer += OnSave;
         GameData.OnLoadPlayer += OnLoad;
         //currentHealth = playerHP.Health;
-
-        pM = GetComponent<PlayerMovement>();
-        pD = GetComponent<PlayerDash>();
-        pA = GetComponent<PlayerAttack>();
-        //pI = GetComponent<NewPlayerInvetory>();
-        iR = GetComponent<InteractReceiver>();
     }
 
     void Update()
@@ -45,11 +39,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            pM.enabled = false;
-            pD.enabled = false;
-            pA.enabled = false;
-            //pI.enabled = false;
-            iR.enabled = false;
+            Player.Instance.SetPlayerActive(false);
 
             waitBeforeDeathTimer += Time.deltaTime;
 
@@ -78,16 +68,13 @@ public class PlayerHealth : MonoBehaviour
     {
         GameData.aData.pData.health = playerHP.Health;
     }
+
     public void OnLoad()
     {
         playerHP.EqualHP(GameData.aData.pData.health);
         isDead = false;
         secondaryDead = false;
 
-        pM.enabled = true;
-        pD.enabled = true;
-        pA.enabled = true;
-        //pI.enabled = true;
-        iR.enabled = true;
+        Player.Instance.SetPlayerActive(true);
     }
 }

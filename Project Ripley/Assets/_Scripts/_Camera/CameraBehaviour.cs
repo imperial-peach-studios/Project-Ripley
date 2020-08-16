@@ -38,7 +38,7 @@ public class CameraBehaviour : MonoBehaviour
     
     void Start()
     {
-        player = GameObject.Find("Player_0_2").transform;
+        player = GameObject.Find("Player_0_3").transform;
         //playerBehaviour = player.GetComponent<PlayerBehaviour>();
         targetRB = player.GetComponent<Rigidbody2D>();
         GetComponent<Camera>().transparencySortMode = TransparencySortMode.CustomAxis;

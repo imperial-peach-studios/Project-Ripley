@@ -28,27 +28,16 @@ public class ItemInfoEditor : Editor
 
         EditorGUILayout.PropertyField(typeOfItem, new GUIContent("Type Of Item"));
 
-        //if (p.typeOfItem != ItemInfo.TypeOfItem.Consumable && p.typeOfItem != ItemInfo.TypeOfItem.None)
-        //{
-        //    EditorGUILayout.Space();
-        //}
-        
+        p.UISprite = (Sprite)EditorGUILayout.ObjectField(p.UISprite, typeof(Sprite), true);
+
         if (p.typeOfItem == ItemInfo.TypeOfItem.Melee)
         {
-            p.meleeIconIndex = EditorGUILayout.Popup(p.meleeIconIndex, new string[] { p.iconNames[0], p.iconNames[1], p.iconNames[2], p.iconNames[3]});
-
-            EditorGUILayout.IntField(p.meleeIconIndex);
-
             EditorGUILayout.Space();
 
             EditorGUILayout.PropertyField(melee, new GUIContent("Melee Class"), true);
         }
         else if (p.typeOfItem == ItemInfo.TypeOfItem.Range)
         {
-            p.rangeIconIndex = EditorGUILayout.Popup(p.rangeIconIndex, new string[] { p.iconNames[4], p.iconNames[5], p.iconNames[6], p.iconNames[7]});
-
-            EditorGUILayout.IntField(p.rangeIconIndex + 4);
-
             EditorGUILayout.Space();
 
             EditorGUILayout.PropertyField(range, new GUIContent("Range Class"), true);
@@ -56,10 +45,6 @@ public class ItemInfoEditor : Editor
         }
         else if (p.typeOfItem == ItemInfo.TypeOfItem.Consumable)
         {
-            p.consumableIndex = EditorGUILayout.Popup(p.consumableIndex, new string[] { p.iconNames[8], p.iconNames[9], p.iconNames[10], p.iconNames[11]});
-
-            EditorGUILayout.IntField(p.consumableIndex + 8);
-
             EditorGUILayout.Space();
 
             EditorGUILayout.PropertyField(consumable, new GUIContent("Consumable Class"), true);

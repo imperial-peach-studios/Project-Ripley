@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    MovementDatabase movementDatabase;
     [SerializeField] float followMouseRate;
     [SerializeField] float clickRate;
 
@@ -20,7 +19,6 @@ public class PlayerAttack : MonoBehaviour
 
     public bool hasAttacked = false;
 
-    PlayerMovement playerMovement;
     [SerializeField] Animator myAnim;
 
     [SerializeField] bool followMouse = false;
@@ -30,146 +28,12 @@ public class PlayerAttack : MonoBehaviour
     float comboWaitingTimer = 0;
     [SerializeField] float comboWaitingLength;
 
-    void Awake()
-    {
-        playerMovement = GetComponent<PlayerMovement>();
-        //myAnim = GetComponent<Animator>();
-        movementDatabase = GetComponent<PlayersMovementData>().movementDatabaseSO;
-    }
-
     void Update()
     {
         MouseDatabase.UpdateMousePosition();
 
         //AnimationController();
         Action();
-    }
-
-    void AnimationController()
-    {
-        int x = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform).x;
-        int y = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform).y;
-
-        float value = myAnim.GetFloat("ItemAttackID");
-
-        if (value > 8 && value < 13) //Melee Weapons
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (attackTimer == 0)
-                {
-                    myAnim.SetBool("Click Attack", true);
-                    followMouse = true;
-                    playerMovement.StopMoving = true;
-                    //stopMoving = true;
-                }
-            }
-
-            if (myAnim.GetBool("Click Attack") == true)
-            {
-                attackTimer += Time.deltaTime;
-                if (attackTimer > myAnim.GetCurrentAnimatorStateInfo(0).length)
-                {
-                    myAnim.SetBool("Click Attack", false);
-                    playerMovement.StopMoving = false;
-                    //stopMoving = false;
-                    attackTimer = 0;
-                }
-            }
-        }
-        else if (value > 4 && value < 9) //Range Weapons
-        {
-            if (Input.GetMouseButton(0))
-            {
-                myAnim.SetBool("Hold Attack", true);
-            }
-
-            if (myAnim.GetBool("Hold Attack") == true)
-            {
-                followMouse = true;
-                playerMovement.StopMoving = true;
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                myAnim.SetBool("Hold Attack", false);
-                playerMovement.StopMoving = false;
-            }
-        }
-        else if (value > 0 && value < 5) //Consumable
-        {
-            if (Input.GetMouseButton(0))
-            {
-                if (consumeTimer == 0)
-                {
-                    myAnim.SetBool("Hold Attack", true);
-                }
-            }
-
-            if (myAnim.GetBool("Hold Attack") == true)
-            {
-                playerMovement.StopMoving = true;
-                //stopMoving = true;
-                myAnim.speed = (GetComponent<PlayerInventory>().myPrimary.GetComponent<ConsumableItemManager>().consumeTimeRate / 2) *
-                    (0.1f * GetComponent<PlayerInventory>().myPrimary.GetComponent<ConsumableItemManager>().consumeTimeRate);
-
-                consumeTimer += Time.deltaTime;
-
-                if (consumeTimer > myAnim.GetCurrentAnimatorStateInfo(0).length && myAnim.GetCurrentAnimatorStateInfo(0).IsName("Hold Attack") == true)
-                {
-                    myAnim.SetBool("Hold Attack", false);
-
-                    playerMovement.StopMoving = false;
-                    //stopMoving = false;
-                    consumeTimer = 0;
-                    myAnim.speed = 1;
-                }
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                myAnim.SetBool("Hold Attack", false);
-                consumeTimer = 0;
-                playerMovement.StopMoving = false;
-                //stopMoving = false;
-                myAnim.speed = 1;
-            }
-        }
-        else
-        {
-            myAnim.SetBool("Hold Attack", false);
-            myAnim.SetBool("Click Attack", false);
-            playerMovement.StopMoving = false;
-            //stopMoving = false;
-        }
-
-        if (followMouse == true)
-        {
-            movementDatabase.SetAnim(new Vector2(x, y));
-            //animHorizontal = (int)CalculateDirectionNonDisplay(mousePosition).x;
-            //animVertical = (int)CalculateDirectionNonDisplay(mousePosition).y;
-
-            followMouseTimer = 0;
-            followMouse = false;
-        }
-
-        if (followMouseTimer >= 0 && movementDatabase.GetMoving() == 0)
-        {
-            followMouseTimer += Time.deltaTime;
-            if (followMouseTimer > followMouseRate)
-            {
-                followMouseTimer = -1;
-            }
-            else
-            {
-                if (playerMovement.StopMoving == false) // || stopMoving == false
-                {
-                    //Debug.Log("Count");
-                    movementDatabase.SetAnim(new Vector2(x, y));
-                    //animHorizontal = (int)CalculateDirectionNonDisplay(mousePosition).x;
-                    //animVertical = (int)CalculateDirectionNonDisplay(mousePosition).y;
-                }
-            }
-        }
     }
 
     void Action()
@@ -182,9 +46,9 @@ public class PlayerAttack : MonoBehaviour
         //else
         //    itemIndex = Equipment.Instance.Secondary;
 
-        Items info = Equipment.Instance?.GetCurrentSelectedItems();
+        Items info = Player.Instance.equipment.GetCurrentSelectedItems();
 
-        if (!GetComponent<PlayerDash>().HasDashed && info?.noDurability == false)
+        if (info?.noDurability == false)
         {
             if (info is Melee m)
             {
@@ -202,9 +66,11 @@ public class PlayerAttack : MonoBehaviour
 
         if (info?.noDurability == true)
         {
-            int selectedIndex = Equipment.Instance.GetCurrentSelectedIndex();
-            GameData.aData.iData.AddDestroyedItem(Inventory.Instance.GetItemInventorySlot(selectedIndex));
-            Inventory.Instance.DestroyItemAtIndex(selectedIndex);
+            int selectedIndex = Player.Instance.equipment.GetCurrentSelectedIndex(); //Equipment.Instance.GetCurrentSelectedIndex()
+            GameData.aData.iData.AddDestroyedItem(Player.Instance.inventory.GetItemInventorySlot(selectedIndex)); //Inventory.Instance.GetItemInventorySlot(selectedIndex)
+
+            //Inventory.Instance.DestroyItemAtIndex(selectedIndex);
+            Player.Instance.inventory.DestroyItemAtIndex(selectedIndex);
 
             attackCombo = 0;
             consumeTimer = 0;
@@ -213,7 +79,7 @@ public class PlayerAttack : MonoBehaviour
             myAnim.SetBool("ExitRecovery", true);
             //playerMovement.StopMoving = false;
             //GetComponent<PlayerDash>().enabled = true;
-            PlayerActivationManager.Instance.SetAllMovementActive(true);
+            Player.Instance.SetAllMovementActive(true);
         }
 
         CharacterFollowMouse();
@@ -234,9 +100,9 @@ public class PlayerAttack : MonoBehaviour
             followMouse = true;
             //playerMovement.StopMoving = true;
             //GetComponent<PlayerDash>().enabled = false;
-            PlayerActivationManager.Instance.SetAllMovementActive(false);
+            Player.Instance.SetAllMovementActive(false);
         }
-
+        
         //if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack Before Recovery"))
         //{
         //    if (Input.GetMouseButtonDown(0))
@@ -267,7 +133,7 @@ public class PlayerAttack : MonoBehaviour
                     followMouse = true;
                     comboWaitingTimer = 0;
                     //followMouseTimer = 0;
-                    PlayerActivationManager.Instance.SetAllMovementActive(false);
+                    Player.Instance.SetAllMovementActive(false);
                 }
             }
             else
@@ -277,7 +143,7 @@ public class PlayerAttack : MonoBehaviour
                 myAnim.SetBool("ExitRecovery", true);
                 //playerMovement.StopMoving = false;
                 //GetComponent<PlayerDash>().enabled = true;
-                PlayerActivationManager.Instance.SetAllMovementActive(true);
+                Player.Instance.SetAllMovementActive(true);
             }
         }
 
@@ -306,8 +172,9 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             followMouse = true;
-            playerMovement.StopMoving = true;
-            GetComponent<PlayerDash>().enabled = false;
+            //playerMovement.StopMoving = true;
+            //GetComponent<PlayerDash>().enabled = false;
+            Player.Instance.SetMovementActive(false);
 
             if (!myAnim.GetCurrentAnimatorStateInfo(0).IsName("Range")) //Hold & Click
             {
@@ -321,7 +188,7 @@ public class PlayerAttack : MonoBehaviour
         {
             //playerMovement.StopMoving = false;
             //GetComponent<PlayerDash>().enabled = true;
-            PlayerActivationManager.Instance.SetMovementActive(true);
+            Player.Instance.SetMovementActive(true);
 
             myAnim.SetBool("ExitRecovery", true);
             //Debug.Log("HEGJ");
@@ -343,8 +210,9 @@ public class PlayerAttack : MonoBehaviour
             if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("Consuming"))
             {
                 followMouse = true;
-                playerMovement.StopMoving = true;
-                GetComponent<PlayerDash>().enabled = false;
+                //playerMovement.StopMoving = true;
+                //GetComponent<PlayerDash>().enabled = false;
+                Player.Instance.SetMovementActive(false);
 
                 consumeTimer += Time.deltaTime;
 
@@ -356,7 +224,8 @@ public class PlayerAttack : MonoBehaviour
             else if(myAnim.GetCurrentAnimatorStateInfo(0).IsName("ConsumingRecover"))
             {
                 myAnim.SetBool("DoneConsuming", false);
-                playerMovement.StopMoving = false;
+                //playerMovement.StopMoving = false;
+                Player.Instance.SetMovementActive(true);
                 GetComponent<PlayerHealth>().DecreaseHealthWith((int)-c.healthIncrease);
                 c.DecreaseDurability();
                 consumeTimer = 0;
@@ -365,7 +234,8 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetMouseButtonUp(0) && consumeTimer > 0 && consumeTimer < c.consumeTimeRate)
             {
                 //myAnim.SetBool("DoneConsuming", false);
-                playerMovement.StopMoving = false;
+                //playerMovement.StopMoving = false;
+                Player.Instance.SetMovementActive(true);
                 consumeTimer = 0;
 
             }
@@ -379,23 +249,30 @@ public class PlayerAttack : MonoBehaviour
 
         if (followMouse == true)
         {
-            movementDatabase.SetAnim(new Vector2(x, y));
+            //movementDatabase.SetAnim(new Vector2(x, y));
+            myAnim.SetFloat("Horizontal", x);
+            myAnim.SetFloat("Vertical", y);
 
             followMouseTimer = 0;
             followMouse = false;
         }
 
-        if (followMouseTimer >= 0 && movementDatabase.GetMoving() == 0)
+        if (followMouseTimer >= 0) //&& movementDatabase.GetMoving() == 0
         {
             followMouseTimer += Time.deltaTime;
             if (followMouseTimer > followMouseRate)
             {
                 followMouseTimer = -1;
             }
-            else if (playerMovement.StopMoving == false)
+            else if(Player.Instance.GetAllMovementActive() == true)
             {
-                movementDatabase.SetAnim(new Vector2(x, y));
+                myAnim.SetFloat("Horizontal", x);
+                myAnim.SetFloat("Vertical", y);
             }
+            //else if (playerMovement.StopMoving == false)
+            //{
+            //    //movementDatabase.SetAnim(new Vector2(x, y));
+            //}
         }
     }
 }

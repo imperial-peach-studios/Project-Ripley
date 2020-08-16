@@ -10,18 +10,21 @@ public class PlayerAnimation : MonoBehaviour
     PlayerMovement pM;
     PlayerHealth pH;
 
+    private float animHorizontal = 0;
+    private float animVertical = 0;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
-        pM = GetComponentInParent<PlayerMovement>();
+        //pM = GetComponentInParent<PlayerMovement>();
         pD = GetComponentInParent<PlayerDash>();
         pH = GetComponentInParent<PlayerHealth>();
-        movementDatabase = GetComponentInParent<PlayersMovementData>().movementDatabaseSO;
+        //movementDatabase = GetComponentInParent<PlayersMovementData>().movementDatabaseSO;
     }
 
     void Update()
     {
-        if (movementDatabase.GetDisableEnableMove() == false)
+        if(Player.Instance.GetAllMovementActive() == true)
         {
             AnimInput();
         }
@@ -38,13 +41,26 @@ public class PlayerAnimation : MonoBehaviour
             }
         }
     }
+
+    float IsMoving()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        if(Mathf.Abs(horizontal) != 0 || Mathf.Abs(vertical) != 0)
+        {
+            return 1;
+        }
+
+        return 0;
+    }
     
     void AnimInput()
     {
-        anim.SetFloat("Moving", movementDatabase.GetMoving());
-        anim.SetFloat("Horizontal", movementDatabase.GetAnimInput().x);
-        anim.SetFloat("Vertical", movementDatabase.GetAnimInput().y);
-        anim.SetBool("Dash", pD.HasDashed);
-        anim.SetBool("Sneaking", pM.IsSneaking);
+        anim.SetFloat("Moving", IsMoving());
+        anim.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
+        //anim.SetBool("Dash", pD.HasDashed);
+        //anim.SetBool("Sneaking", pM.IsSneaking);
     }
 }

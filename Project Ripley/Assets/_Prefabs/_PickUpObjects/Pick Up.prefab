@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4324633636636518}
   - component: {fileID: 212464677806089066}
   - component: {fileID: 61768142157229458}
-  - component: {fileID: 192833240327153934}
   - component: {fileID: -6029062860685974908}
+  - component: {fileID: -3013295034012203417}
   m_Layer: 17
   m_Name: Pick Up
   m_TagString: InteractionPickUp
@@ -109,18 +109,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &192833240327153934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791209926192018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c73fb2e3f283b84f83d2e2069b3e9c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-6029062860685974908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf736b56491124ab5d064149fac9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfItem: 0
+  uiSprite: {fileID: 0}
   spriteIconName: 
   iconNames:
   - Knife_UI
@@ -152,8 +142,8 @@ MonoBehaviour:
   meleeIconIndex: 0
   rangeIconIndex: 0
   consumableIndex: 0
-  lootItem: 0
   atIndex: 0
+  lootItem: 0
   meele:
     state: 
     spriteName: 
@@ -210,5 +200,29 @@ MonoBehaviour:
     healthIncrease: 0
     hungerIncrease: 0
     consumeTimeRate: 0
-  typeOfItem: 0
-  hey: 2s
+--- !u!114 &-3013295034012203417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791209926192018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85f7c8be1874904786c3b3fac2e6717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

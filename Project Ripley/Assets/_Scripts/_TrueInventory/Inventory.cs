@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
     public GameObject GetInventorySlot(int index) => inventory[index];
     public Items GetItemInventorySlot(int index) => itemInventory[index];
 
-    [SerializeField] GameObject player;
+    //[SerializeField] GameObject player;
     [SerializeField] Vector2 dropSize = new Vector2(0.6f, 0.6f);
     [SerializeField] LayerMask collideWithLayer;
     [SerializeField] GameObject pickUpObject;
@@ -43,12 +43,12 @@ public class Inventory : MonoBehaviour
 
         if (Instance == null)
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             Instance = this;
         }
         else if (Instance != this)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
@@ -91,7 +91,7 @@ public class Inventory : MonoBehaviour
 
     public bool CanDrop()
     { //Can't Drop if Looting
-        Collider2D[] hit = Physics2D.OverlapBoxAll(player.transform.position, dropSize, 0f, collideWithLayer);
+        Collider2D[] hit = Physics2D.OverlapBoxAll(transform.position, dropSize, 0f, collideWithLayer);
         return hit.Length == 0;
     }
 
@@ -175,7 +175,7 @@ public class Inventory : MonoBehaviour
         {
             if (itemInventory[slotIndex] is Melee m || itemInventory[slotIndex] is Range r || itemInventory[slotIndex] is Consumable c)
             {
-                GameObject newPickUp = (Instantiate(pickUpObject, player.transform.position, Quaternion.identity) as GameObject);
+                GameObject newPickUp = (Instantiate(pickUpObject, transform.position, Quaternion.identity) as GameObject);
                 
                 ItemInfo pickUpItem = newPickUp.GetComponent<ItemInfo>();
                 itemInventory[slotIndex].SetState(0, slotIndex);

@@ -11,16 +11,15 @@ public class Items
     [Header("Other Options")]
     //[HideInInspector]
     //[SerializeField] public Sprite uiIcon;
-    [HideInInspector]
-    [SerializeField] public string spriteName = "";
-    [SerializeField] public string objectName = "";
-    [SerializeField] public int selectedIconIndex = 0;
+    [SerializeField, HideInInspector] public string spriteName = "";
+    [SerializeField, HideInInspector] public string objectName = "";
+    [SerializeField, HideInInspector] public int selectedIconIndex = 0;
     //[SerializeField] public Vector3 pos = Vector3.zero;
-    [SerializeField] public float x;
-    [SerializeField] public float y;
-    [SerializeField] public bool lootedItem = false;
-    [SerializeField] public ItemInfo.TypeOfItem typeOfItem;
-    [SerializeField] public int animationID;
+    [SerializeField, HideInInspector] public float x;
+    [SerializeField, HideInInspector] public float y;
+    [SerializeField, HideInInspector] public bool lootedItem = false;
+    [SerializeField, HideInInspector] public ItemInfo.TypeOfItem typeOfItem;
+    [SerializeField, HideInInspector] public int animationID;
 
     [Header("Durability Options")]
     [SerializeField] public float startDurability;

@@ -53,12 +53,12 @@ public class Equipment : MonoBehaviour
     {
         if (Instance == null)
         {
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
             Instance = this;
         }
         else if (Instance != this)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
         Inventory.Instance.OnInventoryChanged += OnInvetoryChanged;
