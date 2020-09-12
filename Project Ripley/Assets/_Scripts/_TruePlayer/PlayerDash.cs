@@ -36,9 +36,9 @@ public class PlayerDash : MonoBehaviour
             Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(input.y) > 0)
         {
             hasDashed = true;
-            //GetComponent<PlayerMovement>().enabled = false;
             Player.Instance.SetMovementActive(false);
             Player.Instance.SetAttackActive(false);
+            //GetComponent<PlayerMovement>().enabled = false;
             //PlayerActivationManager.Instance.SetMovementActive()
         }
 

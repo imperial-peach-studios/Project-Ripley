@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+//using Pathfinding;
 
 public class EnemySight : MonoBehaviour
 {
@@ -26,11 +26,11 @@ public class EnemySight : MonoBehaviour
         Down,
     }
 
-    Patrol patrol;
+    //Patrol patrol;
 
     void Awake()
     {
-        patrol = GetComponent<Patrol>();
+        //patrol = GetComponent<Patrol>();
         col = transform.Find("AI Circle Collision").GetComponent<CircleCollider2D>();
         line = transform.Find("Line Renderer").GetComponent<LineRenderer>();
         //info = GetComponent<EnemyInfo>();

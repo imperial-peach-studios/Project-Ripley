@@ -6,8 +6,8 @@ public class NewPlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings:")]
     [SerializeField] float movementSpeed;
-    [SerializeField] float sneakingSpeed; //Player's Sneaking Speed
-    [SerializeField] bool isSneaking = false; //If The Player Is Sneaking
+    [SerializeField] float sneakingSpeed;
+    [SerializeField] bool isSneaking = false;
     [SerializeField] float acceleration, deAcceleration;
 
     [Header("Wall Check:")]
@@ -19,7 +19,6 @@ public class NewPlayerMovement : MonoBehaviour
     Vector3 input;
 
     Rigidbody2D rb;
-
 
     void Start()
     {
@@ -46,7 +45,7 @@ public class NewPlayerMovement : MonoBehaviour
         float speed = SneakOrRun();
         Vector3 moveDirection = input.normalized * speed;
 
-        rb.velocity = moveDirection;
+        rb.velocity = moveDirection; // This should be moved to FixedUpdate.
     }
 
     float SneakOrRun()
@@ -85,17 +84,18 @@ public class NewPlayerMovement : MonoBehaviour
 
     int SetDirection(float value, float input)
     {
-        int direction = 0; //Make A Variable That Will Store The Direction Of The Player, Depending On Where They Press
-        if (value > 0) //If The Player Pressed "Right"
-        {
-            direction = 1;
-        }
-        else if (value < 0) //If The Player Pressed "Left"
-        {
-            direction = -1;
-        }
+        //int direction = 0; //Make A Variable That Will Store The Direction Of The Player, Depending On Where They Press
+        //if (value > 0) //If The Player Pressed "Right"
+        //{
+        //    direction = 1;
+        //}
+        //else if (value < 0) //If The Player Pressed "Left"
+        //{
+        //    direction = -1;
+        //}
 
-        return direction;
+        return value > 0 ? 1 : -1;
+        //return direction;
     }
 
     void WallCollision(ref Vector2 inp)

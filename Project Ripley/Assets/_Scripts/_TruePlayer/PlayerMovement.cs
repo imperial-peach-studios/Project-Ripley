@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        MouseDatabase.UpdateMousePosition();
+        //MouseDatabase.UpdateMousePosition();
 
         if(disableMove != true)
         {

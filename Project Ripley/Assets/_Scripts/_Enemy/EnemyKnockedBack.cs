@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+//using Pathfinding;
 
 public class EnemyKnockedBack : MonoBehaviour
 {
@@ -36,7 +36,7 @@ public class EnemyKnockedBack : MonoBehaviour
 
             if(knockTimer < knockLength)
             {
-                GetComponent<AIPath>().Teleport(newPos, true);
+                //GetComponent<AIPath>().Teleport(newPos, true);
             }
             else if(knockTimer > knockLength)
             {

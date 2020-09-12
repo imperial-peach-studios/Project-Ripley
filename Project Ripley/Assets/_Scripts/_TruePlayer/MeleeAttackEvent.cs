@@ -14,7 +14,7 @@ public class MeleeAttackEvent : MonoBehaviour
     void Awake()
     {
         //invetory = GetComponent<NewPlayerInvetory>().invetorySO;
-        pA = GetComponent<PlayerAttack>();
+        pA = GetComponentInParent<PlayerAttack>();
         attackA = attackActor.GetComponent<AttackActorCollision>();
         fireA = attackActor.GetComponent<FireActor>();
     }

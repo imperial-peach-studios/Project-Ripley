@@ -1,31 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+//using Pathfinding;
 
 public class EnemyAnimation : MonoBehaviour
 {
     EnemyInfo enemyInfo;
     EnemyEvent enemyEvent;
     EnemyHealth enemyHealth;
-    AIPath path;
+    //AIPath path;
     Animator anim;
 
     void Awake()
     {
         enemyEvent = GetComponent<EnemyEvent>();
         enemyHealth = GetComponent<EnemyHealth>();
-        path = GetComponent<AIPath>();
+        //path = GetComponent<AIPath>();
         anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
         float moving = 0f;
-        if(path.velocity != Vector3.zero)
-        {
-            moving = 1;
-        }
+        //if(path.velocity != Vector3.zero)
+        //{
+        //    moving = 1;
+        //}
 
         if(enemyHealth.IsDead())
         {

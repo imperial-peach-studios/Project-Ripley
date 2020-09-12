@@ -18,6 +18,8 @@ public class InteractReceiver : MonoBehaviour
     [SerializeField] float offsetY = 2f;
     bool call = false;
 
+    private InteractionManager iI;
+
     public delegate void OnLoot(GameObject item, Vector3 position);
     public delegate void OnItemLoot(ItemInfo item, Vector3 position);
     public static OnItemLoot OnStartLoot;
@@ -40,7 +42,9 @@ public class InteractReceiver : MonoBehaviour
         if (closestObject == null)
             return;
 
-        InteractionManager iI = closestObject.GetComponent<InteractionManager>();
+        //iI = closestObject.GetComponent<InteractionManager>();
+
+        iI = iI == null || previousObject != closestObject ? closestObject?.GetComponent<InteractionManager>() : iI;
 
         if (Input.GetKeyDown(pickUpKey))
         {

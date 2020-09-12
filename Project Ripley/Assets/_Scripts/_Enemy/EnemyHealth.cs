@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+//using Pathfinding;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     bool secondaryDead = false;
     EnemyEvent eE;
     EnemyAttack eA;
-    AIPath aPath;
+    //AIPath aPath;
     CircleCollider2D circle;
 
     void Awake()
@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
         health = startHealth;
         eE = GetComponent<EnemyEvent>();
         eA = GetComponent<EnemyAttack>();
-        aPath = GetComponent<AIPath>();
+        //aPath = GetComponent<AIPath>();
         circle = GetComponent<CircleCollider2D>();
     }
 
@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
         {
             eE.enabled = false;
             eA.enabled = false;
-            aPath.enabled = false;
+            //aPath.enabled = false;
             circle.isTrigger = true;
             //Destroy(gameObject, destroyLength);
             //GameData.aData.eData.AddDestroyedEnemy(eE.GetEnemyInfo());
@@ -70,7 +70,7 @@ public class EnemyHealth : MonoBehaviour
         isDead = false;
         eE.enabled = true;
         eA.enabled = true;
-        aPath.enabled = true;
+        //aPath.enabled = true;
         circle.isTrigger = false;
         secondaryDead = false;
     }

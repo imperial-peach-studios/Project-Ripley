@@ -27,10 +27,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float maxCombos = 3;
     float comboWaitingTimer = 0;
     [SerializeField] float comboWaitingLength;
+    Camera mainCamera;
+
+    void Awake()
+    {
+        mainCamera = Camera.main;
+    }
 
     void Update()
     {
-        MouseDatabase.UpdateMousePosition();
+        MouseDatabase.UpdateMousePosition(mainCamera);
 
         //AnimationController();
         Action();
@@ -87,7 +93,9 @@ public class PlayerAttack : MonoBehaviour
 
     void Melee(Melee m)
     {
-        if (Input.GetMouseButtonDown(0) && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Melee") && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("MeleeRecover")) //When We Get Input
+        AnimatorStateInfo animStateInfo = myAnim.GetCurrentAnimatorStateInfo(0);
+
+        if (Input.GetMouseButtonDown(0) && !animStateInfo.IsName("Melee") && !animStateInfo.IsName("MeleeRecover")) //When We Get Input
         {
             myAnim.SetFloat("ItemAttackID", m.animationID);
             myAnim.Play("Melee");
@@ -116,7 +124,7 @@ public class PlayerAttack : MonoBehaviour
         //    }
         //}
 
-        if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("MeleeRecover"))
+        if (animStateInfo.IsName("MeleeRecover"))
         {
             //attackCombo = 0;
             //comboWaitingTimer = 0;
@@ -194,8 +202,6 @@ public class PlayerAttack : MonoBehaviour
             //Debug.Log("HEGJ");
 
         }
-           
-
     }
 
     void Consumable(Consumable c)
@@ -244,8 +250,8 @@ public class PlayerAttack : MonoBehaviour
 
     void CharacterFollowMouse()
     {
-        int x = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform).x;
-        int y = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform).y;
+        int x = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform, false).x;
+        int y = (int)MouseDatabase.CalculateDirectionNonDisplay(MouseDatabase.mousePosition, transform, false).y;
 
         if (followMouse == true)
         {

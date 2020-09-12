@@ -7,12 +7,13 @@ public class MouseDatabase
     public static Vector3 mousePosition = Vector2.zero;
     private static float changeDirectionValue = 0.8f;
 
-    public static void UpdateMousePosition()
+    public static void UpdateMousePosition(Camera mainCamera)
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
+        //mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
+        mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
     }
 
-    public static Vector2 CalculateDirectionNonDisplay(Vector3 target, Transform myTransform)
+    public static Vector2 CalculateDirectionNonDisplay(Vector3 target, Transform myTransform, bool displayDirection = false)
     {
         float x = 0; //Create And Set Variable;
         float y = 0; //Create And Set Variable;
@@ -41,49 +42,103 @@ public class MouseDatabase
                 y = -1;
             }
         }
+
+        if(displayDirection)
+        {
+            DisplayDirection(position, x, y);
+        }
+
+        
+        return new Vector2(x, y);
+    }
+
+    public static void DisplayDirection(Vector3 position, float x, float y)
+    {
         float verticalPosition = 0f;
         float horizontalPosition = 0;
         if (y == 0)
         {
             verticalPosition = changeDirectionValue;
-            if (x == 1)
-            {
-                horizontalPosition = changeDirectionValue;
-            }
-            else if (x == -1)
-            {
-                horizontalPosition = -changeDirectionValue;
-            }
-            //Debug.DrawLine(position, position + new Vector3(horizontalPosition, verticalPosition, 0) * distanceOffset);
-            //Debug.DrawLine(position, position + new Vector3(horizontalPosition, -verticalPosition, 0) * distanceOffset);
+            horizontalPosition = changeDirectionValue * x;
+
+            //if (x == 1)
+            //{
+            //    horizontalPosition = changeDirectionValue;
+            //}
+            //else if (x == -1)
+            //{
+            //    horizontalPosition = -changeDirectionValue;
+            //}
+
+
+            Debug.DrawLine(position, position + new Vector3(horizontalPosition, verticalPosition, 0) * 2f);
+            Debug.DrawLine(position, position + new Vector3(horizontalPosition, -verticalPosition, 0) * 2f);
         }
         else if (x == 0)
         {
             horizontalPosition = changeDirectionValue;
-            if (y == 1)
-            {
-                verticalPosition = changeDirectionValue;
-            }
-            else if (y == -1)
-            {
-                verticalPosition = -changeDirectionValue;
-            }
-            //Debug.DrawLine(position, position + new Vector3(horizontalPosition, verticalPosition, 0) * distanceOffset);
-            //Debug.DrawLine(position, position + new Vector3(-horizontalPosition, verticalPosition, 0) * distanceOffset);
-        }
+            verticalPosition = changeDirectionValue * y;
 
-        //else
-        //{
-        //    if(animHorizontal != 0)
-        //    {
-        //        x = animHorizontal;
-        //    }
-        //    else if(animVertical != 0)
-        //    {
-        //        y = animVertical;
-        //    }
-        //}
-        return new Vector2(x, y);
+            //if (y == 1)
+            //{
+            //    verticalPosition = changeDirectionValue;
+            //}
+            //else if (y == -1)
+            //{
+            //    verticalPosition = -changeDirectionValue;
+            //}
+            Debug.DrawLine(position, position + new Vector3(horizontalPosition, verticalPosition, 0) * 2f);
+            Debug.DrawLine(position, position + new Vector3(-horizontalPosition, verticalPosition, 0) * 2f);
+        }
     }
+
+//    float verticalPosition = 0f;
+//    float horizontalPosition = 0;
+//        if (y == 0)
+//        {
+//            verticalPosition = changeDirectionValue;
+//            horizontalPosition = changeDirectionValue* x;
+
+//    if (x == 1)
+//    {
+//        horizontalPosition = changeDirectionValue;
+//    }
+//    else if (x == -1)
+//    {
+//        horizontalPosition = -changeDirectionValue;
+//    }
+
+
+//    Debug.DrawLine(position, position + new Vector3(horizontalPosition, verticalPosition, 0) * distanceOffset);
+//    Debug.DrawLine(position, position + new Vector3(horizontalPosition, -verticalPosition, 0) * distanceOffset);
+//}
+//        else if (x == 0)
+//        {
+//            horizontalPosition = changeDirectionValue;
+//            verticalPosition = changeDirectionValue* y;
+
+//            if (y == 1)
+//            {
+//                verticalPosition = changeDirectionValue;
+//            }
+//            else if (y == -1)
+//            {
+//                verticalPosition = -changeDirectionValue;
+//            }
+//            Debug.DrawLine(position, position + new Vector3(horizontalPosition, verticalPosition, 0) * distanceOffset);
+//            Debug.DrawLine(position, position + new Vector3(-horizontalPosition, verticalPosition, 0) * distanceOffset);
+//        }
+
+//        else
+//        {
+//            if(animHorizontal != 0)
+//            {
+//                x = animHorizontal;
+//            }
+//            else if(animVertical != 0)
+//            {
+//                y = animVertical;
+//            }
+//        }
 
 }

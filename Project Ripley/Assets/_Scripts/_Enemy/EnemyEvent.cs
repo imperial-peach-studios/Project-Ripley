@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+//using Pathfinding;
 
 public class EnemyEvent : MonoBehaviour
 {
     [SerializeField] EnemyInfo info;
-    AIPath path;
-    Patrol patrol;
+    //AIPath path;
+    //Patrol patrol;
     public float distanceOffset;
     [SerializeField] float waitTimer = 0;
     [SerializeField] float waitAmount;
@@ -24,8 +24,8 @@ public class EnemyEvent : MonoBehaviour
 
     void Start()
     {
-        path = GetComponent<AIPath>();
-        patrol = GetComponent<Patrol>();
+        //path = GetComponent<AIPath>();
+        //patrol = GetComponent<Patrol>();
 
         startPosition = transform.position;
     }
@@ -60,7 +60,7 @@ public class EnemyEvent : MonoBehaviour
                 transform.position = info.GetPosition();
             }
 
-            patrol.ResetIndex();
+            //patrol.ResetIndex();
             waitTimer = 0;
             playerInSightTimer = 0;
 
@@ -93,25 +93,26 @@ public class EnemyEvent : MonoBehaviour
     {
         if(info.GetKnockedDown() || info.GetStunned())
         {
-            path.canMove = false;
+            //path.canMove = false;
             //path.Teleport(transform.position, true);
         }
         else if(info.HasAttacked())
         {
-            path.canMove = false;
-            path.Teleport(transform.position, true);
+            //path.canMove = false;
+            //path.Teleport(transform.position, true);
         }
         if (info.GetCurrentSight()) // If the Player Is Seen
         {
-            patrol.enabled = false;
+            //patrol.enabled = false;
             waitTimer = 0;
-            
-            path.destination = info.GetLastPosition();
-            info.SetCurrentDirection(CalculateDirectionNonDisplay(path.destination));
+
+            //path.destination = info.GetLastPosition();
+
+            //info.SetCurrentDirection(CalculateDirectionNonDisplay(path.destination));
         }
         else if (info.GetSearchMode())
         {
-            patrol.enabled = false;
+            //patrol.enabled = false;
             
             waitTimer += Time.deltaTime;
 
@@ -134,7 +135,7 @@ public class EnemyEvent : MonoBehaviour
         }
         else if (!info.GetCurrentSight()) //If The Player Isnt Seen
         {
-            patrol.enabled = true;
+            //patrol.enabled = true;
 
             if (info.HasHeardNoise())
             {
@@ -142,22 +143,22 @@ public class EnemyEvent : MonoBehaviour
                 info.SetHeardNoise(false);
             }
 
-            Vector3 newDirection = new Vector3(path.desiredVelocity.x, path.desiredVelocity.y);
+            //Vector3 newDirection = new Vector3(path.desiredVelocity.x, path.desiredVelocity.y);
 
-            Vector3 newPosition = transform.position + newDirection;
-            if (path.reachedEndOfPath == true)
-            {
-                info.SetCurrentDirection(CalculateDirectionNonDisplay(transform.position + (Vector3)info.GetCurrentDirection()));
-            }
-            else
-            {
-                info.SetCurrentDirection(CalculateDirectionNonDisplay(newPosition));
-            }
+            //Vector3 newPosition = transform.position + newDirection;
+            //if (path.reachedEndOfPath == true)
+            //{
+            //    info.SetCurrentDirection(CalculateDirectionNonDisplay(transform.position + (Vector3)info.GetCurrentDirection()));
+            //}
+            //else
+            //{
+            //    info.SetCurrentDirection(CalculateDirectionNonDisplay(newPosition));
+            //}
         }
 
         if (!info.HasAttacked() && !info.GetStunned() && !info.GetKnockedDown())
         {
-            path.canMove = true;
+            //path.canMove = true;
         }
     }
 

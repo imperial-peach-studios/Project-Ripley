@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+//using Pathfinding;
 
 public class EnemyHear : MonoBehaviour
 {
     [Range(0, 20)] [SerializeField] float hearingRange;
     [SerializeField] LayerMask collideWithLayers;
-    [SerializeField] AIPath path;
+    //[SerializeField] AIPath path;
     EnemyEvent enemyEvent;
     
     void Awake()
@@ -24,27 +24,27 @@ public class EnemyHear : MonoBehaviour
         
         foreach(Collider2D hit in hitSound)
         {
-            path.destination = hit.transform.position;
+            //path.destination = hit.transform.position;
 
-            if (path.remainingDistance <= radius)
-            {
-                //Debug.Log("Sound Heard " + path.remainingDistance);
+            //if (path.remainingDistance <= radius)
+            //{
+            //    //Debug.Log("Sound Heard " + path.remainingDistance);
 
-                PlaySoundManager p = hit.transform.GetComponent<PlaySoundManager>();
+            //    PlaySoundManager p = hit.transform.GetComponent<PlaySoundManager>();
 
-                if(p != null)
-                {
-                    if (p.IsInRange(transform.position) && !PlayersMovementData.InsideASafeHouse)
-                    {
-                        enemyEvent.GetEnemyInfo().SetLastSight(hit.transform.position);
-                        enemyEvent.GetEnemyInfo().SetHeardNoise(true);
-                    }
-                }
-            }
-            else
-            {
-                //Debug.Log("Sound Ignored " + path.remainingDistance);
-            }
+            //    if(p != null)
+            //    {
+            //        if (p.IsInRange(transform.position) && !PlayersMovementData.InsideASafeHouse)
+            //        {
+            //            enemyEvent.GetEnemyInfo().SetLastSight(hit.transform.position);
+            //            enemyEvent.GetEnemyInfo().SetHeardNoise(true);
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    //Debug.Log("Sound Ignored " + path.remainingDistance);
+            //}
         }
     }
 

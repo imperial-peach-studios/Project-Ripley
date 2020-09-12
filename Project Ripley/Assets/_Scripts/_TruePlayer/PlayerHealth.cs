@@ -9,11 +9,6 @@ public class PlayerHealth : MonoBehaviour
     bool secondaryDead = false;
     float waitBeforeDeathTimer = 0;
     [SerializeField] float waitBeforeDeathLength;
-    PlayerMovement pM;
-    PlayerDash pD;
-    PlayerAttack pA;
-    NewPlayerInvetory pI;
-    InteractReceiver iR;
     
     void Awake()
     {
