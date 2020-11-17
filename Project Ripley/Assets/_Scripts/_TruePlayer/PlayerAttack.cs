@@ -97,6 +97,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !animStateInfo.IsName("Melee") && !animStateInfo.IsName("MeleeRecover")) //When We Get Input
         {
+            Player.Instance.SetPlayerState(Player.PlayerState.Attacking);
             myAnim.SetFloat("ItemAttackID", m.animationID);
             myAnim.Play("Melee");
             attackCombo += 1;
@@ -135,6 +136,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    Player.Instance.SetPlayerState(Player.PlayerState.Attacking);
                     myAnim.Play("Melee");
                     attackCombo += 1;
                     myAnim.SetFloat("AttackCombo", attackCombo);
@@ -152,6 +154,7 @@ public class PlayerAttack : MonoBehaviour
                 //playerMovement.StopMoving = false;
                 //GetComponent<PlayerDash>().enabled = true;
                 Player.Instance.SetAllMovementActive(true);
+                Player.Instance.SetPlayerState(Player.PlayerState.Idle);
             }
         }
 
@@ -270,7 +273,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 followMouseTimer = -1;
             }
-            else if(Player.Instance.GetAllMovementActive() == true)
+            else if(Player.Instance.GetAllMovementActive() == true && Player.Instance.GetPlayerState() == Player.PlayerState.Idle)
             {
                 myAnim.SetFloat("Horizontal", x);
                 myAnim.SetFloat("Vertical", y);

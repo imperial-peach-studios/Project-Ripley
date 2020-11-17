@@ -49,6 +49,9 @@ public class PlayerAnimation : MonoBehaviour
 
         if(Mathf.Abs(horizontal) != 0 || Mathf.Abs(vertical) != 0)
         {
+            animHorizontal = horizontal;
+            animVertical = vertical;
+
             if(Player.Instance.GetPlayerState() == Player.PlayerState.Running)
             {
                 return 2;
@@ -57,7 +60,6 @@ public class PlayerAnimation : MonoBehaviour
             {
                 return 1;
             }
-            
         }
 
         return 0;
@@ -66,9 +68,8 @@ public class PlayerAnimation : MonoBehaviour
     void AnimInput()
     {
         anim.SetFloat("Moving", IsMoving());
-        anim.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
-        anim.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
-        //anim.SetBool("Dash", pD.HasDashed);
-        //anim.SetBool("Sneaking", pM.IsSneaking);
+
+        anim.SetFloat("Horizontal", animHorizontal);
+        anim.SetFloat("Vertical", animVertical);
     }
 }
