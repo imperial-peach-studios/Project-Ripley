@@ -35,6 +35,7 @@ public class PlayerDash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(input.x) > 0 ||
             Input.GetKeyDown(KeyCode.Space) && hasDashed == false && Mathf.Abs(input.y) > 0)
         {
+            Player.Instance.SetPlayerState(Player.PlayerState.Dashing);
             hasDashed = true;
             Player.Instance.SetMovementActive(false);
             Player.Instance.SetAttackActive(false);
@@ -50,6 +51,7 @@ public class PlayerDash : MonoBehaviour
 
             if (dashTimer > dashCooldown)
             {
+                Player.Instance.SetPlayerState(Player.PlayerState.Idle);
                 hasDashed = false;
                 dashTimer = 0;
                 //GetComponent<PlayerMovement>().enabled = true;

@@ -24,7 +24,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        if(Player.Instance.GetAllMovementActive() == true)
+        if(Player.Instance.GetAllMovementActive() == true || Player.Instance.GetPlayerState()== Player.PlayerState.Dashing)
         {
             AnimInput();
         }
@@ -67,6 +67,8 @@ public class PlayerAnimation : MonoBehaviour
     
     void AnimInput()
     {
+        anim.SetBool("Dash", Player.Instance.GetComponent<PlayerDash>().HasDashed);
+
         anim.SetFloat("Moving", IsMoving());
 
         anim.SetFloat("Horizontal", animHorizontal);
