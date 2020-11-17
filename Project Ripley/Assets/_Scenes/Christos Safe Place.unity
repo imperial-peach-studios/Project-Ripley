@@ -5082,7 +5082,7 @@ MonoBehaviour:
   deAcceleration: 64
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   distanceToWall: 0
   startY: 0
   endY: 0
@@ -5100,6 +5100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   equipment: {fileID: 0}
+  myPlayerState: 0
 --- !u!114 &430792550
 MonoBehaviour:
   m_ObjectHideFlags: 0

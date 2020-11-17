@@ -49,7 +49,15 @@ public class PlayerAnimation : MonoBehaviour
 
         if(Mathf.Abs(horizontal) != 0 || Mathf.Abs(vertical) != 0)
         {
-            return 1;
+            if(Player.Instance.GetPlayerState() == Player.PlayerState.Running)
+            {
+                return 2;
+            }
+            else if(Player.Instance.GetPlayerState() == Player.PlayerState.Sneaking)
+            {
+                return 1;
+            }
+            
         }
 
         return 0;

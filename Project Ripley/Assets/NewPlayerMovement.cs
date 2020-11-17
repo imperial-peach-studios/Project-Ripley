@@ -30,6 +30,13 @@ public class NewPlayerMovement : MonoBehaviour
         FinalMovement();
     }
 
+    void FixedUpdate()
+    {
+        //float speed = SneakOrRun();
+        //Vector3 moveDirection = input.normalized * speed;
+        //rb.velocity = moveDirection;
+    }
+
     void FinalMovement()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -37,14 +44,22 @@ public class NewPlayerMovement : MonoBehaviour
 
         Vector2 newInput = new Vector3(horizontal, vertical);
         
-        WallCollision(ref newInput);
+        //WallCollision(ref newInput);
         //pA.SetInput(beforeInput);
         
         input = AccelerateInput(newInput, input);
 
+        Player.PlayerState playerState = Player.PlayerState.Idle;
+        if(input != Vector3.zero)
+        {
+            playerState = isSneaking == true ? Player.PlayerState.Sneaking : Player.PlayerState.Running;
+        }
+
+        Player.Instance.TryToModifyState(playerState);
+
         float speed = SneakOrRun();
         Vector3 moveDirection = input.normalized * speed;
-
+        
         rb.velocity = moveDirection; // This should be moved to FixedUpdate.
     }
 
@@ -102,7 +117,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         for (float y = -0.5f; y < 0; y += 0.1f)
         {
-            if (Physics.Raycast(transform.position + Vector3.up * y, Vector2.right * inp.x, wallMask))
+            if (Physics2D.Raycast((Vector2)transform.position + Vector2.up * y, Vector2.right * inp.x, wallMask))
             {
                 inp.x = 0;
                 break;
@@ -111,7 +126,7 @@ public class NewPlayerMovement : MonoBehaviour
 
         for (float x = -0.5f; x < 0; x += 0.1f)
         {
-            if (Physics.Raycast(transform.position + Vector3.right * x, Vector2.up * inp.y, wallMask))
+            if (Physics2D.Raycast((Vector2)transform.position + Vector2.right * x, Vector2.up * inp.y, wallMask))
             {
                 inp.y = 0;
                 break;

@@ -14,6 +14,17 @@ public class Player : MonoBehaviour
     PlayerAttack playerA;
 
     public static bool InsideASafeHouse = false;
+    [SerializeField] private PlayerState myPlayerState;
+
+    public enum PlayerState
+    {
+        Idle,
+        Running,
+        Sneaking,
+        Dashing,
+        Attacking,
+        Damaged
+    }
 
     void Awake()
     {
@@ -43,6 +54,26 @@ public class Player : MonoBehaviour
     public void OnLoad()
     {
         transform.position = GameData.aData.pData.GetPosition();
+    }
+
+    public void SetPlayerState(PlayerState aPlayerState)
+    {
+        myPlayerState = aPlayerState;
+    }
+
+    public PlayerState GetPlayerState()
+    {
+        return myPlayerState;
+    }
+
+    public void TryToModifyState(PlayerState aPlayerState)
+    {
+        if(myPlayerState == PlayerState.Attacking || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.Dashing)
+        {
+            return;
+        }
+
+        SetPlayerState(aPlayerState);
     }
 
     public void SetMovementActive(bool val)
