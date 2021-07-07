@@ -3,19 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Pick Ups
-  - Enemy
-  - Range Weapon
-  - Medicine
-  - Consumable
-  - Melee Weapon
-  - BlackVoid
-  - Interaction
-  - InteractionGiver
-  - InteractionInput
-  - InteractionLoot
-  - InteractionPickUp
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -26,18 +14,18 @@ TagManager:
   - 
   - 
   - Player
-  - Obstacle
   - Enemy
-  - 
-  - Interactable
-  - SoundObjects
-  - Wall
-  - Tilemap
-  - SafeGrounds
   - PickUp
-  - Loot
-  - House
-  - BoundaryPoint
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
