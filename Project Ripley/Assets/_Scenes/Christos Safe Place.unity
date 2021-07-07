@@ -5083,8 +5083,8 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 16384
-  distanceToWall: 0
-  startY: 0
+  distanceToWall: 0.1
+  startY: 1
   endY: 0
 --- !u!114 &430792549
 MonoBehaviour:
