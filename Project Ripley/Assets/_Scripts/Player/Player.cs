@@ -15,14 +15,58 @@ public enum PlayerState
     Count
 }
 
+[System.Serializable]
+struct Health
+{
+    [SerializeField] int myHealth;
+    [SerializeField] int myMaxHealth;
+    [SerializeField] bool myIsDead;
+
+    public void AddHealth(int aAmountToAdd)
+    {
+        myHealth += aAmountToAdd;
+        myHealth = Mathf.Clamp(myHealth, 0, myMaxHealth);
+
+        if (IsDead())
+        {
+            myIsDead = true;
+            Player.Instance.UpdateStateTo(PlayerState.Dead);
+            GameManager.Instance.FadeOut();
+        }
+    }
+
+    public void SetHealth(int aAmountToAdd)
+    {
+        myHealth = aAmountToAdd;
+        myHealth = Mathf.Clamp(myHealth, 0, myMaxHealth);
+    }
+
+    public void Reset()
+    {
+        myHealth = myMaxHealth;
+        myIsDead = false;
+    }
+
+    public bool IsDead()
+    {
+        return myHealth <= 0;
+    }
+}
+
 public class Player : MonoBehaviour
 {
     public static Player Instance;
+    [SerializeField] private Health myHealth;
     [SerializeField] private PlayerState myPlayerState;
 
     [HideInInspector] public Inventory inventory;
     [HideInInspector] public Equipment equipment;
     [HideInInspector] public InteractReceiver interact;
+    private Animator myAnim;
+    Vector3 mySpawnPosition;
+    float myDeathTimer = 0;
+    bool myResetPlayer = false;
+    [SerializeField] float myDeathRate;
 
     void Awake()
     {
@@ -32,18 +76,56 @@ public class Player : MonoBehaviour
             Instance = this;
         }
 
+        ScreenTransition.OnScreenFadedIn += ActivatePlayer;
+
         inventory = GetComponent<Inventory>();
         equipment = GetComponent<Equipment>();
         interact = GetComponent<InteractReceiver>();
 
+        myAnim = GetComponentInChildren<Animator>();
+
         //GameData.OnSavePlayer += OnSave;
         //GameData.OnLoadPlayer += OnLoad;
+    }
+
+    void ActivatePlayer()
+    {
+        myResetPlayer = true;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            myHealth.AddHealth(-1);
+        }
+        else if (Input.GetKeyDown(KeyCode.G))
+        {
+            myHealth.AddHealth(1);
+        }
+
+        if(myHealth.IsDead() && myResetPlayer)
+        {
+            myDeathTimer += Time.deltaTime;
+
+            if(myDeathTimer >= myDeathRate)
+            {
+                myDeathTimer = 0;
+                myHealth.Reset();
+                myAnim.SetBool("Dead", false);
+                transform.position = mySpawnPosition;
+                myPlayerState = PlayerState.Idle;
+                GameManager.Instance.FadeIn();
+                myResetPlayer = false;
+            }
+        }
     }
 
     public void SetPlayerState(PlayerState aPlayerState)
     {
         myPlayerState = aPlayerState;
     }
+
     public PlayerState GetPlayerState()
     {
         return myPlayerState;

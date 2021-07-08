@@ -855,18 +855,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6953695395588518911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9037278776494557955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f7a767127913b0479d76da3272ae73d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6953695395591492098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,6 +1481,18 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &6953695395588518911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037278776494557955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7a767127913b0479d76da3272ae73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1740137220649413388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1554,6 +1554,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784066663324569562, guid: 6a9d8a4463a9dd64f8c90083a44c633c,
+        type: 3}
+      propertyPath: myHealth.myHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784066663324569562, guid: 6a9d8a4463a9dd64f8c90083a44c633c,
+        type: 3}
+      propertyPath: myHealth.myMaxHealth
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2048695391236952519, guid: 6a9d8a4463a9dd64f8c90083a44c633c,
         type: 3}

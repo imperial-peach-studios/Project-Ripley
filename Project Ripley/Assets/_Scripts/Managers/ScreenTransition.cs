@@ -9,6 +9,10 @@ public class ScreenTransition : MonoBehaviour
     bool myFadeOut = false;
     float myFade = 1;
 
+    public delegate void OnScreenTransition();
+    public static OnScreenTransition OnScreenFadedOut;
+    public static OnScreenTransition OnScreenFadedIn;
+
     void Awake()
     {
         myFade = 1;
@@ -39,6 +43,7 @@ public class ScreenTransition : MonoBehaviour
 
             if(myFade == 0)
             {
+                OnScreenFadedIn.Invoke();
                 myFadeIn = false;
             }
         }
@@ -52,6 +57,7 @@ public class ScreenTransition : MonoBehaviour
 
             if (myFade == 1)
             {
+                //OnScreenFadedOut.Invoke();
                 myFadeOut = false;
             }
         }

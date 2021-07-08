@@ -38,12 +38,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void FadeIn()
+    public void FadeIn()
     {
+        Debug.Log("HELLO");
         OnScreenActive.Invoke();
     }
 
-    void FadeOut()
+    public void FadeOut()
     {
         OnScreenDeActive.Invoke();
     }

@@ -130,6 +130,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 64302432144696534, guid: 7b0e062e6d9ecae439c6e9e7b4e24feb,
+        type: 3}
+      propertyPath: myDeathRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 692338919224045629, guid: 7b0e062e6d9ecae439c6e9e7b4e24feb,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399937607876325262, guid: 7b0e062e6d9ecae439c6e9e7b4e24feb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6953695395044995490, guid: 7b0e062e6d9ecae439c6e9e7b4e24feb,
         type: 3}
       propertyPath: m_Name
@@ -189,6 +204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953695395887203758, guid: 7b0e062e6d9ecae439c6e9e7b4e24feb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b0e062e6d9ecae439c6e9e7b4e24feb, type: 3}

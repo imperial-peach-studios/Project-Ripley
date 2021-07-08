@@ -70,10 +70,13 @@ public class PlayerAnimation : MonoBehaviour
             case PlayerState.Damaged:
                 break;
             case PlayerState.Dead:
+                if (myAnim.GetBool("Dead") == false)
+                {
+                    myAnim.SetBool("Dead", true);
+                    myAnim.Play("Death");
+                }
                 break;
         }
-
-      
     }
 
     public void FinishedPickingUp()
