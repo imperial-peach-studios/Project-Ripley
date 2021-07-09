@@ -43,7 +43,7 @@ public class ScreenTransition : MonoBehaviour
 
             if(myFade == 0)
             {
-                OnScreenFadedIn.Invoke();
+                //OnScreenFadedIn.Invoke();
                 myFadeIn = false;
             }
         }
@@ -57,7 +57,7 @@ public class ScreenTransition : MonoBehaviour
 
             if (myFade == 1)
             {
-                //OnScreenFadedOut.Invoke();
+                OnScreenFadedOut.Invoke();
                 myFadeOut = false;
             }
         }

@@ -77,3 +77,6 @@ TagManager:
   - name: BlackScreen
     uniqueID: 2506487653
     locked: 0
+  - name: DeadPlayer
+    uniqueID: 2611488433
+    locked: 0

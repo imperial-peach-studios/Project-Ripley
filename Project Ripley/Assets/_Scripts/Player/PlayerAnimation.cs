@@ -10,7 +10,13 @@ public class PlayerAnimation : MonoBehaviour
     float myVerticalInput;
     bool myIsOver = false;
     bool myPickedUp = false;
-
+    [HideInInspector]
+    public bool myIsDead = false;
+    bool myFinishedPlayingDead = false;
+    [HideInInspector]
+    public bool myFinishedPlayingHealing = false;
+    private bool myIsHealing = false;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +57,14 @@ public class PlayerAnimation : MonoBehaviour
                 myAnim.SetBool("Dash", true);
                 break;
             case PlayerState.Attacking:
+
+                break;
+            case PlayerState.Healing:
+                if(myIsHealing == false)
+                {
+                    myAnim.Play("Consuming");
+                    myIsHealing = true;
+                }
                 break;
             case PlayerState.PickingUp:
                 if(!currentState.IsName("PickUp"))
@@ -70,10 +84,16 @@ public class PlayerAnimation : MonoBehaviour
             case PlayerState.Damaged:
                 break;
             case PlayerState.Dead:
-                if (myAnim.GetBool("Dead") == false)
+                if (myIsDead == false)
                 {
                     myAnim.SetBool("Dead", true);
                     myAnim.Play("Death");
+                    myIsDead = true;
+                }
+                else if(myFinishedPlayingDead)
+                {
+                    GameManager.Instance.FadeOut();
+                    myFinishedPlayingDead = false;
                 }
                 break;
         }
@@ -82,5 +102,21 @@ public class PlayerAnimation : MonoBehaviour
     public void FinishedPickingUp()
     {
         //Player.Instance.UpdateStateTo(PlayerState.Idle);
+    }
+
+    public void FinishedPlayingDeath()
+    {
+        myFinishedPlayingDead = true;
+    }
+
+    public void FinishedPlayingHealing()
+    {
+        myFinishedPlayingHealing = true;
+    }
+
+    public void ResetHealing()
+    {
+        myFinishedPlayingHealing = false;
+        myIsHealing = false;
     }
 }

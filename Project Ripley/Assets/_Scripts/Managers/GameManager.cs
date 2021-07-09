@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     public void FadeIn()
     {
-        Debug.Log("HELLO");
         OnScreenActive.Invoke();
     }
 

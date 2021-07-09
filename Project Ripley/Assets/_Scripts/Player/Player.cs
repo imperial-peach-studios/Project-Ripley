@@ -8,6 +8,7 @@ public enum PlayerState
     Walking,
     Dashing,
     Attacking,
+    Healing,
     PickingUp,
     Dropping,
     Damaged,
@@ -31,7 +32,6 @@ struct Health
         {
             myIsDead = true;
             Player.Instance.UpdateStateTo(PlayerState.Dead);
-            GameManager.Instance.FadeOut();
         }
     }
 
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
             Instance = this;
         }
 
-        ScreenTransition.OnScreenFadedIn += ActivatePlayer;
+        ScreenTransition.OnScreenFadedOut += ActivatePlayer;
 
         inventory = GetComponent<Inventory>();
         equipment = GetComponent<Equipment>();
@@ -90,7 +90,10 @@ public class Player : MonoBehaviour
 
     void ActivatePlayer()
     {
-        myResetPlayer = true;
+        if(myHealth.IsDead())
+        {
+            myResetPlayer = true;
+        }
     }
 
     void Update()
@@ -104,18 +107,14 @@ public class Player : MonoBehaviour
             myHealth.AddHealth(1);
         }
 
-        if(myHealth.IsDead() && myResetPlayer)
+        if(myResetPlayer)
         {
             myDeathTimer += Time.deltaTime;
 
-            if(myDeathTimer >= myDeathRate)
+            if (myDeathTimer >= myDeathRate)
             {
                 myDeathTimer = 0;
-                myHealth.Reset();
-                myAnim.SetBool("Dead", false);
-                transform.position = mySpawnPosition;
-                myPlayerState = PlayerState.Idle;
-                GameManager.Instance.FadeIn();
+                ResetPlayer();
                 myResetPlayer = false;
             }
         }
@@ -163,25 +162,25 @@ public class Player : MonoBehaviour
                 }
                 break;
             case PlayerState.Walking:
-                if (myPlayerState == PlayerState.Dashing || myPlayerState == PlayerState.Attacking || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.PickingUp || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Dead)
+                if (myPlayerState == PlayerState.Dashing || myPlayerState == PlayerState.Attacking || myPlayerState == PlayerState.Healing || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.PickingUp || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Dead)
                 {
                     aCan = false;
                 }
                 break;
             case PlayerState.Dashing:
-                if (myPlayerState == PlayerState.Attacking || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.PickingUp || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Dead)
+                if (myPlayerState == PlayerState.Attacking || myPlayerState == PlayerState.Healing || myPlayerState == PlayerState.Healing || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.PickingUp || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Dead)
                 {
                     aCan = false;
                 }
                 break;
             case PlayerState.Attacking:
-                if (myPlayerState == PlayerState.Dashing || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.PickingUp || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Dead)
+                if (myPlayerState == PlayerState.Dashing || myPlayerState == PlayerState.Healing || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.PickingUp || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Dead)
                 {
                     aCan = false;
                 }
                 break;
             case PlayerState.PickingUp:
-                if (myPlayerState == PlayerState.Dashing || myPlayerState == PlayerState.Attacking || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.Dead)
+                if (myPlayerState == PlayerState.Dashing || myPlayerState == PlayerState.Healing || myPlayerState == PlayerState.Attacking || myPlayerState == PlayerState.Dropping || myPlayerState == PlayerState.Damaged || myPlayerState == PlayerState.Dead)
                 {
                     aCan = false;
                 }
@@ -192,8 +191,26 @@ public class Player : MonoBehaviour
                     aCan = false;
                 }
                 break;
+            case PlayerState.Healing:
+
+                break;
         }
 
         return aCan;
+    }
+
+    public void ResetPlayer()
+    {
+        myHealth.Reset();
+        transform.position = mySpawnPosition;
+        myPlayerState = PlayerState.Idle;
+        GetComponentInChildren<PlayerAnimation>().myIsDead = false;
+        myAnim.SetBool("Dead", false);
+        GameManager.Instance.FadeIn();
+    }
+
+    public void AddHealingHealth()
+    {
+        myHealth.AddHealth(1);
     }
 }
